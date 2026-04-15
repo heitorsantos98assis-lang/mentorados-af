@@ -5,4 +5,1128 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marketing Eh Gol 2026 V1</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
-</
+<style>
+  :root {
+    --verde: #00E676;
+    --verde-escuro: #00B85A;
+    --amarelo: #FFD600;
+    --bg: #0A0D0A;
+    --bg2: #0F1410;
+    --bg3: #141A14;
+    --card: #111611;
+    --borda: rgba(0,230,118,0.15);
+    --texto: #D4E8D4;
+    --subtexto: #7A9A7A;
+    --vermelho: #FF4444;
+    --laranja: #FF8C00;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--texto);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* GRAIN OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.5;
+  }
+
+  /* HEADER */
+  header {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--borda);
+    padding: 60px 80px 50px;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,230,118,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,230,118,0.1);
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+    padding: 5px 14px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--verde);
+    margin-bottom: 28px;
+  }
+
+  .header-tag span {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--verde);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 7vw, 84px);
+    letter-spacing: 3px;
+    line-height: 0.95;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  header h1 em {
+    color: var(--verde);
+    font-style: normal;
+  }
+
+  .header-sub {
+    color: var(--subtexto);
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .header-sub span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .dot-sep { color: var(--verde); opacity: 0.4; }
+
+  /* MAIN LAYOUT */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  /* SECTION TITLE */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .section-label .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: rgba(0,230,118,0.15);
+    line-height: 1;
+  }
+
+  .section-label .texts h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+
+  .section-label .texts p {
+    font-size: 12px;
+    color: var(--subtexto);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  section { margin-bottom: 72px; }
+
+  /* DIAGNÓSTICO CARDS */
+  .diag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .diag-card {
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .diag-card:hover {
+    border-color: rgba(0,230,118,0.4);
+    transform: translateY(-2px);
+  }
+
+  .diag-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--verde), transparent);
+  }
+
+  .diag-card .icon {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .diag-card h3 {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--subtexto);
+    margin-bottom: 8px;
+  }
+
+  .diag-card .value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .diag-card .value.verde { color: var(--verde); }
+  .diag-card .value.amarelo { color: var(--amarelo); }
+  .diag-card .value.vermelho { color: var(--vermelho); }
+
+  .diag-card .detail {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--subtexto);
+  }
+
+  /* STATUS BADGE */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  .badge.ok { background: rgba(0,230,118,0.1); color: var(--verde); border: 1px solid rgba(0,230,118,0.2); }
+  .badge.warn { background: rgba(255,214,0,0.1); color: var(--amarelo); border: 1px solid rgba(255,214,0,0.2); }
+  .badge.crit { background: rgba(255,68,68,0.1); color: var(--vermelho); border: 1px solid rgba(255,68,68,0.2); }
+
+  /* GAP TABLE */
+  .gap-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .gap-table thead tr {
+    border-bottom: 1px solid var(--borda);
+  }
+
+  .gap-table th {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--subtexto);
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  .gap-table td {
+    padding: 16px 16px;
+    border-bottom: 1px solid rgba(0,230,118,0.05);
+    font-size: 14px;
+    vertical-align: top;
+  }
+
+  .gap-table tr:last-child td { border-bottom: none; }
+
+  .gap-table tr:hover td {
+    background: rgba(0,230,118,0.02);
+  }
+
+  .gap-table td:first-child {
+    font-weight: 500;
+    color: #fff;
+    width: 220px;
+  }
+
+  /* PRIORITY ITEMS */
+  .priority-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .priority-item {
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 48px 1fr auto;
+    align-items: start;
+    gap: 20px;
+    transition: border-color 0.3s;
+  }
+
+  .priority-item:hover { border-color: rgba(0,230,118,0.3); }
+
+  .priority-item.p1 { border-left: 3px solid var(--vermelho); }
+  .priority-item.p2 { border-left: 3px solid var(--laranja); }
+  .priority-item.p3 { border-left: 3px solid var(--amarelo); }
+  .priority-item.p4 { border-left: 3px solid var(--verde); }
+
+  .priority-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    line-height: 1;
+    color: rgba(255,255,255,0.08);
+  }
+
+  .priority-item h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .priority-item p {
+    font-size: 13px;
+    color: var(--subtexto);
+    line-height: 1.6;
+  }
+
+  .priority-item ul {
+    margin-top: 10px;
+    padding-left: 16px;
+  }
+
+  .priority-item ul li {
+    font-size: 13px;
+    color: var(--subtexto);
+    margin-bottom: 4px;
+  }
+
+  .priority-item ul li::marker { color: var(--verde); }
+
+  /* FUNIL VISUAL */
+  .funil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin: 32px 0;
+  }
+
+  .funil-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .funil-bar {
+    flex: 1;
+    border-radius: 4px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: opacity 0.3s;
+  }
+
+  .funil-bar:hover { opacity: 0.85; }
+
+  .funil-bar .label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+  }
+
+  .funil-bar .metric {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .funil-icon {
+    width: 32px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .funil-arrow {
+    display: flex;
+    justify-content: center;
+    color: var(--subtexto);
+    font-size: 18px;
+    margin: 2px 0;
+  }
+
+  /* ROADMAP */
+  .roadmap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .roadmap-phase {
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .roadmap-phase::after {
+    content: attr(data-phase);
+    position: absolute;
+    bottom: -10px; right: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .roadmap-phase .phase-tag {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--subtexto);
+    margin-bottom: 6px;
+  }
+
+  .roadmap-phase h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  .roadmap-phase ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .roadmap-phase ul li {
+    font-size: 13px;
+    color: var(--subtexto);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .roadmap-phase ul li::before {
+    content: '→';
+    color: var(--verde);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* VISAO HEITOR */
+  .visao-block {
+    background: linear-gradient(135deg, rgba(0,230,118,0.05), rgba(0,230,118,0.02));
+    border: 1px solid rgba(0,230,118,0.2);
+    border-radius: 8px;
+    padding: 36px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .visao-block::before {
+    content: '"';
+    position: absolute;
+    top: -20px; left: 24px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 180px;
+    color: rgba(0,230,118,0.06);
+    line-height: 1;
+  }
+
+  .visao-block p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--texto);
+    position: relative;
+  }
+
+  .visao-block p + p {
+    margin-top: 16px;
+  }
+
+  .visao-block strong { color: var(--verde); font-weight: 600; }
+
+  /* INSIGHT BOX */
+  .insight-box {
+    background: rgba(255,214,0,0.04);
+    border: 1px solid rgba(255,214,0,0.15);
+    border-left: 3px solid var(--amarelo);
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    margin: 20px 0;
+    font-size: 14px;
+    color: var(--texto);
+  }
+
+  .insight-box .insight-title {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--amarelo);
+    margin-bottom: 6px;
+  }
+
+  /* ALERT BOX */
+  .alert-box {
+    background: rgba(255,68,68,0.04);
+    border: 1px solid rgba(255,68,68,0.15);
+    border-left: 3px solid var(--vermelho);
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    margin: 20px 0;
+    font-size: 14px;
+    color: var(--texto);
+  }
+
+  .alert-box .alert-title {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--vermelho);
+    margin-bottom: 6px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--borda);
+    margin: 64px 0;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg2);
+    border-top: 1px solid var(--borda);
+    padding: 40px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  footer .footer-left h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--verde);
+  }
+
+  footer .footer-left p {
+    font-size: 12px;
+    color: var(--subtexto);
+    margin-top: 2px;
+  }
+
+  footer .footer-right {
+    font-size: 12px;
+    color: var(--subtexto);
+    text-align: right;
+  }
+
+  footer .footer-right strong { color: #fff; }
+
+  /* METRICS ROW */
+  .metrics-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+  }
+
+  .metric-pill {
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    padding: 16px 20px;
+    text-align: center;
+  }
+
+  .metric-pill .mp-label {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--subtexto);
+    margin-bottom: 6px;
+  }
+
+  .metric-pill .mp-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: #fff;
+  }
+
+  .metric-pill .mp-value.verde { color: var(--verde); }
+  .metric-pill .mp-value.amarelo { color: var(--amarelo); }
+  .metric-pill .mp-value.vermelho { color: var(--vermelho); }
+
+  /* NAV ÂNCORA */
+  .nav-anchor {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--borda);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 80px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-anchor::-webkit-scrollbar { display: none; }
+
+  .nav-anchor ul {
+    display: flex;
+    list-style: none;
+    gap: 0;
+    white-space: nowrap;
+  }
+
+  .nav-anchor ul li a {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 14px 18px;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--subtexto);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .nav-anchor ul li a:hover {
+    color: var(--verde);
+    border-bottom-color: var(--verde);
+  }
+
+  .nav-anchor ul li a .nav-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: rgba(0,230,118,0.3);
+    line-height: 1;
+  }
+
+  @media (max-width: 768px) {
+    .nav-anchor { padding: 0 16px; }
+    .nav-anchor ul li a { padding: 12px 12px; font-size: 10px; }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    header { padding: 40px 24px 32px; }
+    main { padding: 40px 20px; }
+    footer { padding: 32px 24px; }
+    .roadmap { grid-template-columns: 1fr; }
+    .priority-item { grid-template-columns: 40px 1fr; }
+    .priority-item .badge { display: none; }
+  }
+
+  /* ANIMATE IN */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  section {
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0;
+  }
+
+  section:nth-child(1) { animation-delay: 0.1s; }
+  section:nth-child(2) { animation-delay: 0.2s; }
+  section:nth-child(3) { animation-delay: 0.3s; }
+  section:nth-child(4) { animation-delay: 0.4s; }
+  section:nth-child(5) { animation-delay: 0.5s; }
+  section:nth-child(6) { animation-delay: 0.6s; }
+  section:nth-child(7) { animation-delay: 0.7s; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-tag">
+    <span></span>
+    Relatório Estratégico — Confidencial
+  </div>
+  <h1>ÉH GOL<br><em>SPORTS</em></h1>
+  <div class="header-sub">
+    <span>📅 14 de abril de 2026</span>
+    <span class="dot-sep">·</span>
+    <span>🎙️ 1ª Reunião de Marketing de Performance</span>
+    <span class="dot-sep">·</span>
+    <span>⏱ 51 minutos</span>
+    <span class="dot-sep">·</span>
+    <span>👤 Preparado por Heitor Santos — HL Mídias</span>
+  </div>
+</header>
+
+<!-- NAV ÂNCORA -->
+<nav class="nav-anchor">
+  <ul>
+    <li><a href="#visao"><span class="nav-num">01</span> Visão Estratégica</a></li>
+    <li><a href="#diagnostico"><span class="nav-num">02</span> Diagnóstico</a></li>
+    <li><a href="#negocio"><span class="nav-num">03</span> Negócio</a></li>
+    <li><a href="#funil"><span class="nav-num">04</span> Funil</a></li>
+    <li><a href="#gargalos"><span class="nav-num">05</span> Gargalos</a></li>
+    <li><a href="#roadmap"><span class="nav-num">06</span> Roadmap</a></li>
+    <li><a href="#finais"><span class="nav-num">07</span> Considerações</a></li>
+  </ul>
+</nav>
+
+<!-- MAIN -->
+<main>
+
+  <!-- 1. VISÃO ESTRATÉGICA -->
+  <section id="visao">
+    <div class="section-label">
+      <div class="num">01</div>
+      <div class="texts">
+        <h2>Visão Estratégica do Consultor</h2>
+        <p>Diagnóstico inicial — reunião 14/04/2026</p>
+      </div>
+    </div>
+
+    <div class="visao-block">
+      <p>
+        Eduardo, a reunião com Ronaldo, Victor e Joeslen foi extremamente reveladora. 
+        A Éh Gol tem algo que a maioria dos negócios no mesmo estágio não tem: 
+        <strong>uma presença orgânica forte, produto validado e um investimento relevante em mídia paga (R$33mil/mês)</strong>. 
+        Esse é o ponto de partida que muita empresa ainda está sonhando. O problema não é o tamanho, é a visibilidade interna dos resultados.
+      </p>
+      <p>
+        O que ficou claro nessa reunião é que existe um negócio que <strong>investe como grande e opera como pequeno</strong> em termos de rastreabilidade de dados. 
+        Vocês não sabem de qual criativo vem a venda. Não sabem a taxa de conversão de lead para oportunidade. 
+        E isso, para quem coloca R$33k por mês em tráfego pago, é o maior risco do negócio. Não o mercado, não a concorrência.
+      </p>
+      <p>
+        <strong>Minha visão: a Éh Gol está a 2 ajustes cirúrgicos de ter um motor de crescimento sustentável e escalável.</strong> 
+        E eu vou detalhar exatamente o que precisa ser feito, em que ordem e por quê.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. DIAGNÓSTICO DE NÚMEROS -->
+  <section id="diagnostico">
+    <div class="section-label">
+      <div class="num">02</div>
+      <div class="texts">
+        <h2>Diagnóstico de Números</h2>
+        <p>Dados coletados em reunião — abril 2026</p>
+      </div>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-pill">
+        <div class="mp-label">Investimento Total/Mês</div>
+        <div class="mp-value amarelo">R$33k</div>
+      </div>
+      <div class="metric-pill">
+        <div class="mp-label">Distribuição Meta Ads</div>
+        <div class="mp-value verde">~90–95%</div>
+      </div>
+      <div class="metric-pill">
+        <div class="mp-label">Investimento Google Ads</div>
+        <div class="mp-value">~R$2k</div>
+      </div>
+      <div class="metric-pill">
+        <div class="mp-label">Meta de Leads/Dia</div>
+        <div class="mp-value">200</div>
+      </div>
+      <div class="metric-pill">
+        <div class="mp-label">Média Real de Leads/Dia</div>
+        <div class="mp-value amarelo">100–150</div>
+      </div>
+      <div class="metric-pill">
+        <div class="mp-label">CPL Médio Meta Ads</div>
+        <div class="mp-value">R$8–10</div>
+      </div>
+      <div class="metric-pill">
+        <div class="mp-label">CPL Histórico (pico ruim)</div>
+        <div class="mp-value vermelho">R$15–20</div>
+      </div>
+      <div class="metric-pill">
+        <div class="mp-label">CPL Google Ads (estimado)</div>
+        <div class="mp-value">R$7–10</div>
+      </div>
+    </div>
+
+    <div class="diag-grid">
+      <div class="diag-card">
+        <div class="icon">📊</div>
+        <h3>CRM Ativo</h3>
+        <div class="value amarelo">Parcial</div>
+        <div class="detail">Sprint Hub em uso apenas para atendimento — pipeline de funil não configurado</div>
+      </div>
+      <div class="diag-card">
+        <div class="icon">📱</div>
+        <h3>Canais de Entrada</h3>
+        <div class="value verde">WhatsApp</div>
+        <div class="detail">100% dos leads vão para WhatsApp. Rastreamento de origem: fragilizado.</div>
+      </div>
+      <div class="diag-card">
+        <div class="icon">🎯</div>
+        <h3>Funil Rastreado</h3>
+        <div class="value vermelho">Lead Only</div>
+        <div class="detail">Funil mapeado apenas até geração de lead. Oportunidade → Venda: caixa-preta.</div>
+      </div>
+      <div class="diag-card">
+        <div class="icon">🤖</div>
+        <h3>Automação</h3>
+        <div class="value">Em ajuste</div>
+        <div class="detail">Chatbot IA para atendimento fora do horário comercial — ainda em fase de maturação do prompt.</div>
+      </div>
+    </div>
+
+    <div class="alert-box">
+      <div class="alert-title">⚠️ Risco Crítico Identificado</div>
+      Com R$33.000/mês sendo investidos sem rastreamento de conversão de lead para venda, é impossível saber se o investimento está sendo eficiente ou se existe margem segura para escalar. Esse GAP precisa ser o primeiro a ser resolvido.
+    </div>
+  </section>
+
+  <!-- 3. MAPEAMENTO DO NEGÓCIO -->
+  <section id="negocio">
+    <div class="section-label">
+      <div class="num">03</div>
+      <div class="texts">
+        <h2>Mapeamento do Negócio</h2>
+        <p>Produto, público, canais e operação</p>
+      </div>
+    </div>
+
+    <table class="gap-table">
+      <thead>
+        <tr>
+          <th>Dimensão</th>
+          <th>Status Atual</th>
+          <th>Avaliação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Produto Principal</td>
+          <td>Uniformes esportivos personalizados — Futebol de Várzea (Kits BPJ a partir de R$1.089)</td>
+          <td><span class="badge ok">✓ Validado</span></td>
+        </tr>
+        <tr>
+          <td>ICP (Público-alvo)</td>
+          <td>Homens de 19 a 55 anos, times de futebol amador (várzea), MG e SP como estados principais</td>
+          <td><span class="badge ok">✓ Claro</span></td>
+        </tr>
+        <tr>
+          <td>Produto Secundário</td>
+          <td>Uniformes escolares, empresariais e pesca personalizada — sem foco em mídia paga</td>
+          <td><span class="badge warn">⚠ Oportunidade</span></td>
+        </tr>
+        <tr>
+          <td>Franquias</td>
+          <td>Pausa ativa — lote fechado, em treinamento. Investimento ~R$100/dia (parado)</td>
+          <td><span class="badge warn">⚠ Retomar com dados</span></td>
+        </tr>
+        <tr>
+          <td>Orgânico (Instagram)</td>
+          <td>Forte presença, vídeos atingindo até 10k visualizações. Publicação quase diária.</td>
+          <td><span class="badge ok">✓ Ponto Forte</span></td>
+        </tr>
+        <tr>
+          <td>Meta Ads</td>
+          <td>R$30–31k/mês. Objetivos: geração de leads + visitas ao perfil. Segmentação por região+idade e interesses em futebol amador.</td>
+          <td><span class="badge warn">⚠ Escalar com cuidado</span></td>
+        </tr>
+        <tr>
+          <td>Google Ads</td>
+          <td>~R$2k/mês. Pesquisa + campanhas de geração de demanda (YouTube). Bom potencial subutilizado.</td>
+          <td><span class="badge warn">⚠ Subaproveitado</span></td>
+        </tr>
+        <tr>
+          <td>CRM (Sprint Hub)</td>
+          <td>Instalado, mas usado apenas para atendimento. Pipeline de funil não ativo por custo de upgrade.</td>
+          <td><span class="badge crit">✗ Gap crítico</span></td>
+        </tr>
+        <tr>
+          <td>Rastreamento de Vendas</td>
+          <td>Sistema de pedidos separado do CRM. Cruzamento manual — feito de forma incompleta.</td>
+          <td><span class="badge crit">✗ Gap crítico</span></td>
+        </tr>
+        <tr>
+          <td>Chatbot / IA</td>
+          <td>Implementado via Sprint Hub com IA — responde fora do horário e transfere para vendedor. Em ajuste.</td>
+          <td><span class="badge warn">⚠ Maturando</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 4. FUNIL ATUAL -->
+  <section id="funil">
+    <div class="section-label">
+      <div class="num">04</div>
+      <div class="texts">
+        <h2>Funil de Performance Atual</h2>
+        <p>Visão real do fluxo — onde está o buraco</p>
+      </div>
+    </div>
+
+    <p style="color: var(--subtexto); font-size: 13px; margin-bottom: 8px;">Representação do funil com base nos dados coletados em reunião:</p>
+
+    <div class="funil">
+      <div class="funil-step">
+        <div class="funil-icon">📣</div>
+        <div class="funil-bar" style="background: rgba(0,230,118,0.12); border: 1px solid rgba(0,230,118,0.25);">
+          <span class="label">Investimento em Tráfego</span>
+          <span class="metric" style="color: var(--verde);">R$33k/mês</span>
+        </div>
+      </div>
+      <div class="funil-arrow">↓</div>
+      <div class="funil-step">
+        <div class="funil-icon">👤</div>
+        <div class="funil-bar" style="background: rgba(0,230,118,0.08); border: 1px solid rgba(0,230,118,0.2); max-width: 92%;">
+          <span class="label">Leads Gerados/Dia</span>
+          <span class="metric" style="color: var(--verde);">100–150 leads</span>
+        </div>
+      </div>
+      <div class="funil-arrow">↓</div>
+      <div class="funil-step">
+        <div class="funil-icon">💬</div>
+        <div class="funil-bar" style="background: rgba(255,214,0,0.08); border: 1px solid rgba(255,214,0,0.2); max-width: 78%;">
+          <span class="label">Atendimento WhatsApp</span>
+          <span class="metric" style="color: var(--amarelo);">? conversas</span>
+        </div>
+      </div>
+      <div class="funil-arrow">↓</div>
+      <div class="funil-step">
+        <div class="funil-icon">🎯</div>
+        <div class="funil-bar" style="background: rgba(255,140,0,0.08); border: 1px solid rgba(255,140,0,0.2); max-width: 55%;">
+          <span class="label">Oportunidades Qualificadas</span>
+          <span class="metric" style="color: var(--laranja);">❓ Desconhecido</span>
+        </div>
+      </div>
+      <div class="funil-arrow">↓</div>
+      <div class="funil-step">
+        <div class="funil-icon">🏆</div>
+        <div class="funil-bar" style="background: rgba(255,68,68,0.08); border: 1px solid rgba(255,68,68,0.2); max-width: 35%;">
+          <span class="label">Vendas Fechadas</span>
+          <span class="metric" style="color: var(--vermelho);">❓ Não rastreado</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-title">💡 Insight Chave</div>
+      O funil está funcionando até a geração de lead. A partir daí, é caixa-preta. O time de mídia toma decisão olhando apenas para CPL, sem saber qual criativo gera venda de fato. Isso é o equivalente a dirigir olhando só para a velocidade — sem ver a estrada.
+    </div>
+  </section>
+
+  <!-- 5. GARGALOS E PRIORIDADES -->
+  <section id="gargalos">
+    <div class="section-label">
+      <div class="num">05</div>
+      <div class="texts">
+        <h2>Gargalos e Prioridades</h2>
+        <p>Ordenados por impacto no crescimento</p>
+      </div>
+    </div>
+
+    <div class="priority-list">
+
+      <div class="priority-item p1">
+        <div class="priority-num">01</div>
+        <div>
+          <h3>Fazer o upgrade do Sprint Hub e ativar o Pipeline de Funil</h3>
+          <p>O Sprint Hub já está instalado e sendo pago, mas operando como uma caixa de atendimento. O upgrade para o módulo de CRM completo é provavelmente a decisão mais eficiente financeiramente que a operação pode tomar agora. Com a ferramenta configurada e um responsável interno dedicado a essa análise, a empresa ganha rastreabilidade de funil e inteligência de dados sem precisar de headcount adicional.</p>
+          <ul>
+            <li>O custo do upgrade tende a ser inferior ao de contratar e manter uma pessoa exclusivamente para cruzar dados manualmente</li>
+            <li>Com a ferramenta ativa, um analista já dentro do time assume a função de acompanhar o pipeline e reportar os números</li>
+            <li>O resultado é duplo: redução de custo operacional e aumento de visibilidade sobre o funil completo</li>
+            <li>Cada lead rastreado de ponta a ponta vira inteligência para as próximas decisões de investimento</li>
+          </ul>
+        </div>
+        <span class="badge crit">URGENTE</span>
+      </div>
+
+      <div class="priority-item p1">
+        <div class="priority-num">02</div>
+        <div>
+          <h3>Implementar rastreamento de origem de lead no atendimento</h3>
+          <p>Enquanto o CRM não está 100% parametrizado, existe uma solução imediata de baixo custo: o time de vendas passa a perguntar na abertura do atendimento de onde o lead veio. Essa pergunta deve ser padronizada e tagueada no CRM.</p>
+          <ul>
+            <li>Script padrão: "Como você nos encontrou? Instagram orgânico, anúncio no Instagram, anúncio no Google ou indicação?"</li>
+            <li>Criar tags no Sprint Hub por origem e obrigar o preenchimento antes de mover o lead no funil</li>
+            <li>Alternativa rápida: configurar mensagem de abertura diferente por canal de anúncio (parâmetro UTM / título do anúncio)</li>
+          </ul>
+        </div>
+        <span class="badge crit">URGENTE</span>
+      </div>
+
+      <div class="priority-item p2">
+        <div class="priority-num">03</div>
+        <div>
+          <h3>Cruzar dados de leads com pedidos gerados no sistema de vendas</h3>
+          <p>Existe um sistema de gestão de pedidos separado do CRM. Esse cruzamento precisa ser feito — mesmo que manualmente no início — para entender qual investimento gera venda e qual gera apenas volume de leads sem retorno.</p>
+          <ul>
+            <li>Criar uma planilha de controle simples: Data do pedido | Canal de origem | Valor | Campanha</li>
+            <li>Responsável: preferencialmente uma pessoa específica (estagiário ou analista) dedicada a isso</li>
+            <li>Com 3 meses de dados, a operação de tráfego passa de "achismo" para decisão baseada em CAC real</li>
+          </ul>
+        </div>
+        <span class="badge warn">ALTA PRIORIDADE</span>
+      </div>
+
+      <div class="priority-item p3">
+        <div class="priority-num">04</div>
+        <div>
+          <h3>Aumentar alocação no Google Ads com foco em pesquisa</h3>
+          <p>O Google Ads recebe apenas ~6% do investimento total (R$2k de R$33k). Joeslen sinalizou que existe espaço para crescimento nas campanhas de pesquisa. A demanda já existe — o usuário está buscando. Isso tende a gerar leads mais qualificados que o Meta em nichos como uniformes esportivos.</p>
+          <ul>
+            <li>Resolver primeiro o rastreamento (ponto 1 e 2) antes de escalar</li>
+            <li>Com rastreamento, testar incremento de R$3–5k no Google e comparar CAC vs. Meta</li>
+            <li>Campanhas de pesquisa para termos como "uniforme time de futebol", "kit uniforme personalizado SP/MG"</li>
+          </ul>
+        </div>
+        <span class="badge warn">MÉDIO PRAZO</span>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- 6. ROADMAP -->
+  <section id="roadmap">
+    <div class="section-label">
+      <div class="num">06</div>
+      <div class="texts">
+        <h2>Roadmap Recomendado</h2>
+        <p>Plano de ação em 3 fases</p>
+      </div>
+    </div>
+
+    <div class="roadmap">
+      <div class="roadmap-phase" data-phase="1">
+        <div class="phase-tag">Fase 01 — 0 a 30 dias</div>
+        <h3>Acender as Luzes</h3>
+        <ul>
+          <li>Ativar pipeline de funil no Sprint Hub (ou avaliar custo/benefício de upgrade)</li>
+          <li>Implementar script de pergunta de origem no atendimento comercial</li>
+          <li>Configurar tags de origem por canal (Meta, Google, Orgânico, Indicação)</li>
+          <li>Criar planilha de controle manual para cruzamento Lead × Pedido</li>
+          <li>Solicitar à Joeslen/JBS relatório dos últimos 3 meses de performance</li>
+          <li>Nomear um responsável por esse processo de dados internamente</li>
+        </ul>
+      </div>
+      <div class="roadmap-phase" data-phase="2">
+        <div class="phase-tag">Fase 02 — 30 a 90 dias</div>
+        <h3>Tomar Decisões com Dados</h3>
+        <ul>
+          <li>Ter o primeiro relatório completo de CAC por canal</li>
+          <li>Saber qual criativo gerou venda nos últimos 30 dias</li>
+          <li>Testar incremento no Google Ads com rastreamento real</li>
+          <li>Criar variações dos criativos campeões identificados</li>
+          <li>Revisar meta de leads: trocar volume por qualidade rastreada</li>
+          <li>Apresentar ao Eduardo o CAC real e margem disponível para escalar</li>
+        </ul>
+      </div>
+      <div class="roadmap-phase" data-phase="3">
+        <div class="phase-tag">Fase 03 — 90 dias+</div>
+        <h3>Escalar com Segurança</h3>
+        <ul>
+          <li>Com CAC e LTV mapeados, definir teto de investimento seguro por canal</li>
+          <li>Estrutura de criativos escaláveis e rotativos</li>
+          <li>Retomar campanha de franquias com dados — sabendo o CAC por franqueado</li>
+          <li>Testar expansão para novas regiões além de MG e SP</li>
+          <li>Avaliar produtos secundários (escolas, empresas) com investimento mínimo e rastreado</li>
+          <li>Dashboard de performance integrado: tráfego + CRM + vendas</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CONSIDERAÇÕES FINAIS -->
+  <section id="finais">
+    <div class="section-label">
+      <div class="num">07</div>
+      <div class="texts">
+        <h2>Considerações Finais</h2>
+        <p>Mensagem direta do consultor</p>
+      </div>
+    </div>
+
+    <div class="visao-block">
+      <p>
+        Eduardo, a Éh Gol tem todos os ingredientes certos: mercado nichado (várzea), produto com ticket que sustenta investimento, time operacional, presença orgânica forte e uma máquina de tráfego funcionando. 
+        O que falta é <strong>enxergar o que a máquina está produzindo de verdade</strong>.
+      </p>
+      <p>
+        O negócio está crescendo, e isso é verdade. Mas com R$33k/mês rodando, a percepção intuitiva não pode ser o único painel de controle. 
+        <strong>O próximo patamar da Éh Gol passa obrigatoriamente por dados</strong>. Não é burocracia, é o combustível para crescer mais rápido e com mais segurança.
+      </p>
+      <p>
+        Quando vocês souberem exatamente quanto custa gerar uma venda por canal, vai existir clareza suficiente para dobrar o investimento onde faz sentido. Esse é o movimento que separa a Éh Gol do restante do mercado de uniformes esportivos no Brasil.
+      </p>
+    </div>
+
+    <div class="insight-box" style="margin-top: 24px;">
+      <div class="insight-title">📌 Próximos Passos Imediatos</div>
+      1. Eduardo e Ronaldo avaliam o upgrade do Sprint Hub até sexta-feira. &nbsp;|&nbsp; 
+      2. Joeslen envia relatório dos últimos 3 meses de Meta/Google Ads.
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <h4>HL Mídias — Escritório de Marketing de Performance</h4>
+    <p>Ecossistema Antonio Fogaça · Relatório produzido em 14/04/2026</p>
+  </div>
+  <div class="footer-right">
+    <strong>Heitor Santos</strong><br>
+    CEO & Responsável de Performance<br>
+    <span style="color: var(--verde);">HL Mídias</span>
+  </div>
+</footer>
+
+</body>
+</html>

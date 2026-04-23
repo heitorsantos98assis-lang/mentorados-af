@@ -5,3 +5,1934 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Relatório Executivo de Marketing — Jueri Sistema de Gestão para Semijoias</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale: #F5E9C8;
+    --dark: #0F0D0A;
+    --dark-2: #1A1710;
+    --dark-3: #252219;
+    --mid: #3A3525;
+    --text: #E8E2D5;
+    --text-muted: #9A9280;
+    --accent: #D4622A;
+    --accent-soft: #F0A070;
+    --border: rgba(201,168,76,0.2);
+    --border-strong: rgba(201,168,76,0.5);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* GRAIN OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* HEADER */
+  .header {
+    position: relative;
+    background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark-3) 60%, #1C1508 100%);
+    border-bottom: 1px solid var(--border-strong);
+    padding: 60px 48px 48px;
+    overflow: hidden;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo-gem {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+
+  .brand-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .meta-badge {
+    background: rgba(201,168,76,0.1);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    padding: 10px 18px;
+    text-align: right;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  .meta-badge strong {
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  .header-title {
+    margin-top: 40px;
+  }
+
+  .doc-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .doc-label::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--text);
+    max-width: 700px;
+  }
+
+  .main-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .header-intro {
+    margin-top: 20px;
+    max-width: 680px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  /* EXECUTIVE SUMMARY BAR */
+  .summary-bar {
+    background: var(--dark-3);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    overflow: hidden;
+  }
+
+  .summary-stat {
+    padding: 16px 24px 16px 0;
+    border-right: 1px solid var(--border);
+  }
+
+  .summary-stat:last-child { border-right: none; }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+  }
+
+  /* MAIN CONTENT */
+  .container {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0 48px 80px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-top: 64px;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4px 10px;
+    white-space: nowrap;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  /* PRIORITY TAG */
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .tag-critical { background: rgba(212,98,42,0.15); color: #F09060; border: 1px solid rgba(212,98,42,0.3); }
+  .tag-high { background: rgba(201,168,76,0.12); color: var(--gold-light); border: 1px solid var(--border); }
+  .tag-medium { background: rgba(100,160,100,0.1); color: #90C890; border: 1px solid rgba(100,160,100,0.25); }
+  .tag-ongoing { background: rgba(100,130,200,0.1); color: #90A8E0; border: 1px solid rgba(100,130,200,0.25); }
+
+  /* CARD */
+  .card {
+    background: var(--dark-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+
+  .card:hover { border-color: var(--border-strong); }
+
+  .card-accent {
+    border-left: 3px solid var(--gold);
+  }
+
+  .card-red {
+    border-left: 3px solid var(--accent);
+  }
+
+  .card-green {
+    border-left: 3px solid #5CAF5C;
+  }
+
+  .card-blue {
+    border-left: 3px solid #5C8FE0;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    line-height: 1.3;
+  }
+
+  .card-body {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+
+  .card-body strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ACTION LIST */
+  .action-list {
+    list-style: none;
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .action-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .action-list li::before {
+    content: '→';
+    color: var(--gold);
+    font-size: 0.85rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .action-list li strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: rgba(201,168,76,0.06);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 0;
+  }
+
+  .highlight-box p {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  .highlight-box .quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--gold-light);
+    line-height: 1.6;
+  }
+
+  /* TWO COLUMNS */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* STEP LIST */
+  .step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .step-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid var(--border-strong);
+    color: var(--gold-light);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .step-content {
+    flex: 1;
+  }
+
+  .step-title {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.92rem;
+    margin-bottom: 4px;
+  }
+
+  .step-desc {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* FUNNEL VISUAL */
+  .funnel {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 20px 0;
+  }
+
+  .funnel-stage {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    border-radius: 6px;
+    position: relative;
+  }
+
+  .funnel-stage:nth-child(1) { background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.25); }
+  .funnel-stage:nth-child(2) { background: rgba(201,168,76,0.09); border: 1px solid rgba(201,168,76,0.18); margin: 0 16px; }
+  .funnel-stage:nth-child(3) { background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.12); margin: 0 32px; }
+  .funnel-stage:nth-child(4) { background: rgba(201,168,76,0.04); border: 1px solid rgba(201,168,76,0.08); margin: 0 48px; }
+  .funnel-stage:nth-child(5) { background: rgba(212,98,42,0.08); border: 1px solid rgba(212,98,42,0.2); margin: 0 64px; }
+
+  .funnel-icon {
+    font-size: 1.2rem;
+    width: 32px;
+    text-align: center;
+  }
+
+  .funnel-label {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.88rem;
+  }
+
+  .funnel-sub {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* METRICS ROW */
+  .metrics-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .metric-box {
+    background: var(--dark-3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+
+  .metric-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+
+  .metric-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* INSTAGRAM GRID PREVIEW */
+  .ig-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .ig-cell {
+    aspect-ratio: 1;
+    background: var(--dark-3);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ig-cell-label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 6px;
+    line-height: 1.3;
+    padding: 0 8px;
+  }
+
+  .ig-cell.featured {
+    background: rgba(201,168,76,0.08);
+    border-color: var(--border-strong);
+  }
+
+  /* WARNING CALLOUT */
+  .callout {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 18px 22px;
+    border-radius: 8px;
+    margin: 16px 0;
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .callout-warn {
+    background: rgba(212,98,42,0.08);
+    border: 1px solid rgba(212,98,42,0.25);
+    color: var(--accent-soft);
+  }
+
+  .callout-info {
+    background: rgba(92,143,224,0.08);
+    border: 1px solid rgba(92,143,224,0.25);
+    color: #90A8E0;
+  }
+
+  .callout-success {
+    background: rgba(92,175,92,0.08);
+    border: 1px solid rgba(92,175,92,0.25);
+    color: #90C890;
+  }
+
+  .callout-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* CODE / MONO BLOCK */
+  .code-block {
+    background: var(--dark-3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--gold-light);
+    margin: 14px 0;
+    overflow-x: auto;
+    line-height: 1.8;
+  }
+
+  .code-block .comment {
+    color: var(--text-muted);
+  }
+
+  /* CHECKLIST */
+  .checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .checklist li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .check-box {
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--border-strong);
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--dark-2);
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+
+  .footer-text {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .header, .container { padding-left: 24px; padding-right: 24px; }
+    .summary-bar { padding: 24px; }
+    .two-col { grid-template-columns: 1fr; }
+    .ig-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  /* ANCHOR MENU HORIZONTAL */
+  .anchor-menu {
+    background: var(--dark-3);
+    border-bottom: 1px solid var(--border-strong);
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+  }
+
+  .anchor-menu-inner {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .anchor-menu-inner::-webkit-scrollbar { display: none; }
+
+  .anchor-menu-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 14px 20px 14px 0;
+    border-right: 1px solid var(--border);
+    margin-right: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .anchor-links {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .anchor-link {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+    color: var(--text-muted);
+    padding: 14px 16px;
+    border-right: 1px solid var(--border);
+    transition: background 0.18s, color 0.18s;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .anchor-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+  }
+
+  .anchor-link:hover {
+    background: rgba(201,168,76,0.07);
+    color: var(--text);
+  }
+
+  .anchor-link:hover::after,
+  .anchor-link.active::after {
+    transform: scaleX(1);
+  }
+
+  .anchor-link.active {
+    color: var(--gold-light);
+    background: rgba(201,168,76,0.08);
+  }
+
+  .anc-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--gold);
+    opacity: 0.8;
+    flex-shrink: 0;
+  }
+
+  .anc-title {
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  @media (max-width: 768px) {
+    .anchor-menu-inner { padding: 0 16px; }
+    .anchor-menu-label { display: none; }
+    .anchor-link { padding: 12px 12px; }
+    .anc-title { font-size: 0.7rem; }
+  }
+
+  /* STICKY NAV */
+  .sticky-nav {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--dark-2);
+    border: 1px solid var(--border);
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.4);
+    transition: width 0.3s ease;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    text-decoration: none;
+    color: var(--text-muted);
+    padding: 0;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s, color 0.2s;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .nav-item:last-child { border-bottom: none; }
+
+  .nav-item:hover {
+    background: rgba(201,168,76,0.08);
+    color: var(--gold-light);
+  }
+
+  .nav-item.active {
+    background: rgba(201,168,76,0.12);
+    color: var(--gold-light);
+    border-left: 2px solid var(--gold);
+  }
+
+  .nav-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--gold);
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .nav-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding-right: 14px;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.35s ease, opacity 0.3s ease;
+    opacity: 0;
+    line-height: 1.3;
+  }
+
+  .sticky-nav:hover .nav-label {
+    max-width: 180px;
+    opacity: 1;
+  }
+
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+    cursor: pointer;
+    background: rgba(201,168,76,0.06);
+    border-bottom: 1px solid var(--border);
+    color: var(--gold);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    font-family: 'DM Mono', monospace;
+    width: 36px;
+  }
+
+  /* Back to top button */
+  .back-top {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 38px;
+    height: 38px;
+    background: var(--dark-2);
+    border: 1px solid var(--border-strong);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 100;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, background 0.2s;
+  }
+
+  .back-top.visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .back-top:hover {
+    background: rgba(201,168,76,0.15);
+    transform: translateY(-2px);
+  }
+
+  /* PRINT */
+  @media print {
+    body { background: white; color: black; }
+    .header::after, body::before { display: none; }
+    .sticky-nav, .back-top { display: none; }
+  }
+
+  @media (max-width: 900px) {
+    .sticky-nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- STICKY NAV -->
+<nav class="sticky-nav" aria-label="Navegação do relatório">
+  <a class="nav-item" href="#sec-01">
+    <span class="nav-num">01</span>
+    <span class="nav-label">Diagnóstico Atual</span>
+  </a>
+  <a class="nav-item" href="#sec-02">
+    <span class="nav-num">02</span>
+    <span class="nav-label">Google ADS</span>
+  </a>
+  <a class="nav-item" href="#sec-03">
+    <span class="nav-num">03</span>
+    <span class="nav-label">Meta ADS</span>
+  </a>
+  <a class="nav-item" href="#sec-04">
+    <span class="nav-num">04</span>
+    <span class="nav-label">Instagram Orgânico</span>
+  </a>
+  <a class="nav-item" href="#sec-05">
+    <span class="nav-num">05</span>
+    <span class="nav-label">CRM & Cadência</span>
+  </a>
+  <a class="nav-item" href="#sec-06">
+    <span class="nav-num">06</span>
+    <span class="nav-label">WhatsApp</span>
+  </a>
+  <a class="nav-item" href="#sec-07">
+    <span class="nav-num">07</span>
+    <span class="nav-label">SEO & Blog</span>
+  </a>
+  <a class="nav-item" href="#sec-08">
+    <span class="nav-num">08</span>
+    <span class="nav-label">Posicionamento</span>
+  </a>
+  <a class="nav-item" href="#sec-09">
+    <span class="nav-num">09</span>
+    <span class="nav-label">Plano de Ação</span>
+  </a>
+</nav>
+
+<!-- BACK TO TOP -->
+<a class="back-top" href="#" id="backTop" title="Voltar ao topo">↑</a>
+
+<script>
+  // Active section highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-item');
+  const anchorLinks = document.querySelectorAll('.anchor-link');
+  const backTop = document.getElementById('backTop');
+
+  function onScroll() {
+    // Back to top visibility
+    backTop.classList.toggle('visible', window.scrollY > 400);
+
+    // Active nav item
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 140) current = sec.id;
+    });
+
+    navItems.forEach(item => {
+      item.classList.toggle('active', item.getAttribute('href') === '#' + current);
+    });
+
+    anchorLinks.forEach(item => {
+      item.classList.toggle('active', item.getAttribute('href') === '#' + current);
+      // scroll active anchor into view inside the bar
+      if (item.getAttribute('href') === '#' + current) {
+        item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-top">
+    <div class="logo-area">
+      <svg class="logo-gem" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="26,4 46,18 46,34 26,48 6,34 6,18" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+        <polygon points="26,4 36,18 26,22 16,18" fill="rgba(201,168,76,0.15)" stroke="#C9A84C" stroke-width="1"/>
+        <polygon points="36,18 46,34 26,48 26,22" fill="rgba(201,168,76,0.08)" stroke="#C9A84C" stroke-width="1"/>
+        <polygon points="6,34 16,18 26,22 26,48" fill="rgba(201,168,76,0.1)" stroke="#C9A84C" stroke-width="1"/>
+        <circle cx="26" cy="26" r="3" fill="#C9A84C" opacity="0.6"/>
+      </svg>
+      <div>
+        <div class="brand-name">Jueri</div>
+        <div class="brand-sub">Sistema de Gestão para Semijoias</div>
+      </div>
+    </div>
+    <div class="meta-badge">
+      <strong>1ª Aula Especialista de Marketing</strong><br>
+      Data: 17/04/2026 · Duração: 99 min<br>
+      Mentor: Heitor Santos (HL Mídias)<br>
+      Responsável: Felipe Santos · Equipe Jueri
+    </div>
+  </div>
+  <div class="header-title">
+    <div class="doc-label">Relatório Executivo Estratégico</div>
+    <h1 class="main-title">Plano Completo de <em>Marketing & Vendas</em><br>para Escalar a Jueri</h1>
+    <p class="header-intro">Este documento reúne todas as soluções, direcionamentos e ações práticas discutidas na reunião de mentoria com o especialista Heitor Santos. Cada seção é um bloco executável. Siga na ordem de prioridade indicada.</p>
+  </div>
+</header>
+
+<!-- SUMMARY BAR -->
+<div class="summary-bar">
+  <div class="summary-stat">
+    <div class="stat-number">8</div>
+    <div class="stat-label">Frentes estratégicas</div>
+  </div>
+  <div class="summary-stat">
+    <div class="stat-number">R$3K</div>
+    <div class="stat-label">Investimento atual em mídia/mês</div>
+  </div>
+  <div class="summary-stat">
+    <div class="stat-number">6K+</div>
+    <div class="stat-label">Seguidores no Instagram</div>
+  </div>
+  <div class="summary-stat">
+    <div class="stat-number">12K</div>
+    <div class="stat-label">Base de leads histórica</div>
+  </div>
+  <div class="summary-stat">
+    <div class="stat-number">15d</div>
+    <div class="stat-label">Janela de conversão (trial)</div>
+  </div>
+</div>
+
+<!-- ANCHOR MENU -->
+<nav class="anchor-menu" aria-label="Índice do relatório">
+  <div class="anchor-menu-inner">
+    <span class="anchor-menu-label">Índice</span>
+    <div class="anchor-links">
+      <a class="anchor-link" href="#sec-01"><span class="anc-num">01</span><span class="anc-title">Diagnóstico</span></a>
+      <a class="anchor-link" href="#sec-02"><span class="anc-num">02</span><span class="anc-title">Google ADS</span></a>
+      <a class="anchor-link" href="#sec-03"><span class="anc-num">03</span><span class="anc-title">Meta ADS</span></a>
+      <a class="anchor-link" href="#sec-04"><span class="anc-num">04</span><span class="anc-title">Instagram</span></a>
+      <a class="anchor-link" href="#sec-05"><span class="anc-num">05</span><span class="anc-title">CRM & Cadência</span></a>
+      <a class="anchor-link" href="#sec-06"><span class="anc-num">06</span><span class="anc-title">WhatsApp</span></a>
+      <a class="anchor-link" href="#sec-07"><span class="anc-num">07</span><span class="anc-title">SEO & Blog</span></a>
+      <a class="anchor-link" href="#sec-08"><span class="anc-num">08</span><span class="anc-title">Posicionamento</span></a>
+      <a class="anchor-link" href="#sec-09"><span class="anc-num">09</span><span class="anc-title">Plano de Ação</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+  <!-- ────── SEÇÃO 1 — DIAGNÓSTICO ────── -->
+  <section class="section" id="sec-01">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2 class="section-title">Diagnóstico Atual — Onde Vocês Estão</h2>
+    </div>
+
+    <div class="two-col">
+      <div class="card card-accent">
+        <div class="card-header">
+          <div class="card-title">✅ Pontos Fortes Identificados</div>
+        </div>
+        <ul class="action-list">
+          <li><strong>Único sistema especializado</strong> em semijoias no Brasil (e no mundo, segundo o GPT)</li>
+          <li><strong>Atende consignado</strong> — funcionalidade que nenhum concorrente genérico entrega</li>
+          <li>Presença no Brasil inteiro + EUA, Londres e Paraguai</li>
+          <li>Base de 12.000 leads histórica — ativo subaproveitado</li>
+          <li>Trial de 15 dias com acompanhamento comercial estruturado</li>
+          <li>Time de 20+ pessoas com áreas bem definidas</li>
+          <li>Instagram ranqueia bem no Google no orgânico (sistema Jueri = 1ª posição)</li>
+        </ul>
+      </div>
+
+      <div class="card card-red">
+        <div class="card-header">
+          <div class="card-title">⚠️ Problemas Críticos Identificados</div>
+        </div>
+        <ul class="action-list">
+          <li><strong>Sem rastreio de origem do lead</strong> — não sabem de qual campanha/canal cada lead veio</li>
+          <li><strong>ROAS e CAC desconhecidos</strong> — impossível tomar decisão de investimento sem esses dados</li>
+          <li><strong>Concorrentes genéricos aparecem antes</strong> para buscas de "sistema para semijoia" no Google</li>
+          <li>Investimento de mídia pago muito baixo para o porte da empresa (R$3K/mês)</li>
+          <li>Orgânico do Instagram com baixo engajamento</li>
+          <li>Empresa de tráfego pago atual não entrega dados claros</li>
+          <li>WhatsApp de disparo sem estrutura de contingência (risco de bloqueio)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout callout-warn">
+      <span class="callout-icon">⚡</span>
+      <div><strong>Alerta crítico do Heitor:</strong> "A Homem, a Bling e a Totvs estão vendendo para o SEU cliente no Google — e o seu cliente nem sabe que a Jueri existe. Eles fazem páginas específicas de 'sistema para semijoia' e o comercial deles fecha enquanto você não aparece. Isso precisa parar agora."</div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ────── SEÇÃO 2 — GOOGLE ADS ────── -->
+  <section class="section" id="sec-02">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2 class="section-title">Google ADS — A Máquina de Vendas Prioritária</h2>
+    </div>
+
+    <div class="highlight-box">
+      <p class="quote">"A pessoa que pesquisa no Google por sistema de gestão para semijoia JÁ QUER comprar. Ela tá com uma dor enorme. O seu comercial só precisa ser bom. No Meta você tem que convencer. No Google, a pessoa JÁ CHEGOU. Não tem como dar ruim."</p>
+      <p style="margin-top:10px; font-size:0.8rem; color: var(--text-muted);">— Heitor Santos, Especialista HL Mídias</p>
+    </div>
+
+    <div class="card card-accent">
+      <div class="card-header">
+        <div class="card-title">Meta de Impressão no Google</div>
+        <span class="tag tag-critical">PRIORIDADE MÁXIMA</span>
+      </div>
+      <div class="card-body">
+        <strong>Objetivo:</strong> 80% de todas as impressões para termos relacionados a "sistema semijoia" no Google devem ser da Jueri. Não deixar concorrente genérico aparecer antes de vocês nesse nicho.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Palavras-Chave de Intenção de Compra — Anunciar em TODAS</div>
+        <span class="tag tag-critical">Executar Imediatamente</span>
+      </div>
+      <div class="card-body">
+        <p>Anuncie em toda e qualquer variação de busca com intenção de compra do seu nicho. Exemplos mapeados na reunião:</p>
+      </div>
+      <div class="code-block">
+        sistema de gestão para semijoia<br>
+        sistema semijoia<br>
+        software para loja de semijoia<br>
+        sistema para loja de joias<br>
+        ERP semijoia<br>
+        sistema gestão joia<br>
+        controle estoque semijoia<br>
+        sistema consignado semijoia<br>
+        <span class="comment">// + variações com/sem acento, plural, singular</span>
+      </div>
+      <div class="callout callout-info">
+        <span class="callout-icon">💡</span>
+        <div>O concorrente "Totvs" anunciou para "loja de joias" e "sistema para loja de joias" com uma página dedicada. A Bling aparece com "controle sistema de gestão". Vocês precisam estar antes deles com a especificidade do nicho como diferencial no anúncio.</div>
+      </div>
+    </div>
+
+    <div class="card card-green">
+      <div class="card-header">
+        <div class="card-title">Como Estruturar os Anúncios (modelo de copy)</div>
+        <span class="tag tag-high">Alta Prioridade</span>
+      </div>
+      <div class="card-body">
+        <p>O diferencial competitivo <strong>deve estar visível no anúncio</strong>. Use a especificidade como gancho. Exemplo de estrutura:</p>
+        <div class="highlight-box" style="margin-top:14px;">
+          <p><strong>Título:</strong> Sistema Exclusivo para Semijoias | Jueri<br>
+          <strong>Descrição:</strong> O único sistema especializado em loja de semijoia do Brasil. Gestão de consignado, estoque, revendedoras e financeiro. +X lojas ativas. Teste 15 dias grátis.<br>
+          <strong>URL:</strong> jueri.com.br/sistema-para-semijoia</p>
+        </div>
+        <ul class="action-list" style="margin-top:12px;">
+          <li>Crie uma <strong>landing page específica</strong> para "sistema para semijoia" (como a Totvs fez para "loja de joias")</li>
+          <li>Não mande para a home — mande para uma LP com argumento de especificidade</li>
+          <li>Inclua avaliações do Google na LP (nota e número de avaliações)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Rastreio Obrigatório — UTMs em TODOS os links de anúncio</div>
+        <span class="tag tag-critical">Sem Isso, Você Está no Escuro</span>
+      </div>
+      <div class="card-body">
+        <p>Hoje a Jueri rastreia apenas "ind=Google" (origem). Isso é insuficiente. O padrão correto é:</p>
+      </div>
+      <div class="code-block">
+        <span class="comment">// Estrutura UTM completa obrigatória</span><br>
+        utm_source=google<br>
+        utm_medium=cpc<br>
+        utm_campaign=nome-da-campanha<br>
+        utm_content=nome-do-anuncio<br>
+        utm_term={keyword} <span class="comment">// palavra-chave que o lead digitou</span>
+      </div>
+      <div class="step-list" style="margin-top:16px;">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Configurar campos ocultos no formulário de cadastro</div>
+            <div class="step-desc">O formulário de trial precisa ter campos ocultos (hidden fields) que capturam automaticamente utm_source, utm_medium, utm_campaign, utm_term e utm_content da URL.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Esses dados devem salvar no CRM junto com o lead</div>
+            <div class="step-desc">Cada lead no CRM precisa ter: origem, campanha, palavra-chave que converteu. Isso permite calcular CAC e ROAS real por campanha.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Calcular ROAS com delay de 15 dias</div>
+            <div class="step-desc">Lead que entra no dia 1 converte no dia 15+. Portanto, o ROAS de janeiro só é calculável em fevereiro. Use esse delay conscientemente — não corte campanhas por impulso.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Exemplo de cálculo correto do CAC</div>
+            <div class="step-desc">Investimento no mês ÷ clientes efetivados (com delay de 15-30 dias) = CAC real. A partir do LTV (lifetime value) do cliente, determine quanto você pode pagar por aquisição.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ────── SEÇÃO 3 — META ADS ────── -->
+  <section class="section" id="sec-03">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title">Meta ADS — Funil com VSL Antes do Trial</h2>
+    </div>
+
+    <div class="card card-accent">
+      <div class="card-header">
+        <div class="card-title">Mudar a Estrutura do Funil no Meta</div>
+        <span class="tag tag-high">Alta Prioridade</span>
+      </div>
+      <div class="card-body">
+        <p>Hoje: Anúncio → Cadastro direto no trial (lead frio, baixa qualificação).</p>
+        <p style="margin-top:8px;"><strong>Novo funil recomendado:</strong></p>
+      </div>
+
+      <div class="funnel">
+        <div class="funnel-stage">
+          <div class="funnel-icon">📱</div>
+          <div>
+            <div class="funnel-label">Anúncio no Meta (Story/Feed/Reels)</div>
+            <div class="funnel-sub">Foco na dor: "Você sabe quanto sua loja vendeu hoje?"</div>
+          </div>
+        </div>
+        <div class="funnel-stage">
+          <div class="funnel-icon">🎬</div>
+          <div>
+            <div class="funnel-label">Landing Page com VSL (Vídeo de Vendas)</div>
+            <div class="funnel-sub">Vídeo de 5-10 min contando a história da Jueri, problema, solução, prova social</div>
+          </div>
+        </div>
+        <div class="funnel-stage">
+          <div class="funnel-icon">📝</div>
+          <div>
+            <div class="funnel-label">Formulário de Cadastro para Trial</div>
+            <div class="funnel-sub">Lead já aquecido, nível de consciência elevado</div>
+          </div>
+        </div>
+        <div class="funnel-stage">
+          <div class="funnel-icon">📞</div>
+          <div>
+            <div class="funnel-label">Abordagem Comercial (15 dias)</div>
+            <div class="funnel-sub">Pessoa mais qualificada = menor resistência no comercial</div>
+          </div>
+        </div>
+        <div class="funnel-stage">
+          <div class="funnel-icon">💎</div>
+          <div>
+            <div class="funnel-label">Conversão em Cliente Pagante</div>
+            <div class="funnel-sub">Taxa de conversão maior = CAC menor</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-info">
+        <span class="callout-icon">💡</span>
+        <div><strong>Por que a VSL funciona:</strong> O empresário de semijoia tem uma história forte para contar. Consignado, revendedoras, controle do que foi ou não pago — isso cria uma narrativa de transformação poderosa. A VSL eleva o nível de consciência antes do lead entrar no trial, reduzindo a carga do comercial.</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Investimento Mínimo Recomendado no Meta</div>
+          <span class="tag tag-high">Urgente</span>
+        </div>
+        <div class="card-body">
+          <p>R$ 2.000/mês por 30-60 dias com rastreio UTM completo para medir ROAS real do Meta. Testar funil com VSL vs. funil direto para trial.</p>
+          <ul class="action-list" style="margin-top:12px;">
+            <li>Usar públicos de loja de semijoia e joias no Brasil</li>
+            <li>Retargeting para quem visitou o site mas não converteu</li>
+            <li>Fundo de funil: anúncio de prova social para quem já conhece a Jueri</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Segmentação de Público no Meta</div>
+        </div>
+        <div class="card-body">
+          <p>A Jueri não é para qualquer loja. Defina e comunique o porte mínimo:</p>
+          <ul class="action-list" style="margin-top:12px;">
+            <li>Lojista com <strong>revendedoras consignadas</strong> (diferenciador)</li>
+            <li>Empresa com <strong>mais de X revendedoras</strong> ativas</li>
+            <li>Faturamento mínimo (definir internamente)</li>
+            <li>Fale da dor, não do porte — "você ainda controla sua empresa no Excel?"</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ────── SEÇÃO 4 — INSTAGRAM ORGÂNICO ────── -->
+  <section class="section" id="sec-04">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2 class="section-title">Instagram Orgânico — Estratégia de Conteúdo Refeita</h2>
+    </div>
+
+    <div class="callout callout-warn">
+      <span class="callout-icon">⚠️</span>
+      <div><strong>Diagnóstico do Heitor:</strong> "Não é o Grid bonito que vai trazer autoridade. É sobre entender profundamente o seu cliente: o que tira o sono dele, o que ele sonha como loja. O Instagram é rede de relacionamento, não catálogo."</div>
+    </div>
+
+    <div class="card card-accent">
+      <div class="card-header">
+        <div class="card-title">PRIMEIRO PASSO: Pesquisa com Clientes Atuais</div>
+        <span class="tag tag-critical">Antes de Criar Qualquer Conteúdo</span>
+      </div>
+      <div class="card-body">
+        <p>Não tire conteúdo da sua cabeça. Pergunte para quem já compra de você. Metodologia:</p>
+      </div>
+      <div class="step-list" style="margin-top:16px;">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Criar formulário Google com perguntas de mapeamento</div>
+            <div class="step-desc">Enviar para base de clientes ativos. Perguntar: qual era seu maior problema antes da Jueri? O que mudou? Qual funcionalidade usa mais? O que quase te impediu de assinar? O que você diria para um colega que não usa sistema?</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Exportar base do sistema e jogar na IA para análise</div>
+            <div class="step-desc">Exporte dados de faturamento e comportamento dos clientes. Use IA (Claude, ChatGPT) para categorizar padrões, dores recorrentes e motivadores de compra.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Categorizar as respostas por padrão de dor</div>
+            <div class="step-desc">Exemplo: 60% cita "não saber quanto vendeu no dia". 40% cita "perda de controle do consignado". Esses são os temas do seu conteúdo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Estrutura do Grid Instagram — O Que Mostrar</div>
+        <span class="tag tag-high">Alta Prioridade</span>
+      </div>
+      <div class="card-body">
+        <p>Organize o feed para que o visitante, ao entrar no perfil, seja conduzido rapidamente à decisão:</p>
+      </div>
+
+      <div class="ig-grid">
+        <div class="ig-cell featured">
+          📹
+          <div class="ig-cell-label">Vídeo VSL — "O que é a Jueri"</div>
+        </div>
+        <div class="ig-cell featured">
+          ⭐
+          <div class="ig-cell-label">Prova Social — Depoimentos de clientes</div>
+        </div>
+        <div class="ig-cell">
+          💡
+          <div class="ig-cell-label">Funcionalidade em destaque</div>
+        </div>
+        <div class="ig-cell">
+          😰
+          <div class="ig-cell-label">Conteúdo de dor: "Você sabe quanto vendeu hoje?"</div>
+        </div>
+        <div class="ig-cell featured">
+          🏆
+          <div class="ig-cell-label">Diferencial: único sistema para semijoia</div>
+        </div>
+        <div class="ig-cell">
+          📊
+          <div class="ig-cell-label">Carrossel: funcionalidades</div>
+        </div>
+        <div class="ig-cell">
+          🤝
+          <div class="ig-cell-label">Visita à loja de cliente (prova social real)</div>
+        </div>
+        <div class="ig-cell">
+          💬
+          <div class="ig-cell-label">Lo-fi: câmera aberta, falando direto</div>
+        </div>
+        <div class="ig-cell featured">
+          🎯
+          <div class="ig-cell-label">Objeção quebrada: "É difícil de usar?"</div>
+        </div>
+      </div>
+
+      <div class="callout callout-success" style="margin-top:16px;">
+        <span class="callout-icon">✅</span>
+        <div><strong>Destaques do Perfil (Highlights):</strong> Crie destaques específicos: (1) Só depoimentos em vídeo de clientes, (2) Conheça a Jueri (VSL), (3) Funcionalidades, (4) Como funciona o trial.</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Conteúdo Lo-Fi que Converte</div>
+          <span class="tag tag-medium">Testar</span>
+        </div>
+        <div class="card-body">
+          <p>Formato de câmera aberta, informal, direto. Exemplo de roteiro:</p>
+          <div class="highlight-box" style="margin-top:12px;">
+            <p class="quote">"Aqui na Jueri, quase todo dia a gente encontra alguém com loja de semijoia que no final do dia não sabe se sobrou dinheiro. Você é assim?"</p>
+          </div>
+          <p style="margin-top:10px; font-size:0.86rem; color:var(--text-muted);">Desenvolva a dor → apresente a solução → CTA para trial.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Prova Social em Vídeo — Meta de 30 Depoimentos</div>
+          <span class="tag tag-high">Alta Prioridade</span>
+        </div>
+        <div class="card-body">
+          <ul class="action-list">
+            <li>Visitar lojas de clientes e filmar depoimentos reais</li>
+            <li>Perguntar: por que escolheu a Jueri? O que mudou?</li>
+            <li>Meta: <strong>30 vídeos de depoimento</strong> num destaque fixado</li>
+            <li>Usar nos anúncios de fundo de funil para quebrar objeção de preço</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Análise de Retenção dos Vídeos — Como Melhorar o Gancho</div>
+      </div>
+      <div class="card-body">
+        <p><strong>Responsável (Rafaela):</strong> analisar estatísticas de retenção de cada vídeo no Instagram.</p>
+        <ul class="action-list" style="margin-top:12px;">
+          <li><strong>Retenção baixa nos primeiros 3 segundos</strong> → melhorar o gancho (hook)</li>
+          <li><strong>Retenção cai no meio</strong> → desenvolvimento fraco, perdendo atenção</li>
+          <li><strong>Retenção cai no final</strong> → CTA fraco, sem conexão com o desenvolvimento</li>
+          <li>Pesquisar marcas de outros segmentos com alto engajamento e <strong>modelar o gancho</strong> para a Jueri</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card card-blue">
+      <div class="card-header">
+        <div class="card-title">Social Selling via Direct — 6.000 Seguidores = Oportunidade</div>
+        <span class="tag tag-high">Alta Prioridade</span>
+      </div>
+      <div class="card-body">
+        <p>A Jueri tem +6.000 seguidores. Quantos desses são donos de loja de semijoia que ainda não são clientes? Estratégia:</p>
+        <div class="step-list" style="margin-top:14px;">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <div class="step-title">Criar isca de levantada de mão</div>
+              <div class="step-desc">Post: "Comenta VENDER MAIS que eu te mando o [material gratuito]". Use MiniChat para automação do Direct.</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <div class="step-title">Criar material gratuito para donos de loja de semijoia</div>
+              <div class="step-desc">PDF/e-book: "5 formas de vender mais semijoia sem aumentar estoque" ou "Como controlar revendedoras sem perder dinheiro".</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <div class="step-title">Equipe faz relacionamento no Direct</div>
+              <div class="step-desc">Abrir conversa: "Oi [nome], vi que você tem uma loja de semijoia. Como você faz hoje para controlar suas revendedoras?" → relacionamento → venda.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ────── SEÇÃO 5 — CRM & CADÊNCIA ────── -->
+  <section class="section" id="sec-05">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <h2 class="section-title">CRM & Cadência de Nutrição — Os 15 Dias do Trial</h2>
+    </div>
+
+    <div class="card card-accent">
+      <div class="card-header">
+        <div class="card-title">Sequência de Cadência Durante o Trial (15 dias)</div>
+        <span class="tag tag-critical">Executar Imediatamente</span>
+      </div>
+      <div class="card-body">
+        <p>Cada mensagem da cadência deve atacar uma objeção específica mapeada pelo comercial. Nunca enviar mensagem genérica.</p>
+      </div>
+
+      <div class="step-list" style="margin-top:16px;">
+        <div class="step-item">
+          <div class="step-num">D1</div>
+          <div class="step-content">
+            <div class="step-title">Boas-vindas + Vídeo de primeiros passos</div>
+            <div class="step-desc">"Seja bem-vindo à Jueri! Aqui está tudo que você precisa para configurar sua loja em menos de 10 minutos."</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">D3</div>
+          <div class="step-content">
+            <div class="step-title">Quebra de objeção: "É difícil de usar"</div>
+            <div class="step-desc">"Você sabia que a maioria dos nossos clientes configurou o sistema em 1 dia? Veja como o João da Semijoia Flores fez isso." [vídeo/case]</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">D6</div>
+          <div class="step-content">
+            <div class="step-title">Funcionalidade de consignado</div>
+            <div class="step-desc">"Você já testou o módulo de consignado? É aqui que a maioria dos nossos clientes para de perder dinheiro." [tutorial curto]</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">D9</div>
+          <div class="step-content">
+            <div class="step-title">Prova social / depoimento</div>
+            <div class="step-desc">"Olha o que a [cliente] falou depois de 3 meses usando a Jueri..." [vídeo depoimento]</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">D12</div>
+          <div class="step-content">
+            <div class="step-title">Quebra de objeção: preço</div>
+            <div class="step-desc">"Muitos clientes achavam que era caro — até calcular quanto perdiam sem o sistema. [case com números]"</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">D14</div>
+          <div class="step-content">
+            <div class="step-title">Urgência + Convite para reunião de apresentação</div>
+            <div class="step-desc">"Seu trial encerra amanhã. Posso te apresentar em 15 min como o sistema resolve exatamente o que você precisa?" [link Calendly]</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Configuração do CRM para Rastreio de Jornada</div>
+        <span class="tag tag-critical">Sem Isso = No Escuro</span>
+      </div>
+      <div class="card-body">
+        <p>O CRM deve registrar, para cada lead:</p>
+      </div>
+      <ul class="checklist" style="margin-top:14px;">
+        <li><div class="check-box"></div> Origem (UTM source: Google, Meta, Indicação, WhatsApp, Evento)</li>
+        <li><div class="check-box"></div> Campanha (UTM campaign: qual anúncio gerou o lead)</li>
+        <li><div class="check-box"></div> Palavra-chave (UTM term: o que o lead digitou no Google)</li>
+        <li><div class="check-box"></div> Data de entrada no trial</li>
+        <li><div class="check-box"></div> Data de efetivação (com delay de 15+ dias)</li>
+        <li><div class="check-box"></div> Motivo de não conversão (para leads que não fecharam)</li>
+        <li><div class="check-box"></div> LTV por cohort de origem</li>
+      </ul>
+
+      <div class="metrics-row" style="margin-top:20px;">
+        <div class="metric-box">
+          <div class="metric-value">CAC</div>
+          <div class="metric-label">Custo de Aquisição por Canal (calcular mensalmente)</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">ROAS</div>
+          <div class="metric-label">Retorno sobre gasto em anúncio (delay 15-30 dias)</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">LTV</div>
+          <div class="metric-label">Tempo médio de vida do cliente e receita total gerada</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-value">CVR</div>
+          <div class="metric-label">Taxa de conversão: trial → cliente pagante</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ────── SEÇÃO 6 — WHATSAPP ────── -->
+  <section class="section" id="sec-06">
+    <div class="section-header">
+      <span class="section-number">06</span>
+      <h2 class="section-title">WhatsApp — Reativação de Base e Contingência</h2>
+    </div>
+
+    <div class="callout callout-success">
+      <span class="callout-icon">✅</span>
+      <div><strong>Resultado comprovado:</strong> Campanha de 300 disparos gerou 15 levantadas de mão e 1 fechamento (cliente que havia ido para concorrente e voltou). Sinal claro: a copy precisa melhorar, mas o canal funciona.</div>
+    </div>
+
+    <div class="two-col">
+      <div class="card card-accent">
+        <div class="card-header">
+          <div class="card-title">Estrutura de Contingência (5-7 números)</div>
+          <span class="tag tag-critical">Urgente</span>
+        </div>
+        <ul class="action-list" style="margin-top:12px;">
+          <li>Ter <strong>mínimo 5-7 números</strong> do WhatsApp Business aquecidos e prontos</li>
+          <li>Se um número ficar amarelo → parar disparos nele, passar para o próximo</li>
+          <li>Número amarelo = em risco. Vermelho = bloqueado. Verde = apto a disparar</li>
+          <li>Rotacionar números para não sobrecarregar um único</li>
+          <li>Máximo de 500 disparos/dia por número</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Aquecimento de Números Novos</div>
+        </div>
+        <ul class="action-list" style="margin-top:12px;">
+          <li>Iniciar disparo para lista <strong>mais quente primeiro</strong> (clientes ativos/recentes)</li>
+          <li>Alta taxa de resposta = número ganha reputação boa no WhatsApp</li>
+          <li>Aumentar volume progressivamente: 50/dia → 100/dia → 200/dia → 500/dia</li>
+          <li>Nunca disparar copy com termos que disparam filtros do WhatsApp</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Melhorar a Copy da Campanha de Reativação</div>
+        <span class="tag tag-high">Alta Prioridade</span>
+      </div>
+      <div class="card-body">
+        <p>De 300 disparos, apenas 15 levantaram a mão (5% de conversão). O benchmark esperado é 15-25%+. A copy precisa ser revisada. Pontos:</p>
+        <ul class="action-list" style="margin-top:12px;">
+          <li>Abrir com a dor, não com o produto. Ex: "Você ainda controla sua loja de semijoia no caderno?"</li>
+          <li>Personalizar com nome do cliente quando possível</li>
+          <li>CTA claro e único: uma única ação pedida (responder "SIM", clicar em link, etc.)</li>
+          <li>Segmentar a base por porte/comportamento antes de disparar</li>
+          <li>Testar A/B com 2 versões de copy para a mesma campanha</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Campanha de Reativação — Base de 12.000 Leads</div>
+        <span class="tag tag-high">Oportunidade de Curto Prazo</span>
+      </div>
+      <div class="card-body">
+        <p>Há 12.000 leads históricos. A campanha recente foi para 300 apenas. Reestrutura e escale:</p>
+        <ul class="action-list" style="margin-top:12px;">
+          <li>Segmentar: últimos 3 anos (5.500 leads), separados por motivo de não conversão</li>
+          <li>Para quem saiu por "preço" → abordar com nova estrutura de planos (módulos inclusos)</li>
+          <li>Para quem nunca efetivou → cadência de 5-7 mensagens com dor + solução</li>
+          <li>Resultado esperado se CVR subir para 10%: 550+ clientes em potencial</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ────── SEÇÃO 7 — SEO & BLOG ────── -->
+  <section class="section" id="sec-07">
+    <div class="section-header">
+      <span class="section-number">07</span>
+      <h2 class="section-title">SEO & Blog — Dominar as Buscas Orgânicas</h2>
+    </div>
+
+    <div class="card card-accent">
+      <div class="card-header">
+        <div class="card-title">Conteúdo de Blog — Pauta Prioritária Identificada na Reunião</div>
+        <span class="tag tag-high">Alta Prioridade</span>
+      </div>
+      <div class="card-body">
+        <p>O Heitor identificou um conteúdo específico para publicar no blog baseado num case real da reunião:</p>
+      </div>
+      <div class="highlight-box">
+        <p class="quote">"Um mentor embaixador da Jueri pegou um Uber em São Paulo e o motorista tinha uma tabela de preços da Jueri atrás do banco. Isso mostrou que o sistema já é usado além da internet — e que o alcance da marca é orgânico e genuíno."</p>
+      </div>
+      <ul class="action-list" style="margin-top:14px;">
+        <li>Escrever post de blog contando essa história + moral sobre como um sistema especializado se difunde por qualidade</li>
+        <li>Usar como prova de autoridade nas redes sociais e no pitch comercial</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Pautas de Blog para Ranqueamento (SEO)</div>
+        <span class="tag tag-medium">Contínuo</span>
+      </div>
+      <div class="card-body">
+        <p>Crie artigos otimizados para as palavras-chave de intenção informacional do nicho:</p>
+      </div>
+      <ul class="action-list" style="margin-top:12px;">
+        <li><strong>"Como precificar semijoias"</strong> — dor frequente dos clientes (mencionado na reunião)</li>
+        <li><strong>"Como funciona o consignado em semijoia"</strong> — diferencial da Jueri</li>
+        <li><strong>"Como controlar revendedoras de semijoia"</strong></li>
+        <li><strong>"Sistema de gestão para semijoia: guia completo"</strong></li>
+        <li><strong>"Como calcular o lucro da sua loja de semijoia"</strong></li>
+        <li><strong>"Diferença entre semijoia e joia: gestão especializada"</strong></li>
+        <li>Cada artigo deve ter CTA para trial gratuito da Jueri</li>
+      </ul>
+
+      <div class="callout callout-info" style="margin-top:14px;">
+        <span class="callout-icon">💡</span>
+        <div>O ChatGPT e Google AI Overview já referenciam a Jueri quando buscas sobre sistema de semijoia são feitas. Conteúdo de blog de qualidade aumenta essa visibilidade na busca generativa — uma fronteira nova e pouco explorada pelos concorrentes.</div>
+      </div>
+    </div>
+
+    <div class="card card-accent">
+      <div class="card-header">
+        <div class="card-title">📌 Oportunidade Específica: Terminologia Técnica de Semijoia (Rabicho, Cauda e outros)</div>
+        <span class="tag tag-critical">Identificado na Reunião</span>
+      </div>
+      <div class="card-body">
+        <p>O Heitor apontou diretamente: a Jueri deve criar conteúdo de blog com <strong>termos técnicos específicos de joalheria e semijoia</strong> — como "rabicho" e "cauda" — porque esses termos têm volume de busca no Google e <strong>nenhum concorrente genérico ranqueia para eles</strong>. A Jueri, por ser especialista no nicho e inclusive vender e apoiar a precificação desses itens, tem autoridade natural para dominar essas buscas.</p>
+      </div>
+      <div class="highlight-box" style="margin-top:14px;">
+        <p class="quote">"Fazer conteúdo que presta suporte para etiquetas específicas de joalheria como rabicho ou cauda."</p>
+        <p style="margin-top:8px; font-size:0.8rem; color:var(--text-muted);">— Heitor Santos, 15:17:23 · confirmado por Felipe Santos: "é um dos produtos que a gente vende aqui"</p>
+      </div>
+
+      <div class="step-list" style="margin-top:18px;">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Por que isso é uma oportunidade de SEO grande?</div>
+            <div class="step-desc">Termos técnicos de nicho têm baixa concorrência no Google. Nenhuma Bling, Totvs ou ERP genérico vai produzir conteúdo sobre "o que é rabicho em semijoia" — mas a Jueri pode e deve, porque é exatamente isso que diferencia o sistema deles.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Pautas específicas de terminologia para criar</div>
+            <div class="step-desc">
+              <strong>"O que é rabicho em semijoia e como precificar"</strong><br>
+              <strong>"O que é cauda (componente) em joias e semijoias"</strong><br>
+              <strong>"Glossário completo de termos técnicos para loja de semijoia"</strong><br>
+              <strong>"Como precificar componentes de semijoia: guia prático"</strong><br>
+              <strong>"Diferença entre rabicho, fecho e gancho em semijoias"</strong>
+            </div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Como transformar isso em autoridade e venda</div>
+            <div class="step-desc">Cada artigo de terminologia técnica deve: (1) explicar o termo de forma clara, (2) mostrar como o sistema Jueri ajuda a <strong>precificar e controlar</strong> esses componentes, (3) ter CTA para o trial. Quem busca "como precificar rabicho" é exatamente o empresário de semijoia que a Jueri quer atrair.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Aproveitar o conhecimento interno da equipe</div>
+            <div class="step-desc">O Felipe confirmou que a Jueri já atende clientes com dúvidas de precificação desses itens — o conhecimento está dentro da empresa. Entrevistar o time de suporte para levantar os termos técnicos mais perguntados pelos clientes e transformar cada um em artigo de blog.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-warn" style="margin-top:16px;">
+        <span class="callout-icon">⚡</span>
+        <div><strong>Urgência:</strong> O Heitor ficou espantado ao ver que a Jueri não ranqueia para esses termos — "A gente perder para alguém no Google nisso? Não é possível. Loucura." Publique esses conteúdos antes que qualquer concorrente perceba essa lacuna.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ────── SEÇÃO 8 — POSICIONAMENTO ────── -->
+  <section class="section" id="sec-08">
+    <div class="section-header">
+      <span class="section-number">08</span>
+      <h2 class="section-title">Posicionamento & Narrativa de Vendas</h2>
+    </div>
+
+    <div class="card card-accent">
+      <div class="card-header">
+        <div class="card-title">O Diferencial que Precisa Estar em TUDO</div>
+        <span class="tag tag-critical">Fundação</span>
+      </div>
+      <div class="card-body">
+        <p style="font-size:1rem; color: var(--text); margin-bottom:12px;">"O único sistema de gestão <em>especializado exclusivamente</em> em semijoias do Brasil — e provavelmente do mundo."</p>
+        <p>Nenhum concorrente pode dizer isso. A Bling, a Totvs, a Homem — todas são genéricas. A Jueri foi construída <em>para</em> o empresário de semijoia. Isso precisa estar em:</p>
+      </div>
+      <ul class="checklist" style="margin-top:14px;">
+        <li><div class="check-box"></div> Todos os anúncios (Google e Meta)</li>
+        <li><div class="check-box"></div> Home page e landing pages</li>
+        <li><div class="check-box"></div> Bio do Instagram</li>
+        <li><div class="check-box"></div> Script de abertura do comercial</li>
+        <li><div class="check-box"></div> Cadência de WhatsApp e e-mail</li>
+        <li><div class="check-box"></div> Destaques do Instagram</li>
+        <li><div class="check-box"></div> Assinatura de e-mail da equipe</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Script de Abertura Comercial (Modelo Treinado pelo Heitor)</div>
+        <span class="tag tag-high">Alta Prioridade</span>
+      </div>
+      <div class="card-body">
+        <p>Quando o lead do Google ligar ou responder, o comercial usa esta abertura:</p>
+      </div>
+      <div class="highlight-box">
+        <p>"Oi [nome], tudo joia? Aqui é [nome] da Jueri. Vi que você pesquisou hoje por sistema de gestão para semijoia. Você tem uma loja de semijoia, é isso? Há quanto tempo você tem a loja? [espera]. Que bacana! E o que te motivou a buscar um sistema hoje — o que tá te incomodando? [escuta ativa]..."</p>
+        <p style="margin-top:10px; color:var(--text-muted); font-size:0.85rem;">→ Depois de mapear a dor, apresenta a Jueri como especialista: "Hoje a gente atende mais de X lojas de semijoia no Brasil, com o único sistema criado exclusivamente para esse segmento. O que faz a gente ser muito melhor que qualquer ERP genérico é justamente isso: a gente entende de consignado, de revendedora, de precificação de semijoia."</p>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Avaliações no Google — Ativo Poderoso</div>
+        </div>
+        <ul class="action-list" style="margin-top:12px;">
+          <li>Mencionar a nota e número de avaliações no Google em todo o pitch comercial</li>
+          <li>Enviar link para o Google Maps durante a ligação para o lead pesquisar</li>
+          <li>Meta: ter o maior número de avaliações do segmento</li>
+          <li>Campanha interna: pedir avaliação para todos os clientes ativos satisfeitos</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Ecossistema de Soluções — Consignado como Diferencial</div>
+        </div>
+        <ul class="action-list" style="margin-top:12px;">
+          <li>Sistema + parceiro de <strong>consignado</strong> = solução completa</li>
+          <li>O cliente não precisa comprar R$5-7K de estoque — pode revender no consignado</li>
+          <li>Isso melhora o fluxo de caixa do cliente e cria fidelização</li>
+          <li>Incluir isso no pitch como "ecossistema de soluções" — não apenas software</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ────── PLANO DE AÇÃO ────── -->
+  <section class="section" id="sec-09">
+    <div class="section-header">
+      <span class="section-number">09</span>
+      <h2 class="section-title">Plano de Ação — Ordem de Execução</h2>
+    </div>
+
+    <div class="card card-red">
+      <div class="card-header">
+        <div class="card-title">🔴 SEMANA 1 — Fundação de Dados (Execute Hoje)</div>
+        <span class="tag tag-critical">Crítico</span>
+      </div>
+      <ul class="action-list" style="margin-top:12px;">
+        <li><strong>Configurar UTMs completas</strong> em todos os links de anúncio (Google e Meta)</li>
+        <li><strong>Mapear campos ocultos</strong> no formulário de trial para capturar UTMs automaticamente</li>
+        <li><strong>Criar pesquisa</strong> com clientes ativos (Google Forms) — mapear dores e motivadores</li>
+        <li><strong>Contratar/revisar empresa de tráfego pago</strong> — exigir relatório com CAC, ROAS e palavras-chave</li>
+        <li><strong>Estruturar 5 números de WhatsApp Business</strong> para contingência</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">🟡 SEMANA 2-3 — Google ADS e Conteúdo</div>
+        <span class="tag tag-high">Alta Prioridade</span>
+      </div>
+      <ul class="action-list" style="margin-top:12px;">
+        <li>Criar landing page específica para "sistema para semijoia" com copy de especificidade</li>
+        <li>Lançar campanha Google ADS com todas as palavras-chave de intenção de compra</li>
+        <li>Anunciar em <strong>todas as posições relevantes</strong> — meta de 80% de impressões</li>
+        <li>Iniciar gravação de depoimentos de clientes para Instagram (meta: 30 vídeos)</li>
+        <li>Publicar primeiro artigo de blog sobre o case do Uber</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">🟢 SEMANA 3-4 — Meta ADS e Instagram</div>
+        <span class="tag tag-medium">Médio Prazo</span>
+      </div>
+      <ul class="action-list" style="margin-top:12px;">
+        <li>Gravar VSL (Vídeo de Vendas) para landing page do Meta</li>
+        <li>Lançar campanha Meta com funil VSL → Trial (R$2.000/mês de teste)</li>
+        <li>Reestruturar Grid do Instagram com base na pesquisa de clientes</li>
+        <li>Criar e automatizar cadência de WhatsApp para os 15 dias do trial</li>
+        <li>Lançar primeira campanha de social selling via Direct (isca de material gratuito)</li>
+      </ul>
+    </div>
+
+    <div class="card card-green">
+      <div class="card-header">
+        <div class="card-title">🔵 MÊS 2 EM DIANTE — Escala e Otimização</div>
+        <span class="tag tag-ongoing">Contínuo</span>
+      </div>
+      <ul class="action-list" style="margin-top:12px;">
+        <li>Analisar ROAS e CAC por canal com dados reais (delay 15-30 dias)</li>
+        <li>Escalar orçamento nos canais com melhor ROAS</li>
+        <li>Reaplicar campanha de reativação para os 12.000 leads históricos com copy melhorada</li>
+        <li>Publicar artigos de SEO quinzenalmente</li>
+        <li>Monitorar retenção de vídeos no Instagram e ajustar ganchos</li>
+        <li>Construir estoque de 30 depoimentos em vídeo</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">Jueri · Sistema de Gestão para Semijoias</div>
+  <div class="footer-text">
+    Relatório gerado com base na 1ª Aula de Especialista de Marketing com Heitor Santos (HL Mídias)<br>
+    realizada em 17/04/2026 · Mentoria Antonio Fogaça · Todos os direcionamentos são baseados na transcrição completa da reunião.<br><br>
+    Instagram: <a href="https://www.instagram.com/sistemajueri/" style="color: var(--gold-light); text-decoration: none;">@sistemajueri</a>
+  </div>
+</footer>
+
+</body>
+</html>

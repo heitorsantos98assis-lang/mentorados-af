@@ -213,24 +213,17 @@
     align-items: center;
     gap: 10px;
   }
-  #navbar .nb-brand span {
-    background: #E8272A;
-    color: white;
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-weight: 700;
-  }
   #navbar .nb-links {
     display: flex;
     gap: 4px;
     align-items: center;
+    flex-wrap: nowrap;
   }
   #navbar .nb-links a {
     color: rgba(255,255,255,0.6);
     text-decoration: none;
     font-size: 12px;
-    padding: 6px 12px;
+    padding: 6px 11px;
     border-radius: 6px;
     transition: all 0.2s;
     white-space: nowrap;
@@ -239,29 +232,11 @@
     color: white;
     background: rgba(255,255,255,0.08);
   }
-  #navbar .nb-links a.active {
-    color: #E8272A;
-  }
-  #navbar .nb-back {
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    font-size: 11px;
-    padding: 5px 10px;
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 6px;
-    margin-left: 8px;
-    transition: all 0.2s;
-  }
-  #navbar .nb-back:hover {
-    color: white;
-    border-color: rgba(255,255,255,0.3);
-  }
-  /* Compensar altura do navbar fixo */
   body { padding-top: 56px; }
-  @media (max-width: 680px) {
+  @media (max-width: 780px) {
     #navbar { padding: 0 16px; }
+    #navbar .nb-links { overflow-x: auto; gap: 2px; }
     #navbar .nb-links a { font-size: 11px; padding: 5px 8px; }
-    #navbar .nb-links .nb-back { display: none; }
   }
 
 </style>
@@ -269,8 +244,7 @@
 <body>
 <nav id="navbar">
   <a class="nb-brand" href="#">
-    <div style="background:#E8272A;color:white;font-family:'Syne',sans-serif;font-weight:800;font-size:13px;padding:5px 10px;border-radius:6px;">ALOKEI</div>
-    Relatório Executivo
+    <div style="background:#E8272A;color:white;font-family:'Syne',sans-serif;font-weight:800;font-size:13px;padding:5px 10px;border-radius:6px;letter-spacing:-0.3px;">ALOKEI</div>
   </a>
   <div class="nb-links">
     <a href="#diag">Diagnóstico</a>
@@ -283,10 +257,8 @@
     <a href="#est04">Taxas</a>
     <a href="#est05">Tráfego</a>
     <a href="#checklist">Checklist</a>
-    <a class="nb-back" href="https://mentorados-af.vercel.app/">← Hub</a>
   </div>
 </nav>
-
 <header>
   <div class="header-badge">
     <div class="logo-box">ALOKEI</div>

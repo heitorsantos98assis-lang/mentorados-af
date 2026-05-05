@@ -187,9 +187,106 @@
   .toc-item { background: var(--cream); color: var(--ink); text-decoration: none; font-size: 12px; padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border); }
   .toc-item:hover { background: var(--coral); color: white; }
   .section-label { font-family: 'Syne', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--coral); margin-bottom: 8px; }
+
+  /* ── NAVBAR FIXO ── */
+  #navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 9999;
+    background: rgba(13,13,13,0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 0 48px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #navbar .nb-brand {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  #navbar .nb-brand span {
+    background: #E8272A;
+    color: white;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  #navbar .nb-links {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  #navbar .nb-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  #navbar .nb-links a:hover {
+    color: white;
+    background: rgba(255,255,255,0.08);
+  }
+  #navbar .nb-links a.active {
+    color: #E8272A;
+  }
+  #navbar .nb-back {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 11px;
+    padding: 5px 10px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    margin-left: 8px;
+    transition: all 0.2s;
+  }
+  #navbar .nb-back:hover {
+    color: white;
+    border-color: rgba(255,255,255,0.3);
+  }
+  /* Compensar altura do navbar fixo */
+  body { padding-top: 56px; }
+  @media (max-width: 680px) {
+    #navbar { padding: 0 16px; }
+    #navbar .nb-links a { font-size: 11px; padding: 5px 8px; }
+    #navbar .nb-links .nb-back { display: none; }
+  }
+
 </style>
 </head>
 <body>
+<nav id="navbar">
+  <a class="nb-brand" href="#">
+    <div style="background:#E8272A;color:white;font-family:'Syne',sans-serif;font-weight:800;font-size:13px;padding:5px 10px;border-radius:6px;">ALOKEI</div>
+    Relatório Executivo
+  </a>
+  <div class="nb-links">
+    <a href="#diag">Diagnóstico</a>
+    <a href="#regional">Regiões</a>
+    <a href="#base">Imóveis</a>
+    <a href="#est01">Regionalização</a>
+    <a href="#est02">Ativação</a>
+    <a href="#scripts">Scripts</a>
+    <a href="#est03">Influenciadores</a>
+    <a href="#est04">Taxas</a>
+    <a href="#est05">Tráfego</a>
+    <a href="#checklist">Checklist</a>
+    <a class="nb-back" href="https://mentorados-af.vercel.app/">← Hub</a>
+  </div>
+</nav>
+
 <header>
   <div class="header-badge">
     <div class="logo-box">ALOKEI</div>

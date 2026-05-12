@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1E3D34">
+
+<title>Clínica Dilascio | Dr. Mauro Dilascio — Implantes, Próteses e Reabilitação Oral em Belo Horizonte</title>
+<meta name="description" content="Há mais de 30 anos cuidando de quem busca voltar a sorrir, mastigar e viver com mais segurança. Implantes, próteses e protocolo sobre implante em Belo Horizonte com o Dr. Mauro Dilascio.">
+<meta name="keywords" content="implante dentário Belo Horizonte, prótese dentária BH, protocolo sobre implante, reabilitação oral, Dr. Mauro Dilascio, Clínica Dilascio">
+<meta name="author" content="Clínica Dilascio">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Clínica Dilascio — Voltar a sorrir com segurança">
+<meta property="og:description" content="Dr. Mauro Dilascio: 30+ anos em reabilitação oral, implantes, próteses e protocolo. Atendimento humanizado em Belo Horizonte.">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        cream:  { 50: '#FCFAF5', 100: '#F8F4ED', 200: '#F2EBD9', 300: '#EDE4D2' },
+        sand:   { 100: '#E8DCC4', 200: '#D6C5A0', 300: '#C2AC7E' },
+        forest: { 50:'#EBF1EE',100:'#D2DFD8',200:'#9DB6AB',300:'#6E9082',400:'#4A7561',500:'#2D5448',600:'#1E3D34',700:'#152A24',800:'#0D1B17' },
+        gold:   { 100:'#EFE3CC',200:'#D9C19A',300:'#C2A472',400:'#B89968',500:'#A88450',600:'#8E7344',700:'#6E5832' },
+        ink:    { DEFAULT:'#1A2A24', soft:'#3A4B44', mute:'#5A6962', faint:'#8A9690' },
+        line:   '#E0D5C2'
+      },
+      fontFamily: {
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        sans:    ['Manrope', 'system-ui', 'sans-serif']
+      },
+      letterSpacing: { 'tightish':'-0.018em', 'widest-2':'0.22em' }
+    }
+  }
+}
+</script>
+
+<style>
+html { scroll-behavior: smooth; }
+body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color: #1A2A24; -webkit-font-smoothing: antialiased; }
+.font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+.h-display { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; letter-spacing: -0.018em; line-height: 1.02; }
+.eyebrow { font-family: 'Manrope', sans-serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; }
+.bg-paper { background-color: #F8F4ED; background-image: radial-gradient(at 12% 18%, rgba(184, 153, 104, 0.08) 0px, transparent 50%), radial-gradient(at 92% 82%, rgba(30, 61, 52, 0.06) 0px, transparent 55%); }
+.bg-paper-noise { position: relative; }
+.bg-paper-noise::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); opacity: 0.035; pointer-events: none; z-index: 0; }
+.bg-paper-noise > * { position: relative; z-index: 1; }
+.divider-fine { height: 1px; background: linear-gradient(90deg, transparent, #D6C5A0 50%, transparent); }
+.btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.65rem; padding: 0.95rem 1.7rem; background: linear-gradient(180deg, #2D5448 0%, #1E3D34 100%); color: #F8F4ED; font-weight: 600; font-size: 0.95rem; border-radius: 999px; border: 1px solid rgba(184, 153, 104, 0.3); box-shadow: 0 1px 0 0 rgba(255,255,255,0.06) inset, 0 14px 28px -16px rgba(30,61,52,0.5); transition: transform 280ms cubic-bezier(.2,.7,.2,1), box-shadow 280ms ease, background 280ms ease; position: relative; overflow: hidden; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 1px 0 0 rgba(255,255,255,0.08) inset, 0 22px 38px -14px rgba(30,61,52,0.55); background: linear-gradient(180deg, #2D5448 0%, #152A24 100%); }
+.btn-primary::after { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 30%, rgba(184,153,104,0.18) 50%, transparent 70%); transform: translateX(-120%); transition: transform 750ms ease; }
+.btn-primary:hover::after { transform: translateX(120%); }
+.btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; padding: 0.85rem 1.4rem; background: transparent; color: #1E3D34; font-weight: 600; font-size: 0.9rem; border-radius: 999px; border: 1px solid #1E3D34; transition: all 250ms ease; }
+.btn-ghost:hover { background: #1E3D34; color: #F8F4ED; }
+.btn-gold { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.95rem 1.7rem; background: linear-gradient(180deg, #B89968 0%, #8E7344 100%); color: #F8F4ED; font-weight: 600; font-size: 0.95rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 14px 26px -12px rgba(142,115,68,0.5); transition: transform 280ms cubic-bezier(.2,.7,.2,1), box-shadow 280ms ease; }
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 20px 34px -10px rgba(142,115,68,0.55); }
+.marquee { display: flex; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track { display: flex; flex-shrink: 0; gap: 2.5rem; animation: marquee 42s linear infinite; padding: 0 1.25rem; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 900ms cubic-bezier(.2,.7,.2,1), transform 900ms cubic-bezier(.2,.7,.2,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 90ms; } .reveal-delay-2 { transition-delay: 180ms; } .reveal-delay-3 { transition-delay: 270ms; } .reveal-delay-4 { transition-delay: 360ms; } .reveal-delay-5 { transition-delay: 450ms; }
+.card-elegant { background: #FFFFFF; border: 1px solid #E0D5C2; border-radius: 6px; transition: transform 350ms cubic-bezier(.2,.7,.2,1), box-shadow 350ms ease, border-color 350ms ease; position: relative; overflow: hidden; }
+.card-elegant::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 3px; background: linear-gradient(180deg, #B89968, transparent); opacity: 0; transition: opacity 350ms ease; }
+.card-elegant:hover { transform: translateY(-4px); box-shadow: 0 28px 50px -22px rgba(30,61,52,0.18); border-color: #D6C5A0; }
+.card-elegant:hover::before { opacity: 1; }
+.faq-item details { border-bottom: 1px solid #E0D5C2; }
+.faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 500; color: #1A2A24; transition: color 250ms ease; }
+.faq-item summary:hover { color: #1E3D34; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary .plus { width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #B89968; border-radius: 50%; font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 1rem; color: #B89968; transition: transform 350ms ease, background 350ms ease, color 350ms ease; flex-shrink: 0; margin-left: 1rem; }
+.faq-item details[open] summary .plus { transform: rotate(45deg); background: #B89968; color: #FFFFFF; }
+.faq-item details[open] summary { color: #1E3D34; }
+.faq-item .faq-body { overflow: hidden; padding: 0 0 1.6rem 0; color: #3A4B44; font-size: 1.02rem; line-height: 1.7; max-width: 62ch; animation: faqOpen 450ms cubic-bezier(.2,.7,.2,1); }
+@keyframes faqOpen { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+.site-header { transition: background 250ms ease, box-shadow 250ms ease, border-color 250ms ease, padding 250ms ease; }
+.site-header.scrolled { background: rgba(248,244,237,0.92); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 1px 0 #E0D5C2; }
+.hero-portrait-frame { position: relative; border-radius: 4px; overflow: hidden; background: linear-gradient(180deg, #2D5448, #1E3D34); aspect-ratio: 4/5; }
+.hero-portrait-frame::after { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(184,153,104,0.45); border-radius: 3px; pointer-events: none; }
+.portrait-fallback { position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: center; padding: 2.5rem; background: radial-gradient(ellipse at 50% 35%, rgba(184,153,104,0.18) 0%, transparent 55%), linear-gradient(180deg, #2D5448 0%, #152A24 100%); }
+.portrait-fallback svg { color: rgba(184,153,104,0.35); }
+.hero-side-decor { font-family: 'Cormorant Garamond', serif; font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: #8A9690; writing-mode: vertical-rl; transform: rotate(180deg); }
+.stat-number { font-family: 'Cormorant Garamond', serif; font-weight: 500; letter-spacing: -0.02em; line-height: 1; }
+.journey-step { position: relative; }
+.journey-num { font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; font-weight: 400; font-style: italic; color: #B89968; line-height: 0.85; }
+.wa-float { position: fixed; bottom: 1.5rem; right: 1.5rem; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 30px -8px rgba(37, 211, 102, 0.5); z-index: 60; transition: transform 250ms ease; animation: pulseWA 2.5s ease-in-out infinite; }
+.wa-float:hover { transform: scale(1.08); }
+@keyframes pulseWA { 0%, 100% { box-shadow: 0 12px 30px -8px rgba(37, 211, 102, 0.5), 0 0 0 0 rgba(37, 211, 102, 0.45); } 50% { box-shadow: 0 12px 30px -8px rgba(37, 211, 102, 0.5), 0 0 0 16px rgba(37, 211, 102, 0); } }
+.video-card { position: relative; overflow: hidden; border-radius: 4px; background: linear-gradient(135deg, #1E3D34 0%, #2D5448 100%); aspect-ratio: 9/16; border: 1px solid rgba(184,153,104,0.25); transition: transform 350ms cubic-bezier(.2,.7,.2,1); cursor: pointer; }
+.video-card:hover { transform: translateY(-5px) scale(1.01); }
+.video-card .play-btn { width: 64px; height: 64px; background: rgba(248,244,237,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); transition: transform 250ms ease, background 250ms ease; }
+.video-card:hover .play-btn { transform: translate(-50%, -50%) scale(1.06); background: #FFFFFF; }
+.video-card .play-icon { width: 0; height: 0; border-left: 16px solid #1E3D34; border-top: 11px solid transparent; border-bottom: 11px solid transparent; margin-left: 4px; }
+.video-grain { position: absolute; inset: 0; opacity: 0.18; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); mix-blend-mode: overlay; }
+.icon-halo { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(140deg, #EFE3CC 0%, #D9C19A 100%); display: flex; align-items: center; justify-content: center; color: #6E5832; border: 1px solid #D9C19A; }
+.mobile-menu { position: fixed; inset: 0; background: #1E3D34; z-index: 100; transform: translateX(100%); transition: transform 450ms cubic-bezier(.6,0,.2,1); display: flex; flex-direction: column; }
+.mobile-menu.open { transform: translateX(0); }
+.mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 500; color: #F8F4ED; padding: 0.4rem 0; transition: color 200ms ease, padding-left 250ms ease; border-bottom: 1px solid rgba(184,153,104,0.18); }
+.mobile-menu a:hover { color: #B89968; padding-left: 0.5rem; }
+*:focus-visible { outline: 2px solid #B89968; outline-offset: 3px; border-radius: 2px; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } .reveal { opacity: 1; transform: none; } }
+@media (max-width: 768px) {
+  .h-display.text-7xl { font-size: 3rem; line-height: 1; }
+  .h-display.text-6xl { font-size: 2.5rem; line-height: 1.04; }
+  .h-display.text-5xl { font-size: 2.1rem; line-height: 1.08; }
+  .wa-float { width: 56px; height: 56px; bottom: 1rem; right: 1rem; }
+  .journey-num { font-size: 3.5rem; }
+}
+</style>
+</head>
+<body class="bg-paper">
+
+<!-- TOP BAR -->
+<div class="hidden lg:block bg-forest-700 text-cream-100 text-[0.78rem]">
+  <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+    <div class="flex items-center gap-6 opacity-90">
+      <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold-400"></i> R. Domingos Vieira, 587 — sala 1214 · Santa Efigênia · Belo Horizonte/MG</span>
+      <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-gold-400"></i> Segunda à Sexta · Atendimento particular</span>
+    </div>
+    <a href="tel:+553132411738" class="flex items-center gap-1.5 hover:text-gold-300 transition-colors">
+      <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-400"></i> (31) 3241-1738
+    </a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="site-header" class="site-header sticky top-0 z-50 bg-cream-100/70 backdrop-blur-sm">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between gap-8">
+    <a href="#topo" class="flex items-center gap-3" aria-label="Clínica Dilascio">
+      <div class="w-11 h-11 rounded-full bg-forest-600 flex items-center justify-center border border-gold-300/50 relative">
+        <span class="font-display text-cream-100 text-xl leading-none italic">D</span>
+        <span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-gold-400 border-2 border-cream-100"></span>
+      </div>
+      <div class="leading-tight">
+        <div class="font-display text-[1.55rem] text-forest-700 tracking-tightish">Clínica Dilascio</div>
+        <div class="eyebrow text-gold-600 text-[0.62rem] mt-0.5">Reabilitação Oral · BH</div>
+      </div>
+    </a>
+    <nav class="hidden lg:flex items-center gap-9 text-[0.88rem] font-medium text-ink-soft">
+      <a href="#dr-mauro"    class="hover:text-forest-600 transition-colors">Dr. Mauro</a>
+      <a href="#atendimento" class="hover:text-forest-600 transition-colors">Atendimento</a>
+      <a href="#tratamentos" class="hover:text-forest-600 transition-colors">Tratamentos</a>
+      <a href="#depoimentos" class="hover:text-forest-600 transition-colors">Depoimentos</a>
+      <a href="#duvidas"     class="hover:text-forest-600 transition-colors">Dúvidas</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-primary text-[0.85rem] py-2.5 px-5 hidden md:inline-flex">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> Agendar avaliação
+      </a>
+      <button id="menu-toggle" class="lg:hidden p-2 text-forest-700" aria-label="Abrir menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+  <div class="flex items-center justify-between px-6 py-5 border-b border-gold-400/15">
+    <div class="font-display text-cream-100 text-2xl">Menu</div>
+    <button id="menu-close" class="text-cream-100 p-2" aria-label="Fechar menu">
+      <i data-lucide="x" class="w-7 h-7"></i>
+    </button>
+  </div>
+  <nav class="flex flex-col px-8 mt-10 gap-2">
+    <a href="#dr-mauro"    data-mclose>Dr. Mauro</a>
+    <a href="#atendimento" data-mclose>Atendimento</a>
+    <a href="#tratamentos" data-mclose>Tratamentos</a>
+    <a href="#depoimentos" data-mclose>Depoimentos</a>
+    <a href="#duvidas"     data-mclose>Dúvidas</a>
+  </nav>
+  <div class="mt-auto px-8 pb-10">
+    <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-gold w-full justify-center">
+      <i data-lucide="message-circle" class="w-5 h-5"></i> Agendar pelo WhatsApp
+    </a>
+    <p class="text-cream-100/55 text-sm mt-6 font-display italic">Belo Horizonte · Santa Efigênia</p>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="topo" class="bg-paper bg-paper-noise pt-12 lg:pt-20 pb-20 lg:pb-28 relative overflow-hidden">
+  <div class="hidden xl:block absolute left-6 top-1/2 -translate-y-1/2 hero-side-decor">Dilascio · Desde 1994</div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <div class="lg:col-span-7 reveal">
+      <div class="flex items-center gap-3 mb-7">
+        <div class="w-10 h-px bg-gold-400"></div>
+        <span class="eyebrow text-gold-600">Clínica Dilascio · Belo Horizonte</span>
+      </div>
+      <h1 class="h-display text-5xl md:text-6xl lg:text-7xl text-forest-700 mb-7">
+        Volte a sorrir <br>
+        <span class="italic text-forest-600">com segurança,</span> <br>
+        conforto e <span class="text-gold-500 italic">naturalidade.</span>
+      </h1>
+      <p class="text-ink-soft text-lg md:text-xl leading-relaxed max-w-xl mb-10 font-light">
+        Tratamentos de implante, prótese e protocolo conduzidos pelo
+        <strong class="font-medium text-forest-700">Dr. Mauro Dilascio</strong> — unindo mais de
+        três décadas de experiência, planejamento individualizado e um atendimento
+        que escuta antes de tratar.
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-2xl">
+        <div class="flex items-start gap-2.5 reveal reveal-delay-1">
+          <i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i>
+          <span class="text-sm text-ink-soft leading-snug">+30 anos<br><span class="text-ink-mute">de atuação</span></span>
+        </div>
+        <div class="flex items-start gap-2.5 reveal reveal-delay-2">
+          <i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i>
+          <span class="text-sm text-ink-soft leading-snug">+3.000<br><span class="text-ink-mute">pacientes atendidos</span></span>
+        </div>
+        <div class="flex items-start gap-2.5 reveal reveal-delay-3">
+          <i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i>
+          <span class="text-sm text-ink-soft leading-snug">7 cadeiras<br><span class="text-ink-mute">estrutura completa</span></span>
+        </div>
+        <div class="flex items-start gap-2.5 reveal reveal-delay-4">
+          <i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i>
+          <span class="text-sm text-ink-soft leading-snug">Particular<br><span class="text-ink-mute">foco em excelência</span></span>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 reveal reveal-delay-5">
+        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-primary">
+          <i data-lucide="message-circle" class="w-5 h-5"></i> Agendar avaliação pelo WhatsApp
+        </a>
+        <a href="#dr-mauro" class="btn-ghost">
+          <i data-lucide="arrow-down-right" class="w-4 h-4"></i> Conhecer o Dr. Mauro
+        </a>
+      </div>
+      <p class="mt-7 text-sm text-ink-mute italic font-display">
+        "Não é apenas sobre dentes. É sobre voltar a sorrir, mastigar e viver com mais segurança."
+      </p>
+    </div>
+    <div class="lg:col-span-5 reveal reveal-delay-2 relative">
+      <div class="hero-portrait-frame max-w-md mx-auto">
+        <div class="portrait-fallback">
+          <svg viewBox="0 0 100 130" fill="none" class="w-1/2 max-w-[180px]">
+            <circle cx="50" cy="42" r="20" fill="currentColor"/>
+            <path d="M14 130c0-22 16-40 36-40s36 18 36 40" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="absolute left-5 bottom-5 right-5 z-10 flex items-end justify-between text-cream-100">
+          <div>
+            <div class="eyebrow text-gold-300 mb-1">Cirurgião-dentista</div>
+            <div class="font-display text-2xl leading-tight">Dr. Mauro Dilascio</div>
+          </div>
+          <div class="text-right">
+            <div class="font-display text-3xl leading-none text-gold-300 italic">30+</div>
+            <div class="text-[0.65rem] uppercase tracking-widest opacity-80">anos</div>
+          </div>
+        </div>
+      </div>
+      <div class="hidden md:flex absolute -top-5 -right-5 w-28 h-28 rounded-full bg-cream-100 border border-gold-300 items-center justify-center text-center shadow-xl rotate-6">
+        <div>
+          <div class="font-display text-xl text-forest-700 italic leading-none">Belo</div>
+          <div class="font-display text-xl text-forest-700 italic leading-tight mt-0.5">Horizonte</div>
+          <div class="eyebrow text-gold-600 mt-1 text-[0.55rem]">Santa Efigênia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<section aria-hidden="true" class="bg-forest-700 py-6 overflow-hidden border-y border-gold-700/20">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Reabilitação Oral</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Implantes</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Próteses</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Protocolo sobre Implante</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Planejamento</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Acompanhamento</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Confiança</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Excelência</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Reabilitação Oral</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Implantes</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Próteses</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Protocolo sobre Implante</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Planejamento</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Acompanhamento</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Confiança</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+      <span class="font-display text-cream-100 text-3xl md:text-4xl italic">Excelência</span>
+      <span class="text-gold-400 text-xl self-center">✦</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="py-20 lg:py-28 bg-cream-100">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 text-center">
+      <div class="reveal">
+        <div class="stat-number text-6xl md:text-7xl text-forest-700">
+          <span class="counter" data-target="30">0</span><span class="text-gold-500">+</span>
+        </div>
+        <div class="divider-fine w-12 mx-auto my-4"></div>
+        <div class="eyebrow text-ink-mute">Anos de atuação</div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="stat-number text-6xl md:text-7xl text-forest-700">
+          <span class="counter" data-target="3000">0</span><span class="text-gold-500">+</span>
+        </div>
+        <div class="divider-fine w-12 mx-auto my-4"></div>
+        <div class="eyebrow text-ink-mute">Pacientes atendidos</div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="stat-number text-6xl md:text-7xl text-forest-700">
+          <span class="counter" data-target="7">0</span>
+        </div>
+        <div class="divider-fine w-12 mx-auto my-4"></div>
+        <div class="eyebrow text-ink-mute">Cadeiras clínicas</div>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <div class="stat-number text-5xl md:text-6xl text-forest-700 italic font-display">100<span class="text-gold-500">%</span></div>
+        <div class="divider-fine w-12 mx-auto my-4"></div>
+        <div class="eyebrow text-ink-mute">Atendimento particular</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTORIDADE EMOCIONAL -->
+<section class="py-24 lg:py-32 bg-forest-700 text-cream-100 relative overflow-hidden">
+  <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-gold-500/5 blur-3xl"></div>
+  <div class="absolute -bottom-32 -left-20 w-96 h-96 rounded-full bg-forest-400/10 blur-3xl"></div>
+  <div class="max-w-5xl mx-auto px-6 lg:px-8 relative">
+    <div class="reveal">
+      <div class="flex items-center gap-4 mb-9">
+        <div class="w-12 h-px bg-gold-400"></div>
+        <span class="eyebrow text-gold-300">Por que a Dilascio é diferente</span>
+      </div>
+      <h2 class="h-display text-4xl md:text-6xl lg:text-7xl text-cream-100 mb-10 max-w-3xl">
+        Não é apenas sobre <span class="italic text-gold-300">dentes.</span><br>
+        É sobre voltar a sorrir <span class="italic">sem vergonha.</span>
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 lg:gap-16 max-w-4xl mt-12">
+      <p class="text-cream-100/85 text-lg leading-relaxed font-light reveal reveal-delay-1">
+        Muitas pessoas convivem por anos com insegurança para sorrir, falar ou
+        até se alimentar. E quando finalmente procuram ajuda, acabam encontrando
+        clínicas onde se sentem apenas <em class="text-gold-300 not-italic font-medium">"mais um paciente"</em>.
+      </p>
+      <p class="text-cream-100/85 text-lg leading-relaxed font-light reveal reveal-delay-2">
+        Na Clínica Dilascio, o atendimento é diferente. Cada caso é tratado com
+        atenção, planejamento e acompanhamento próximo, para que o paciente
+        tenha segurança em cada etapa do tratamento.
+      </p>
+    </div>
+    <div class="mt-12 pt-10 border-t border-gold-400/20 max-w-4xl reveal reveal-delay-3">
+      <p class="font-display italic text-2xl md:text-3xl text-gold-300 leading-snug">
+        Porque quando falamos de implantes e reabilitação oral, <span class="text-cream-100">confiança</span> importa.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DR. MAURO -->
+<section id="dr-mauro" class="py-24 lg:py-32 bg-cream-100 relative">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+    <div class="lg:col-span-5 reveal">
+      <div class="relative max-w-md mx-auto">
+        <div class="hero-portrait-frame">
+          <div class="portrait-fallback">
+            <svg viewBox="0 0 100 130" fill="none" class="w-1/2 max-w-[180px]">
+              <circle cx="50" cy="42" r="20" fill="currentColor"/>
+              <path d="M14 130c0-22 16-40 36-40s36 18 36 40" fill="currentColor"/>
+            </svg>
+          </div>
+        </div>
+        <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 bg-cream-100 border border-line px-6 py-3 rounded-full shadow-lg">
+          <span class="eyebrow text-gold-600">Cirurgião-dentista · CRO-MG</span>
+        </div>
+      </div>
+    </div>
+    <div class="lg:col-span-7 reveal reveal-delay-2">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-px bg-gold-400"></div>
+        <span class="eyebrow text-gold-600">Conheça</span>
+      </div>
+      <h2 class="h-display text-5xl md:text-6xl text-forest-700 mb-7">
+        Dr. Mauro <span class="italic">Dilascio</span>
+      </h2>
+      <p class="text-ink-soft text-lg leading-relaxed mb-7 font-light max-w-2xl">
+        O Dr. Mauro atua há <strong class="text-forest-700 font-medium">mais de 30 anos</strong> na
+        odontologia, com referência em reabilitação oral e na devolução de
+        funcionalidade, estética e qualidade de vida a quem perdeu dentes ou
+        convive com próteses desconfortáveis.
+      </p>
+      <p class="text-ink-soft text-lg leading-relaxed mb-9 font-light max-w-2xl">
+        Ao longo dos anos, ajudou milhares de pacientes a recuperarem não
+        apenas o sorriso, mas também a confiança para falar em público, comer
+        sem medo e aparecer em fotos sem cobrir a boca.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-10 max-w-2xl">
+        <div class="flex items-center gap-3 reveal reveal-delay-1">
+          <div class="w-8 h-8 rounded-full bg-gold-100 flex items-center justify-center"><i data-lucide="bone" class="w-4 h-4 text-gold-600"></i></div>
+          <span class="text-forest-700 font-medium">Implantes dentários</span>
+        </div>
+        <div class="flex items-center gap-3 reveal reveal-delay-2">
+          <div class="w-8 h-8 rounded-full bg-gold-100 flex items-center justify-center"><i data-lucide="smile" class="w-4 h-4 text-gold-600"></i></div>
+          <span class="text-forest-700 font-medium">Próteses dentárias</span>
+        </div>
+        <div class="flex items-center gap-3 reveal reveal-delay-3">
+          <div class="w-8 h-8 rounded-full bg-gold-100 flex items-center justify-center"><i data-lucide="layers" class="w-4 h-4 text-gold-600"></i></div>
+          <span class="text-forest-700 font-medium">Protocolo sobre implante</span>
+        </div>
+        <div class="flex items-center gap-3 reveal reveal-delay-4">
+          <div class="w-8 h-8 rounded-full bg-gold-100 flex items-center justify-center"><i data-lucide="heart-pulse" class="w-4 h-4 text-gold-600"></i></div>
+          <span class="text-forest-700 font-medium">Reabilitação oral completa</span>
+        </div>
+      </div>
+      <a href="https://wa.me/553132411738?text=Ol%C3%A1%2C%20Dr.%20Mauro%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn-primary">
+        <i data-lucide="message-circle" class="w-5 h-5"></i> Conversar com a clínica
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ATENDIMENTO -->
+<section id="atendimento" class="py-24 lg:py-32 bg-cream-50 relative">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+      <div class="flex items-center gap-3 justify-center mb-6">
+        <div class="w-10 h-px bg-gold-400"></div>
+        <span class="eyebrow text-gold-600">A jornada do paciente</span>
+        <div class="w-10 h-px bg-gold-400"></div>
+      </div>
+      <h2 class="h-display text-4xl md:text-5xl lg:text-6xl text-forest-700 mb-6">
+        Como funciona o <span class="italic">atendimento</span>
+      </h2>
+      <p class="text-ink-soft text-lg font-light">
+        Um caminho claro, sem improviso, do primeiro contato até o resultado final.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 relative">
+      <div class="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-gold-300 to-transparent"></div>
+      <div class="journey-step reveal">
+        <div class="journey-num mb-4">01</div>
+        <h3 class="font-display text-2xl text-forest-700 mb-3">Avaliação inicial</h3>
+        <p class="text-ink-soft text-base leading-relaxed font-light">
+          Escutamos sua história, suas dores e seus objetivos antes de
+          recomendar qualquer tratamento.
+        </p>
+      </div>
+      <div class="journey-step reveal reveal-delay-1">
+        <div class="journey-num mb-4">02</div>
+        <h3 class="font-display text-2xl text-forest-700 mb-3">Planejamento individualizado</h3>
+        <p class="text-ink-soft text-base leading-relaxed font-light">
+          Cada paciente é um caso único. O plano é desenhado caso a caso, com
+          tecnologia e critério.
+        </p>
+      </div>
+      <div class="journey-step reveal reveal-delay-2">
+        <div class="journey-num mb-4">03</div>
+        <h3 class="font-display text-2xl text-forest-700 mb-3">Explicação do tratamento</h3>
+        <p class="text-ink-soft text-base leading-relaxed font-light">
+          Você entende cada etapa, prazo e investimento antes de começar.
+          Nada de "surpresas no meio do caminho".
+        </p>
+      </div>
+      <div class="journey-step reveal reveal-delay-3">
+        <div class="journey-num mb-4">04</div>
+        <h3 class="font-display text-2xl text-forest-700 mb-3">Acompanhamento próximo</h3>
+        <p class="text-ink-soft text-base leading-relaxed font-light">
+          Do início à finalização, o Dr. Mauro e a equipe seguem ao seu lado —
+          inclusive depois que o tratamento termina.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRATAMENTOS -->
+<section id="tratamentos" class="py-24 lg:py-32 bg-cream-200 relative">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 mb-16 items-end">
+      <div class="lg:col-span-7 reveal">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-px bg-gold-400"></div>
+          <span class="eyebrow text-gold-600">Tratamentos · Foco em reabilitação</span>
+        </div>
+        <h2 class="h-display text-4xl md:text-5xl lg:text-6xl text-forest-700">
+          O que <span class="italic">tratamos</span> com excelência.
+        </h2>
+      </div>
+      <div class="lg:col-span-5 lg:pb-2 reveal reveal-delay-2">
+        <p class="text-ink-soft text-lg leading-relaxed font-light">
+          Concentramos nossa expertise em três frentes que devolvem
+          mastigação, estética e autoestima ao paciente.
+        </p>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-3 gap-7">
+      <div class="card-elegant p-8 lg:p-10 reveal">
+        <div class="icon-halo mb-7"><i data-lucide="bone" class="w-7 h-7"></i></div>
+        <span class="eyebrow text-gold-600 mb-3 block">01 · Tratamento</span>
+        <h3 class="h-display text-3xl text-forest-700 mb-4">Implante <span class="italic">Dentário</span></h3>
+        <p class="text-ink-mute text-base mb-6 italic font-display text-lg">Perdeu um ou mais dentes?</p>
+        <p class="text-ink-soft leading-relaxed mb-7 font-light">
+          Solução moderna para recuperar o sorriso, devolvendo estética,
+          mastigação e a confiança de morder uma maçã sem pensar duas vezes.
+        </p>
+        <ul class="space-y-2.5 mb-8 text-sm">
+          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Mais conforto para mastigar</span></li>
+          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Mais segurança ao sorrir</span></li>
+          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Resultado natural</span></li>
+          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Melhora da autoestima</span></li>
+        </ul>
+        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20avaliar%20um%20implante%20dent%C3%A1rio." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-forest-600 font-semibold hover:text-gold-500 transition-colors group">
+          Quero avaliar meu caso
+          <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+        </a>
+      </div>
+
+      <div class="card-elegant p-8 lg:p-10 reveal reveal-delay-1">
+        <div class="icon-halo mb-7"><i data-lucide="smile" class="w-7 h-7"></i></div>
+        <span class="eyebrow text-gold-600 mb-3 block">02 · Tratamento</span>
+        <h3 class="h-display text-3xl text-forest-700 mb-4">Próteses <span class="italic">Dentárias</span></h3>
+        <p class="text-ink-mute text-base mb-6 italic font-display text-lg">Sua prótese atual te incomoda?</p>
+        <p class="text-ink-soft leading-relaxed mb-7 font-light">
+          Recupere a funcionalidade e a harmonia do sorriso com próteses
+          planejadas para oferecer conforto, estabilidade e naturalidade.
+          Cada tratamento é desenvolvido de forma individual.
+        </p>
+        <ul class="space-y-2.5 mb-8 text-sm">
+          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Estética sob medida</span></li>
+          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Conforto para o uso diário</span></li>
+          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Funcionalidade plena</span></li>
+          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Resultado durável</span></li>
+        </ul>
+        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20uma%20avalia%C3%A7%C3%A3o%20para%20pr%C3%B3tese%20dent%C3%A1ria." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-forest-600 font-semibold hover:text-gold-500 transition-colors group">
+          Quero avaliar meu caso
+          <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+        </a>
+      </div>
+
+      <div class="card-elegant p-8 lg:p-10 reveal reveal-delay-2">
+        <div class="icon-halo mb-7"><i data-lucide="layers" class="w-7 h-7"></i></div>
+        <span class="eyebrow text-gold-600 mb-3 block">03 · Tratamento</span>
+        <h3 class="h-display text-3xl text-forest-700 mb-4">Protocolo sobre <span class="italic">Implante</span></h3>
+        <p class="text-ink-mute text-base mb-6 italic font-display text-lg">Perdeu muitos dentes? Existe um caminho.</p>
+        <p class="text-ink-soft leading-relaxed mb-7 font-light">
+          Uma alternativa moderna para quem perdeu vários dentes e deseja voltar a
+          sorrir com firmeza — sem o desconforto e a insegurança das dentaduras
+          tradicionais.
+        </p>
+        <ul class="space-y-2.5 mb-8 text-sm">
+          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Mais estabilidade</span></li>
+          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Mais conforto</span></li>
+          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Melhor estética</span></li>
+          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Confiança para falar e comer</span></li>
+        </ul>
+        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20o%20protocolo%20sobre%20implante." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-forest-600 font-semibold hover:text-gold-500 transition-colors group">
+          Quero avaliar meu caso
+          <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="py-24 lg:py-32 bg-paper relative">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 mb-16 items-end">
+      <div class="lg:col-span-6 reveal">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-px bg-gold-400"></div>
+          <span class="eyebrow text-gold-600">Diferenciais</span>
+        </div>
+        <h2 class="h-display text-4xl md:text-5xl lg:text-6xl text-forest-700">
+          Por que pacientes escolhem <span class="italic">a Dilascio</span>?
+        </h2>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+      <div class="bg-white border border-line p-8 rounded-md reveal hover:border-gold-300 transition-colors">
+        <div class="flex items-center gap-4 mb-5">
+          <div class="w-12 h-12 rounded-md bg-forest-50 flex items-center justify-center"><i data-lucide="hand-heart" class="w-6 h-6 text-forest-600"></i></div>
+          <span class="font-display text-2xl text-gold-500 italic">01</span>
+        </div>
+        <h3 class="font-display text-2xl text-forest-700 mb-3">Atendimento humanizado</h3>
+        <p class="text-ink-soft leading-relaxed font-light">
+          O paciente é ouvido com atenção real e acompanhado em cada etapa do tratamento.
+        </p>
+      </div>
+      <div class="bg-white border border-line p-8 rounded-md reveal reveal-delay-1 hover:border-gold-300 transition-colors">
+        <div class="flex items-center gap-4 mb-5">
+          <div class="w-12 h-12 rounded-md bg-forest-50 flex items-center justify-center"><i data-lucide="clipboard-pen-line" class="w-6 h-6 text-forest-600"></i></div>
+          <span class="font-display text-2xl text-gold-500 italic">02</span>
+        </div>
+        <h3 class="font-display text-2xl text-forest-700 mb-3">Planejamento personalizado</h3>
+        <p class="text-ink-soft leading-relaxed font-light">
+          Cada paciente possui necessidades diferentes. O tratamento é pensado para cada caso.
+        </p>
+      </div>
+      <div class="bg-white border border-line p-8 rounded-md reveal reveal-delay-2 hover:border-gold-300 transition-colors">
+        <div class="flex items-center gap-4 mb-5">
+          <div class="w-12 h-12 rounded-md bg-forest-50 flex items-center justify-center"><i data-lucide="shield-check" class="w-6 h-6 text-forest-600"></i></div>
+          <span class="font-display text-2xl text-gold-500 italic">03</span>
+        </div>
+        <h3 class="font-display text-2xl text-forest-700 mb-3">Segurança e confiança</h3>
+        <p class="text-ink-soft leading-relaxed font-light">
+          Tratamentos conduzidos com mais de 30 anos de experiência e acompanhamento profissional.
+        </p>
+      </div>
+      <div class="bg-white border border-line p-8 rounded-md reveal reveal-delay-3 hover:border-gold-300 transition-colors">
+        <div class="flex items-center gap-4 mb-5">
+          <div class="w-12 h-12 rounded-md bg-forest-50 flex items-center justify-center"><i data-lucide="building-2" class="w-6 h-6 text-forest-600"></i></div>
+          <span class="font-display text-2xl text-gold-500 italic">04</span>
+        </div>
+        <h3 class="font-display text-2xl text-forest-700 mb-3">Estrutura moderna</h3>
+        <p class="text-ink-soft leading-relaxed font-light">
+          Clínica equipada com 7 cadeiras clínicas, oferecendo conforto e praticidade.
+        </p>
+      </div>
+      <div class="bg-white border border-line p-8 rounded-md reveal reveal-delay-4 hover:border-gold-300 transition-colors">
+        <div class="flex items-center gap-4 mb-5">
+          <div class="w-12 h-12 rounded-md bg-forest-50 flex items-center justify-center"><i data-lucide="target" class="w-6 h-6 text-forest-600"></i></div>
+          <span class="font-display text-2xl text-gold-500 italic">05</span>
+        </div>
+        <h3 class="font-display text-2xl text-forest-700 mb-3">Foco em resultado real</h3>
+        <p class="text-ink-soft leading-relaxed font-light">
+          Mais do que estética: devolver funcionalidade, segurança e qualidade de vida.
+        </p>
+      </div>
+      <div class="bg-forest-700 text-cream-100 p-8 rounded-md flex flex-col justify-between reveal reveal-delay-5">
+        <div>
+          <p class="font-display text-2xl leading-snug italic mb-4">"Quero agendar uma avaliação."</p>
+          <p class="text-cream-100/70 text-sm mb-6 font-light">
+            A primeira conversa é simples e sem compromisso. Você sai com clareza
+            sobre o seu caso.
+          </p>
+        </div>
+        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-gold w-full justify-center">
+          <i data-lucide="message-circle" class="w-5 h-5"></i> Falar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos" class="py-24 lg:py-32 bg-cream-100 relative">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+      <div class="flex items-center gap-3 justify-center mb-6">
+        <div class="w-10 h-px bg-gold-400"></div>
+        <span class="eyebrow text-gold-600">Pacientes reais · histórias reais</span>
+        <div class="w-10 h-px bg-gold-400"></div>
+      </div>
+      <h2 class="h-display text-4xl md:text-5xl lg:text-6xl text-forest-700 mb-6">
+        Histórias <span class="italic">de quem voltou</span> a sorrir
+      </h2>
+      <p class="text-ink-soft text-lg font-light">
+        São pessoas que mudaram a forma como falam, comem e se enxergam no espelho.
+      </p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
+      <div class="reveal">
+        <div class="video-card" role="button" tabindex="0" aria-label="Reproduzir depoimento">
+          <div class="video-grain"></div>
+          <div class="absolute top-4 left-4 right-4 flex justify-between items-start z-10">
+            <span class="eyebrow text-gold-300">Depoimento 01</span>
+            <i data-lucide="quote" class="w-5 h-5 text-gold-300/70"></i>
+          </div>
+          <div class="play-btn"><div class="play-icon"></div></div>
+          <div class="absolute bottom-5 left-5 right-5 z-10">
+            <p class="font-display text-cream-100 text-xl italic leading-snug">"Eu tinha vergonha de sorrir."</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="video-card" role="button" tabindex="0" aria-label="Reproduzir depoimento">
+          <div class="video-grain"></div>
+          <div class="absolute top-4 left-4 right-4 flex justify-between items-start z-10">
+            <span class="eyebrow text-gold-300">Depoimento 02</span>
+            <i data-lucide="quote" class="w-5 h-5 text-gold-300/70"></i>
+          </div>
+          <div class="play-btn"><div class="play-icon"></div></div>
+          <div class="absolute bottom-5 left-5 right-5 z-10">
+            <p class="font-display text-cream-100 text-xl italic leading-snug">"Voltei a mastigar normalmente."</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="video-card" role="button" tabindex="0" aria-label="Reproduzir depoimento">
+          <div class="video-grain"></div>
+          <div class="absolute top-4 left-4 right-4 flex justify-between items-start z-10">
+            <span class="eyebrow text-gold-300">Depoimento 03</span>
+            <i data-lucide="quote" class="w-5 h-5 text-gold-300/70"></i>
+          </div>
+          <div class="play-btn"><div class="play-icon"></div></div>
+          <div class="absolute bottom-5 left-5 right-5 z-10">
+            <p class="font-display text-cream-100 text-xl italic leading-snug">"Viajei mais de 200 km para tratar com o Dr. Mauro."</p>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <div class="video-card" role="button" tabindex="0" aria-label="Reproduzir depoimento">
+          <div class="video-grain"></div>
+          <div class="absolute top-4 left-4 right-4 flex justify-between items-start z-10">
+            <span class="eyebrow text-gold-300">Depoimento 04</span>
+            <i data-lucide="quote" class="w-5 h-5 text-gold-300/70"></i>
+          </div>
+          <div class="play-btn"><div class="play-icon"></div></div>
+          <div class="absolute bottom-5 left-5 right-5 z-10">
+            <p class="font-display text-cream-100 text-xl italic leading-snug">"Hoje eu consigo sorrir com confiança."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-center text-sm text-ink-mute mt-10 max-w-2xl mx-auto italic font-display text-base reveal">
+      Espaços reservados para vídeos reais de pacientes — gravados na própria clínica.
+    </p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="duvidas" class="py-24 lg:py-32 bg-cream-200 relative">
+  <div class="max-w-5xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 mb-12">
+      <div class="lg:col-span-5 reveal">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-px bg-gold-400"></div>
+          <span class="eyebrow text-gold-600">Dúvidas frequentes</span>
+        </div>
+        <h2 class="h-display text-4xl md:text-5xl text-forest-700 mb-6">
+          Antes de <span class="italic">decidir,</span><br>
+          é normal ter dúvidas.
+        </h2>
+        <p class="text-ink-soft text-lg font-light max-w-md">
+          Reunimos as perguntas que mais ouvimos no dia a dia. Se ainda restar
+          alguma, fale com a gente pelo WhatsApp.
+        </p>
+        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20tratamento." target="_blank" rel="noopener" class="btn-primary mt-9 hidden lg:inline-flex">
+          <i data-lucide="message-circle" class="w-5 h-5"></i> Tirar minha dúvida
+        </a>
+      </div>
+      <div class="lg:col-span-7 reveal reveal-delay-2">
+        <div class="faq-item">
+          <details>
+            <summary>O implante dói? <span class="plus">+</span></summary>
+            <div class="faq-body">
+              O procedimento é realizado com anestesia e planejamento adequado para
+              proporcionar conforto ao paciente durante e depois da cirurgia. A
+              maioria dos pacientes relata um pós-operatório tranquilo, com um leve
+              desconforto controlável por medicação simples.
+            </div>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Tenho medo de fazer implante. O que devo fazer? <span class="plus">+</span></summary>
+            <div class="faq-body">
+              É absolutamente normal sentir medo, principalmente se você já passou
+              por experiências ruins. Na Clínica Dilascio, o primeiro passo é uma
+              conversa. O Dr. Mauro escuta seu histórico, explica cada etapa e só
+              avança quando você se sente seguro. Sem pressa, sem pressão.
+            </div>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Quem usa dentadura pode fazer protocolo? <span class="plus">+</span></summary>
+            <div class="faq-body">
+              Em muitos casos, sim — e essa é uma das transformações mais marcantes
+              da clínica. Quem usa dentadura e sofre com instabilidade, dor ou
+              vergonha frequentemente encontra no protocolo sobre implante uma
+              alternativa fixa, segura e estética. A avaliação individual indica a
+              melhor solução para o seu caso.
+            </div>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Quem pode fazer implante? <span class="plus">+</span></summary>
+            <div class="faq-body">
+              Cada caso precisa ser avaliado individualmente. Fatores como saúde
+              geral, qualidade óssea e expectativas do paciente são considerados.
+              Por isso, a avaliação inicial é fundamental — é nela que entendemos
+              o que é possível, recomendado e seguro para você.
+            </div>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Quanto tempo dura o tratamento? <span class="plus">+</span></summary>
+            <div class="faq-body">
+              O tempo varia conforme o planejamento e a necessidade de cada
+              paciente. Alguns tratamentos são finalizados em poucos meses; outros,
+              mais complexos, podem se estender por mais tempo. No primeiro
+              encontro, você sai com uma noção realista de prazo.
+            </div>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>A avaliação é obrigatória? <span class="plus">+</span></summary>
+            <div class="faq-body">
+              Sim. É na avaliação que a equipe entende o seu caso, examina sua
+              condição atual e só então indica o melhor caminho. Sem avaliação,
+              não há plano de tratamento sério — apenas suposições.
+            </div>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>O tratamento é igual para todo mundo? <span class="plus">+</span></summary>
+            <div class="faq-body">
+              Não. Cada boca, cada história e cada objetivo são diferentes. Por isso
+              o planejamento é individual: dois pacientes com o "mesmo problema"
+              podem receber caminhos diferentes — e isso é justamente o que garante
+              um resultado adequado a cada um.
+            </div>
+          </details>
+        </div>
+        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20tratamento." target="_blank" rel="noopener" class="btn-primary mt-9 lg:hidden inline-flex">
+          <i data-lucide="message-circle" class="w-5 h-5"></i> Tirar minha dúvida
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="py-28 lg:py-40 bg-forest-700 text-cream-100 relative overflow-hidden">
+  <div class="absolute -top-32 right-1/4 w-96 h-96 rounded-full bg-gold-500/8 blur-3xl"></div>
+  <div class="absolute -bottom-40 left-1/4 w-[28rem] h-[28rem] rounded-full bg-forest-400/8 blur-3xl"></div>
+  <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative">
+    <div class="reveal">
+      <div class="flex items-center gap-3 justify-center mb-7">
+        <div class="w-10 h-px bg-gold-400"></div>
+        <span class="eyebrow text-gold-300">Está na hora</span>
+        <div class="w-10 h-px bg-gold-400"></div>
+      </div>
+      <h2 class="h-display text-4xl md:text-6xl lg:text-7xl text-cream-100 mb-8 leading-[1.04]">
+        Dê o primeiro passo para <br>
+        <span class="italic text-gold-300">voltar a sorrir</span> com mais segurança.
+      </h2>
+      <p class="text-cream-100/80 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl mx-auto font-light">
+        Agende sua avaliação e descubra qual é o melhor tratamento para o seu caso —
+        com escuta, planejamento e o acompanhamento de quem cuida disso há mais
+        de três décadas.
+      </p>
+      <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-gold text-lg py-5 px-10 reveal reveal-delay-1">
+        <i data-lucide="message-circle" class="w-6 h-6"></i> Agendar minha avaliação
+      </a>
+      <p class="mt-10 text-cream-100/60 text-sm font-display italic">
+        Resposta pessoal · Belo Horizonte · Santa Efigênia
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-forest-800 text-cream-100/80 py-16 lg:py-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid md:grid-cols-12 gap-10 mb-12">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-11 h-11 rounded-full bg-forest-600 flex items-center justify-center border border-gold-300/40">
+            <span class="font-display text-cream-100 text-xl leading-none italic">D</span>
+          </div>
+          <div>
+            <div class="font-display text-[1.55rem] text-cream-100">Clínica Dilascio</div>
+            <div class="eyebrow text-gold-300/80 text-[0.62rem] mt-0.5">Reabilitação Oral · BH</div>
+          </div>
+        </div>
+        <p class="text-cream-100/70 leading-relaxed max-w-md font-light text-sm">
+          Há mais de 30 anos cuidando de pessoas que querem voltar a sorrir,
+          mastigar e viver com mais segurança. Implantes, próteses e protocolo
+          em Belo Horizonte.
+        </p>
+      </div>
+      <div class="md:col-span-3">
+        <div class="eyebrow text-gold-300/80 mb-4">Atendimento</div>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="#dr-mauro" class="hover:text-gold-300 transition-colors">Dr. Mauro Dilascio</a></li>
+          <li><a href="#tratamentos" class="hover:text-gold-300 transition-colors">Implantes</a></li>
+          <li><a href="#tratamentos" class="hover:text-gold-300 transition-colors">Próteses</a></li>
+          <li><a href="#tratamentos" class="hover:text-gold-300 transition-colors">Protocolo</a></li>
+          <li><a href="#duvidas" class="hover:text-gold-300 transition-colors">Dúvidas frequentes</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-4">
+        <div class="eyebrow text-gold-300/80 mb-4">Contato</div>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-start gap-3">
+            <i data-lucide="map-pin" class="w-4 h-4 text-gold-400 mt-0.5 flex-shrink-0"></i>
+            <span>R. Domingos Vieira, 587 — sala 1214<br>Santa Efigênia · Belo Horizonte/MG<br>CEP 30150-240</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="phone" class="w-4 h-4 text-gold-400 mt-0.5 flex-shrink-0"></i>
+            <a href="tel:+553132411738" class="hover:text-gold-300 transition-colors">(31) 3241-1738</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <i data-lucide="message-circle" class="w-4 h-4 text-gold-400 mt-0.5 flex-shrink-0"></i>
+            <a href="https://wa.me/553132411738" target="_blank" rel="noopener" class="hover:text-gold-300 transition-colors">WhatsApp</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="divider-fine mb-6 opacity-30"></div>
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-cream-100/50">
+      <p>© 2026 Clínica Dilascio · Dr. Mauro Dilascio. Todos os direitos reservados.</p>
+      <p class="font-display italic text-sm">Não é apenas sobre dentes. É sobre voltar a viver.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="wa-float" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor" class="w-7 h-7 text-white"><path d="M16.003 3C9.376 3 4 8.376 4 15.003c0 2.116.553 4.181 1.604 6.001L4 29l8.215-1.557A11.96 11.96 0 0 0 16.003 27C22.63 27 28 21.625 28 14.998 28 8.371 22.63 3 16.003 3Zm0 21.812a9.81 9.81 0 0 1-5.001-1.367l-.36-.213-4.873.924.928-4.75-.234-.376a9.802 9.802 0 0 1-1.49-5.027c0-5.434 4.418-9.857 9.853-9.857 5.434 0 9.852 4.423 9.852 9.857 0 5.435-4.418 9.809-9.675 9.809Zm5.703-7.301c-.31-.155-1.832-.903-2.116-1.005-.284-.104-.49-.155-.694.155-.207.31-.798 1.005-.979 1.212-.18.207-.36.233-.67.078-.31-.155-1.312-.483-2.499-1.539-.923-.823-1.547-1.836-1.727-2.146-.18-.31-.02-.477.137-.633.142-.141.31-.36.466-.54.155-.18.207-.31.31-.517.103-.207.052-.388-.026-.543-.078-.155-.694-1.673-.951-2.292-.25-.601-.504-.52-.694-.531a14.41 14.41 0 0 0-.59-.011c-.207 0-.543.078-.829.388-.284.31-1.087 1.063-1.087 2.59 0 1.526 1.113 3.002 1.268 3.21.155.207 2.188 3.344 5.302 4.687.74.32 1.318.51 1.769.654.744.236 1.42.203 1.955.123.596-.089 1.832-.749 2.091-1.473.258-.724.258-1.345.18-1.473-.078-.13-.284-.207-.594-.362Z"/></svg>
+</a>
+
+<script>
+lucide.createIcons();
+
+// Scroll header
+(function () {
+  const header = document.getElementById('site-header');
+  let scrolled = false;
+  window.addEventListener('scroll', () => {
+    const sc = window.scrollY > 24;
+    if (sc !== scrolled) { scrolled = sc; header.classList.toggle('scrolled', sc); }
+  }, { passive: true });
+})();
+
+// Mobile menu
+(function () {
+  const menu = document.getElementById('mobile-menu');
+  const toggle = document.getElementById('menu-toggle');
+  const close = document.getElementById('menu-close');
+  const closers = document.querySelectorAll('[data-mclose]');
+  const open = () => { menu.classList.add('open'); menu.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; };
+  const shut = () => { menu.classList.remove('open'); menu.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; };
+  toggle && toggle.addEventListener('click', open);
+  close && close.addEventListener('click', shut);
+  closers.forEach(a => a.addEventListener('click', shut));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') shut(); });
+})();
+
+// Reveal on scroll
+(function () {
+  const els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('visible')); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(e => io.observe(e));
+})();
+
+// Counters
+(function () {
+  const counters = document.querySelectorAll('.counter');
+  if (!('IntersectionObserver' in window)) { counters.forEach(c => c.textContent = c.dataset.target); return; }
+  const animate = (el) => {
+    const target = parseInt(el.dataset.target, 10);
+    const duration = 1700;
+    const start = performance.now();
+    const isLarge = target >= 1000;
+    const ease = t => 1 - Math.pow(1 - t, 3);
+    const step = (now) => {
+      const elapsed = now - start;
+      const t = Math.min(elapsed / duration, 1);
+      const v = Math.round(ease(t) * target);
+      el.textContent = isLarge ? v.toLocaleString('pt-BR') : v;
+      if (t < 1) requestAnimationFrame(step);
+      else el.textContent = isLarge ? target.toLocaleString('pt-BR') : target;
+    };
+    requestAnimationFrame(step);
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { animate(entry.target); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.3 });
+  counters.forEach(c => io.observe(c));
+})();
+
+// Smooth scroll with header offset
+(function () {
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        const headerH = document.getElementById('site-header').offsetHeight;
+        const y = target.getBoundingClientRect().top + window.scrollY - headerH + 1;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

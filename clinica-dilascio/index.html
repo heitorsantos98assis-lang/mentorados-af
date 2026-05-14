@@ -23,26 +23,74 @@
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
 <script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        cream:  { 50: '#FCFAF5', 100: '#F8F4ED', 200: '#F2EBD9', 300: '#EDE4D2' },
-        sand:   { 100: '#E8DCC4', 200: '#D6C5A0', 300: '#C2AC7E' },
-        forest: { 50:'#EBF1EE',100:'#D2DFD8',200:'#9DB6AB',300:'#6E9082',400:'#4A7561',500:'#2D5448',600:'#1E3D34',700:'#152A24',800:'#0D1B17' },
-        gold:   { 100:'#EFE3CC',200:'#D9C19A',300:'#C2A472',400:'#B89968',500:'#A88450',600:'#8E7344',700:'#6E5832' },
-        ink:    { DEFAULT:'#1A2A24', soft:'#3A4B44', mute:'#5A6962', faint:'#8A9690' },
-        line:   '#E0D5C2'
-      },
-      fontFamily: {
-        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        sans:    ['Manrope', 'system-ui', 'sans-serif']
-      },
-      letterSpacing: { 'tightish':'-0.018em', 'widest-2':'0.22em' }
+// Aplica config após CDN carregar. Defensivo contra race condition (CDN lento).
+(function applyTailwindConfig() {
+  const cfg = {
+    theme: {
+      extend: {
+        colors: {
+          cream:  { 50: '#FCFAF5', 100: '#F8F4ED', 200: '#F2EBD9', 300: '#EDE4D2' },
+          sand:   { 100: '#E8DCC4', 200: '#D6C5A0', 300: '#C2AC7E' },
+          forest: { 50:'#EBF1EE',100:'#D2DFD8',200:'#9DB6AB',300:'#6E9082',400:'#4A7561',500:'#2D5448',600:'#1E3D34',700:'#152A24',800:'#0D1B17' },
+          gold:   { 100:'#EFE3CC',200:'#D9C19A',300:'#C2A472',400:'#B89968',500:'#A88450',600:'#8E7344',700:'#6E5832' },
+          ink:    { DEFAULT:'#1A2A24', soft:'#3A4B44', mute:'#5A6962', faint:'#8A9690' },
+          line:   '#E0D5C2'
+        },
+        fontFamily: {
+          display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+          sans:    ['Manrope', 'system-ui', 'sans-serif']
+        },
+        letterSpacing: { 'tightish':'-0.018em', 'widest-2':'0.22em' }
+      }
     }
+  };
+  if (typeof tailwind !== 'undefined') {
+    tailwind.config = cfg;
+  } else {
+    // Fallback: tenta a cada 50ms até 5s
+    let tries = 0;
+    const id = setInterval(() => {
+      tries++;
+      if (typeof tailwind !== 'undefined') {
+        tailwind.config = cfg;
+        clearInterval(id);
+      } else if (tries > 100) {
+        clearInterval(id);
+        console.warn('Tailwind CDN não carregou — aplicando fallback CSS via :root vars');
+      }
+    }, 50);
   }
-}
+})();
 </script>
+
+<!-- Fallback CSS vars caso o Tailwind CDN falhe completamente — garante que cores nunca sumam -->
+<style id="dilascio-fallback">
+.bg-forest-700  { background-color: #152A24 !important; }
+.bg-forest-600  { background-color: #1E3D34 !important; }
+.bg-forest-800  { background-color: #0D1B17 !important; }
+.bg-cream-50    { background-color: #FCFAF5 !important; }
+.bg-cream-100   { background-color: #F8F4ED !important; }
+.bg-cream-200   { background-color: #F2EBD9 !important; }
+.text-forest-700{ color: #152A24 !important; }
+.text-forest-600{ color: #1E3D34 !important; }
+.text-gold-300  { color: #C2A472 !important; }
+.text-gold-400  { color: #B89968 !important; }
+.text-gold-500  { color: #A88450 !important; }
+.text-gold-600  { color: #8E7344 !important; }
+.text-cream-100 { color: #F8F4ED !important; }
+.text-cream-100\/70 { color: rgba(248,244,237,0.7) !important; }
+.text-cream-100\/80 { color: rgba(248,244,237,0.8) !important; }
+.text-cream-100\/85 { color: rgba(248,244,237,0.85) !important; }
+.text-cream-100\/55 { color: rgba(248,244,237,0.55) !important; }
+.text-cream-100\/60 { color: rgba(248,244,237,0.6) !important; }
+.text-ink        { color: #1A2A24 !important; }
+.text-ink-soft   { color: #3A4B44 !important; }
+.text-ink-mute   { color: #5A6962 !important; }
+.text-ink-faint  { color: #8A9690 !important; }
+.border-line     { border-color: #E0D5C2 !important; }
+.border-gold-300 { border-color: #C2A472 !important; }
+.border-gold-400 { border-color: #B89968 !important; }
+</style>
 
 <style>
 html { scroll-behavior: smooth; }

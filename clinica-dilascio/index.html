@@ -308,33 +308,18 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
 </head>
 <body class="bg-paper">
 
-<!-- PRE-QUALIFIER RIBBON (inspirado em Pedro II, refinado para o tom Dilascio) -->
-<div class="ribbon-prequal">
-  <div class="max-w-7xl mx-auto px-6 flex items-center justify-center gap-4 pre-mobile-flex">
-    <span class="flex items-center gap-2"><i data-lucide="badge-check" class="w-4 h-4 text-gold-300"></i> <strong class="font-semibold tracking-wide">Avaliação inicial gratuita</strong></span>
-    <span class="sep text-gold-300/60">·</span>
-    <span class="flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4 text-gold-300"></i> Atendimento 100% particular</span>
-    <span class="sep text-gold-300/60">·</span>
-    <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-gold-300"></i> Belo Horizonte/MG</span>
-  </div>
-</div>
-
-<!-- TOP BAR -->
+<!-- TOP BAR — minimalista -->
 <div class="hidden lg:block bg-cream-200 text-ink-soft text-[0.78rem] border-b border-line">
   <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
-    <div class="flex items-center gap-6">
-      <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold-500"></i> R. Domingos Vieira, 587 — sala 1214 · Santa Efigênia · Belo Horizonte/MG</span>
-      <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-gold-500"></i> Segunda à Sexta · Horários flexíveis</span>
-    </div>
-    <div class="flex items-center gap-5">
-      <a href="tel:+553132411738" class="flex items-center gap-1.5 hover:text-forest-600 transition-colors font-medium">
-        <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-500"></i> (31) 3241-1738
-      </a>
-      <span class="text-line">|</span>
-      <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Em%20que%20posso%20ajudar%3F" target="_blank" rel="noopener" class="flex items-center gap-1.5 hover:text-forest-600 transition-colors font-medium">
-        <i data-lucide="message-circle" class="w-3.5 h-3.5 text-gold-500"></i> Falar pelo WhatsApp
-      </a>
-    </div>
+    <span class="flex items-center gap-1.5">
+      <i data-lucide="badge-check" class="w-3.5 h-3.5 text-gold-500"></i>
+      <span class="font-medium">Avaliação inicial gratuita</span>
+      <span class="text-line mx-2">·</span>
+      Atendimento particular
+    </span>
+    <a href="tel:+553132411738" class="flex items-center gap-1.5 hover:text-forest-600 transition-colors font-medium">
+      <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-500"></i> (31) 3241-1738
+    </a>
   </div>
 </div>
 
@@ -351,12 +336,9 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
         <div class="eyebrow text-gold-600 text-[0.62rem] mt-0.5">Implantes · Próteses · BH</div>
       </div>
     </a>
-    <nav class="hidden lg:flex items-center gap-7 text-[0.86rem] font-medium text-ink-soft">
-      <a href="#dr-mauro"    class="hover:text-forest-600 transition-colors">Dr. Mauro</a>
-      <a href="#equipe"      class="hover:text-forest-600 transition-colors">Equipe</a>
-      <a href="#atendimento" class="hover:text-forest-600 transition-colors">Atendimento</a>
+    <nav class="hidden lg:flex items-center gap-9 text-[0.88rem] font-medium text-ink-soft">
       <a href="#tratamentos" class="hover:text-forest-600 transition-colors">Tratamentos</a>
-      <a href="#depoimentos" class="hover:text-forest-600 transition-colors">Depoimentos</a>
+      <a href="#dr-mauro"    class="hover:text-forest-600 transition-colors">Dr. Mauro</a>
       <a href="#duvidas"     class="hover:text-forest-600 transition-colors">Dúvidas</a>
       <a href="#contato"     class="hover:text-forest-600 transition-colors">Contato</a>
     </nav>
@@ -380,11 +362,8 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
     </button>
   </div>
   <nav class="flex flex-col px-8 mt-10 gap-2">
-    <a href="#dr-mauro"    data-mclose>Dr. Mauro</a>
-    <a href="#equipe"      data-mclose>Equipe</a>
-    <a href="#atendimento" data-mclose>Atendimento</a>
     <a href="#tratamentos" data-mclose>Tratamentos</a>
-    <a href="#depoimentos" data-mclose>Depoimentos</a>
+    <a href="#dr-mauro"    data-mclose>Dr. Mauro</a>
     <a href="#duvidas"     data-mclose>Dúvidas</a>
     <a href="#contato"     data-mclose>Contato</a>
   </nav>
@@ -401,12 +380,12 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
   <div class="hidden xl:block absolute left-6 top-1/2 -translate-y-1/2 hero-side-decor">Dilascio · Desde 1994</div>
   <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
     <div class="lg:col-span-7 reveal">
-      <span class="pill-free mb-7">
+      <span class="pill-free mb-8">
         <span class="dot"></span>
         Primeira avaliação · Sem custo
       </span>
 
-      <h1 class="h-display text-5xl md:text-6xl lg:text-7xl text-forest-700 mb-5">
+      <h1 class="h-display text-5xl md:text-6xl lg:text-7xl text-forest-700 mb-6">
         Implante dentário, <br>
         prótese e protocolo <br>
         em <span class="text-gold-500 italic">Belo Horizonte.</span>
@@ -416,38 +395,14 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
         Voltar a sorrir com <span class="text-gold-500">segurança.</span>
       </p>
 
-      <p class="text-ink-soft text-lg leading-relaxed max-w-xl mb-10 font-light">
-        Mais de <strong class="font-medium text-forest-700">30 anos</strong> em implante, prótese e protocolo com o
+      <p class="text-ink-soft text-lg max-w-xl mb-12 font-light">
+        Mais de <strong class="font-medium text-forest-700">30 anos</strong> com o
         <strong class="font-medium text-forest-700">Dr. Mauro Dilascio</strong>.
       </p>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-2xl">
-        <div class="flex items-start gap-2.5 reveal reveal-delay-1">
-          <i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i>
-          <span class="text-sm text-ink-soft leading-snug">+30 anos<br><span class="text-ink-mute">de atuação</span></span>
-        </div>
-        <div class="flex items-start gap-2.5 reveal reveal-delay-2">
-          <i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i>
-          <span class="text-sm text-ink-soft leading-snug">+3.000<br><span class="text-ink-mute">pacientes</span></span>
-        </div>
-        <div class="flex items-start gap-2.5 reveal reveal-delay-3">
-          <i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i>
-          <span class="text-sm text-ink-soft leading-snug">Particular<br><span class="text-ink-mute">sem convênios</span></span>
-        </div>
-        <div class="flex items-start gap-2.5 reveal reveal-delay-4">
-          <i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i>
-          <span class="text-sm text-ink-soft leading-snug">Avaliação<br><span class="text-ink-mute">gratuita</span></span>
-        </div>
-      </div>
-
-      <div class="flex flex-col sm:flex-row gap-4 reveal reveal-delay-5">
-        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20a%20avalia%C3%A7%C3%A3o%20gratuita%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-primary">
-          <i data-lucide="message-circle" class="w-5 h-5"></i> Agendar avaliação gratuita
-        </a>
-        <a href="tel:+553132411738" class="btn-ghost">
-          <i data-lucide="phone" class="w-4 h-4"></i> (31) 3241-1738
-        </a>
-      </div>
+      <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20a%20avalia%C3%A7%C3%A3o%20gratuita%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-primary text-base reveal reveal-delay-5">
+        <i data-lucide="message-circle" class="w-5 h-5"></i> Agendar avaliação gratuita
+      </a>
     </div>
     <div class="lg:col-span-5 reveal reveal-delay-2 relative">
       <div class="hero-portrait-frame max-w-md mx-auto">
@@ -518,7 +473,7 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
 </section>
 
 <!-- AUTORIDADE EMOCIONAL -->
-<section class="py-20 lg:py-24 bg-forest-700 text-cream-100 relative overflow-hidden">
+<section class="py-16 lg:py-20 bg-forest-700 text-cream-100 relative overflow-hidden">
   <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-gold-500/5 blur-3xl"></div>
   <div class="absolute -bottom-32 -left-20 w-96 h-96 rounded-full bg-forest-400/10 blur-3xl"></div>
   <div class="max-w-5xl mx-auto px-6 lg:px-8 relative">
@@ -730,10 +685,9 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
         <span class="eyebrow text-gold-600 mb-3 block">01 · Tratamento</span>
         <h3 class="h-display text-3xl text-forest-700 mb-4">Implante <span class="italic">Dentário</span></h3>
         <p class="text-ink-mute text-base mb-7 italic font-display text-lg">Perdeu um ou mais dentes?</p>
-        <ul class="space-y-2.5 mb-8 text-sm">
-          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Implante unitário ou múltiplo</span></li>
-          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Carga imediata em casos indicados</span></li>
+        <ul class="space-y-3 mb-8 text-sm">
           <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Titânio com certificação</span></li>
+          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Carga imediata em casos indicados</span></li>
           <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Resultado fixo e duradouro</span></li>
         </ul>
         <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20avaliar%20um%20implante%20dent%C3%A1rio." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-forest-600 font-semibold hover:text-gold-500 transition-colors group">
@@ -747,11 +701,10 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
         <span class="eyebrow text-gold-600 mb-3 block">02 · Tratamento</span>
         <h3 class="h-display text-3xl text-forest-700 mb-4">Próteses <span class="italic">Dentárias</span></h3>
         <p class="text-ink-mute text-base mb-7 italic font-display text-lg">Sua prótese atual te incomoda?</p>
-        <ul class="space-y-2.5 mb-8 text-sm">
+        <ul class="space-y-3 mb-8 text-sm">
           <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Prótese fixa</span></li>
           <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Prótese removível (PPR)</span></li>
           <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Prótese sobre implante</span></li>
-          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Ajuste e troca de prótese antiga</span></li>
         </ul>
         <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20uma%20avalia%C3%A7%C3%A3o%20para%20pr%C3%B3tese%20dent%C3%A1ria." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-forest-600 font-semibold hover:text-gold-500 transition-colors group">
           Agendar avaliação gratuita
@@ -764,11 +717,10 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
         <span class="eyebrow text-gold-600 mb-3 block">03 · Tratamento</span>
         <h3 class="h-display text-3xl text-forest-700 mb-4">Protocolo sobre <span class="italic">Implante</span></h3>
         <p class="text-ink-mute text-base mb-7 italic font-display text-lg">Perdeu muitos dentes?</p>
-        <ul class="space-y-2.5 mb-8 text-sm">
+        <ul class="space-y-3 mb-8 text-sm">
           <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">All-on-4 ou All-on-6</span></li>
           <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Fixo (não cai e não tira)</span></li>
-          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Alternativa à dentadura</span></li>
-          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Pode ser feito no mesmo dia, em casos indicados</span></li>
+          <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Pode ser feito no mesmo dia</span></li>
         </ul>
         <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20o%20protocolo%20sobre%20implante." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-forest-600 font-semibold hover:text-gold-500 transition-colors group">
           Agendar avaliação gratuita
@@ -812,7 +764,7 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
       </h2>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-7">
+    <div class="grid md:grid-cols-3 gap-8 lg:gap-10">
       <div class="bg-white border border-line p-8 lg:p-10 rounded-md reveal hover:border-gold-300 transition-colors">
         <div class="pillar-icon mb-7"><i data-lucide="hand-heart" class="w-7 h-7"></i></div>
         <h3 class="font-display text-2xl text-forest-700 mb-3">Atendimento direto com o dentista</h3>
@@ -984,24 +936,6 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
             </div>
           </details>
         </div>
-        <div class="faq-item">
-          <details>
-            <summary>A avaliação é obrigatória? <span class="plus">+</span></summary>
-            <div class="faq-body">
-              Sim. Sem avaliação não há plano sério — apenas suposições.
-              E a primeira avaliação é gratuita.
-            </div>
-          </details>
-        </div>
-        <div class="faq-item">
-          <details>
-            <summary>O tratamento é igual para todo mundo? <span class="plus">+</span></summary>
-            <div class="faq-body">
-              Não. Dois pacientes com o "mesmo problema" podem receber caminhos
-              diferentes. É o planejamento individual que garante o resultado certo.
-            </div>
-          </details>
-        </div>
         <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20avalia%C3%A7%C3%A3o%20gratuita." target="_blank" rel="noopener" class="btn-primary mt-9 lg:hidden inline-flex">
           <i data-lucide="message-circle" class="w-5 h-5"></i> Tirar minha dúvida
         </a>
@@ -1145,15 +1079,11 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
         </p>
       </div>
       <div class="md:col-span-3">
-        <div class="eyebrow text-gold-300/80 mb-4">Atendimento</div>
+        <div class="eyebrow text-gold-300/80 mb-4">Tratamentos</div>
         <ul class="space-y-2.5 text-sm">
-          <li><a href="#dr-mauro" class="hover:text-gold-300 transition-colors">Dr. Mauro Dilascio</a></li>
-          <li><a href="#equipe" class="hover:text-gold-300 transition-colors">Nossa equipe</a></li>
           <li><a href="#tratamentos" class="hover:text-gold-300 transition-colors">Implantes</a></li>
           <li><a href="#tratamentos" class="hover:text-gold-300 transition-colors">Próteses</a></li>
-          <li><a href="#tratamentos" class="hover:text-gold-300 transition-colors">Protocolo</a></li>
-          <li><a href="#duvidas" class="hover:text-gold-300 transition-colors">Dúvidas frequentes</a></li>
-          <li><a href="#contato" class="hover:text-gold-300 transition-colors">Onde estamos</a></li>
+          <li><a href="#tratamentos" class="hover:text-gold-300 transition-colors">Protocolo (All-on-4)</a></li>
         </ul>
       </div>
       <div class="md:col-span-4">

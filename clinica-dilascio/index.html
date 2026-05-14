@@ -116,20 +116,177 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
   .wa-float { width: 56px; height: 56px; bottom: 1rem; right: 1rem; }
   .journey-num { font-size: 3.5rem; }
 }
+
+/* ============ NEW COMPONENTS v2 ============ */
+
+/* Pre-qualifier ribbon (acima do header) */
+.ribbon-prequal {
+  background: linear-gradient(90deg, #1E3D34 0%, #2D5448 50%, #1E3D34 100%);
+  color: #F8F4ED;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(184,153,104,0.25);
+  position: relative;
+  overflow: hidden;
+}
+.ribbon-prequal::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 35%, rgba(184,153,104,0.18) 50%, transparent 65%);
+  animation: ribbonShine 8s ease-in-out infinite;
+}
+@keyframes ribbonShine {
+  0%,100% { transform: translateX(-120%); }
+  50% { transform: translateX(120%); }
+}
+.ribbon-prequal > div { position: relative; z-index: 1; }
+
+/* Pill "Avaliação gratuita" no hero */
+.pill-free {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(184,153,104,0.12);
+  border: 1px solid rgba(184,153,104,0.45);
+  border-radius: 999px;
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #8E7344;
+}
+.pill-free .dot {
+  width: 6px; height: 6px; border-radius: 50%; background: #B89968;
+  box-shadow: 0 0 0 0 rgba(184,153,104,0.7);
+  animation: dotPulse 2s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(184,153,104,0.7); }
+  50% { box-shadow: 0 0 0 6px rgba(184,153,104,0); }
+}
+
+/* Star rating component */
+.stars-row {
+  display: inline-flex; gap: 0.15rem; color: #B89968;
+}
+.stars-row svg { width: 22px; height: 22px; fill: currentColor; }
+
+/* Team card */
+.team-card {
+  background: #FFFFFF;
+  border: 1px solid #E0D5C2;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 350ms cubic-bezier(.2,.7,.2,1), box-shadow 350ms ease, border-color 350ms ease;
+  position: relative;
+}
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 50px -22px rgba(30,61,52,0.18);
+  border-color: #D6C5A0;
+}
+.team-portrait {
+  aspect-ratio: 4/5;
+  background: linear-gradient(180deg, #2D5448, #152A24);
+  position: relative;
+  display: flex; align-items: flex-end; justify-content: center;
+  padding: 2rem;
+}
+.team-portrait::after {
+  content: '';
+  position: absolute; inset: 10px;
+  border: 1px solid rgba(184,153,104,0.35);
+  border-radius: 3px;
+  pointer-events: none;
+}
+.team-portrait svg { color: rgba(184,153,104,0.32); width: 50%; max-width: 140px; }
+.team-card .info { padding: 1.5rem 1.6rem 1.7rem; }
+
+/* Map iframe wrapper */
+.map-wrapper {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #E0D5C2;
+  background: #F8F4ED;
+  box-shadow: 0 28px 60px -28px rgba(30,61,52,0.22);
+}
+.map-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(0.2) contrast(0.96);
+  transition: filter 400ms ease;
+}
+.map-wrapper:hover iframe { filter: grayscale(0) contrast(1); }
+
+/* Fallback panel (outras especialidades) */
+.fallback-panel {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FCFAF5 100%);
+  border: 1px dashed #D9C19A;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.fallback-panel::before {
+  content: '';
+  position: absolute; right: -40px; top: -40px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(184,153,104,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Pillars (3 colunas: Suporte / Horários / Pagamento) */
+.pillar-icon {
+  width: 64px; height: 64px;
+  border-radius: 14px;
+  background: linear-gradient(140deg, #1E3D34 0%, #2D5448 100%);
+  display: flex; align-items: center; justify-content: center;
+  color: #C2A472;
+  border: 1px solid rgba(184,153,104,0.3);
+  box-shadow: 0 14px 26px -14px rgba(30,61,52,0.45);
+}
+
+@media (max-width: 768px) {
+  .ribbon-prequal { font-size: 0.7rem; }
+  .ribbon-prequal .sep { display: none; }
+  .ribbon-prequal .pre-mobile-flex {
+    flex-direction: column; gap: 0.15rem; align-items: center;
+  }
+}
 </style>
 </head>
 <body class="bg-paper">
 
+<!-- PRE-QUALIFIER RIBBON (inspirado em Pedro II, refinado para o tom Dilascio) -->
+<div class="ribbon-prequal">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-center gap-4 pre-mobile-flex">
+    <span class="flex items-center gap-2"><i data-lucide="badge-check" class="w-4 h-4 text-gold-300"></i> <strong class="font-semibold tracking-wide">Avaliação inicial gratuita</strong></span>
+    <span class="sep text-gold-300/60">·</span>
+    <span class="flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4 text-gold-300"></i> Atendimento 100% particular</span>
+    <span class="sep text-gold-300/60">·</span>
+    <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-gold-300"></i> Belo Horizonte/MG</span>
+  </div>
+</div>
+
 <!-- TOP BAR -->
-<div class="hidden lg:block bg-forest-700 text-cream-100 text-[0.78rem]">
+<div class="hidden lg:block bg-cream-200 text-ink-soft text-[0.78rem] border-b border-line">
   <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
-    <div class="flex items-center gap-6 opacity-90">
-      <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold-400"></i> R. Domingos Vieira, 587 — sala 1214 · Santa Efigênia · Belo Horizonte/MG</span>
-      <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-gold-400"></i> Segunda à Sexta · Atendimento particular</span>
+    <div class="flex items-center gap-6">
+      <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold-500"></i> R. Domingos Vieira, 587 — sala 1214 · Santa Efigênia · Belo Horizonte/MG</span>
+      <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-gold-500"></i> Segunda à Sexta · Horários flexíveis</span>
     </div>
-    <a href="tel:+553132411738" class="flex items-center gap-1.5 hover:text-gold-300 transition-colors">
-      <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-400"></i> (31) 3241-1738
-    </a>
+    <div class="flex items-center gap-5">
+      <a href="tel:+553132411738" class="flex items-center gap-1.5 hover:text-forest-600 transition-colors font-medium">
+        <i data-lucide="phone" class="w-3.5 h-3.5 text-gold-500"></i> (31) 3241-1738
+      </a>
+      <span class="text-line">|</span>
+      <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Em%20que%20posso%20ajudar%3F" target="_blank" rel="noopener" class="flex items-center gap-1.5 hover:text-forest-600 transition-colors font-medium">
+        <i data-lucide="message-circle" class="w-3.5 h-3.5 text-gold-500"></i> Falar pelo WhatsApp
+      </a>
+    </div>
   </div>
 </div>
 
@@ -146,16 +303,18 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
         <div class="eyebrow text-gold-600 text-[0.62rem] mt-0.5">Reabilitação Oral · BH</div>
       </div>
     </a>
-    <nav class="hidden lg:flex items-center gap-9 text-[0.88rem] font-medium text-ink-soft">
+    <nav class="hidden lg:flex items-center gap-7 text-[0.86rem] font-medium text-ink-soft">
       <a href="#dr-mauro"    class="hover:text-forest-600 transition-colors">Dr. Mauro</a>
+      <a href="#equipe"      class="hover:text-forest-600 transition-colors">Equipe</a>
       <a href="#atendimento" class="hover:text-forest-600 transition-colors">Atendimento</a>
       <a href="#tratamentos" class="hover:text-forest-600 transition-colors">Tratamentos</a>
       <a href="#depoimentos" class="hover:text-forest-600 transition-colors">Depoimentos</a>
       <a href="#duvidas"     class="hover:text-forest-600 transition-colors">Dúvidas</a>
+      <a href="#contato"     class="hover:text-forest-600 transition-colors">Contato</a>
     </nav>
     <div class="flex items-center gap-3">
-      <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-primary text-[0.85rem] py-2.5 px-5 hidden md:inline-flex">
-        <i data-lucide="message-circle" class="w-4 h-4"></i> Agendar avaliação
+      <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20a%20avalia%C3%A7%C3%A3o%20gratuita%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-primary text-[0.85rem] py-2.5 px-5 hidden md:inline-flex">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> Avaliação gratuita
       </a>
       <button id="menu-toggle" class="lg:hidden p-2 text-forest-700" aria-label="Abrir menu">
         <i data-lucide="menu" class="w-6 h-6"></i>
@@ -174,14 +333,16 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
   </div>
   <nav class="flex flex-col px-8 mt-10 gap-2">
     <a href="#dr-mauro"    data-mclose>Dr. Mauro</a>
+    <a href="#equipe"      data-mclose>Equipe</a>
     <a href="#atendimento" data-mclose>Atendimento</a>
     <a href="#tratamentos" data-mclose>Tratamentos</a>
     <a href="#depoimentos" data-mclose>Depoimentos</a>
     <a href="#duvidas"     data-mclose>Dúvidas</a>
+    <a href="#contato"     data-mclose>Contato</a>
   </nav>
   <div class="mt-auto px-8 pb-10">
-    <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-gold w-full justify-center">
-      <i data-lucide="message-circle" class="w-5 h-5"></i> Agendar pelo WhatsApp
+    <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20a%20avalia%C3%A7%C3%A3o%20gratuita%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-gold w-full justify-center">
+      <i data-lucide="message-circle" class="w-5 h-5"></i> Agendar avaliação gratuita
     </a>
     <p class="text-cream-100/55 text-sm mt-6 font-display italic">Belo Horizonte · Santa Efigênia</p>
   </div>
@@ -192,21 +353,30 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
   <div class="hidden xl:block absolute left-6 top-1/2 -translate-y-1/2 hero-side-decor">Dilascio · Desde 1994</div>
   <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
     <div class="lg:col-span-7 reveal">
+      <span class="pill-free mb-6">
+        <span class="dot"></span>
+        Primeira avaliação · Sem custo
+      </span>
+
       <div class="flex items-center gap-3 mb-7">
         <div class="w-10 h-px bg-gold-400"></div>
         <span class="eyebrow text-gold-600">Clínica Dilascio · Belo Horizonte</span>
       </div>
+
       <h1 class="h-display text-5xl md:text-6xl lg:text-7xl text-forest-700 mb-7">
         Volte a sorrir <br>
         <span class="italic text-forest-600">com segurança,</span> <br>
         conforto e <span class="text-gold-500 italic">naturalidade.</span>
       </h1>
+
       <p class="text-ink-soft text-lg md:text-xl leading-relaxed max-w-xl mb-10 font-light">
         Tratamentos de implante, prótese e protocolo conduzidos pelo
         <strong class="font-medium text-forest-700">Dr. Mauro Dilascio</strong> — unindo mais de
         três décadas de experiência, planejamento individualizado e um atendimento
         que escuta antes de tratar.
+        <span class="block mt-3 text-forest-600 font-medium">Sua primeira avaliação é gratuita e sem compromisso.</span>
       </p>
+
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-2xl">
         <div class="flex items-start gap-2.5 reveal reveal-delay-1">
           <i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i>
@@ -225,14 +395,16 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
           <span class="text-sm text-ink-soft leading-snug">Particular<br><span class="text-ink-mute">foco em excelência</span></span>
         </div>
       </div>
+
       <div class="flex flex-col sm:flex-row gap-4 reveal reveal-delay-5">
-        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-primary">
-          <i data-lucide="message-circle" class="w-5 h-5"></i> Agendar avaliação pelo WhatsApp
+        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20a%20avalia%C3%A7%C3%A3o%20gratuita%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-primary">
+          <i data-lucide="message-circle" class="w-5 h-5"></i> Agendar avaliação gratuita
         </a>
-        <a href="#dr-mauro" class="btn-ghost">
-          <i data-lucide="arrow-down-right" class="w-4 h-4"></i> Conhecer o Dr. Mauro
+        <a href="tel:+553132411738" class="btn-ghost">
+          <i data-lucide="phone" class="w-4 h-4"></i> (31) 3241-1738
         </a>
       </div>
+
       <p class="mt-7 text-sm text-ink-mute italic font-display">
         "Não é apenas sobre dentes. É sobre voltar a sorrir, mastigar e viver com mais segurança."
       </p>
@@ -307,6 +479,61 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
   </div>
 </section>
 
+<!-- SOCIAL PROOF — Google reviews (inspirado em Pedro II, refinado) -->
+<section class="py-14 lg:py-16 bg-cream-50 border-b border-line">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="grid md:grid-cols-12 gap-8 items-center">
+      <div class="md:col-span-5 reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-px bg-gold-400"></div>
+          <span class="eyebrow text-gold-600">Avaliação dos pacientes</span>
+        </div>
+        <div class="flex items-end gap-4 mb-3">
+          <div class="font-display text-6xl text-forest-700 leading-none">4.9</div>
+          <div class="pb-2">
+            <div class="stars-row mb-1">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="text-xs text-ink-mute tracking-wide">Avaliações verificadas</div>
+          </div>
+        </div>
+        <p class="text-ink-soft font-light leading-relaxed max-w-md text-[0.98rem]">
+          A confiança que construímos paciente a paciente, há mais de três décadas.
+        </p>
+      </div>
+
+      <div class="md:col-span-7 reveal reveal-delay-2 grid grid-cols-2 gap-4">
+        <div class="bg-white border border-line p-5 rounded-md">
+          <div class="stars-row mb-3" style="color:#B89968">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="font-display italic text-forest-700 text-[1.05rem] leading-snug mb-2">"Atendimento excepcional, atenção em cada detalhe."</p>
+          <p class="text-xs text-ink-mute">— Paciente verificado</p>
+        </div>
+        <div class="bg-white border border-line p-5 rounded-md">
+          <div class="stars-row mb-3" style="color:#B89968">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="font-display italic text-forest-700 text-[1.05rem] leading-snug mb-2">"Voltei a sorrir sem medo. Profissionalismo do começo ao fim."</p>
+          <p class="text-xs text-ink-mute">— Paciente verificado</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- STATS -->
 <section class="py-20 lg:py-28 bg-cream-100">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
@@ -333,9 +560,9 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
         <div class="eyebrow text-ink-mute">Cadeiras clínicas</div>
       </div>
       <div class="reveal reveal-delay-3">
-        <div class="stat-number text-5xl md:text-6xl text-forest-700 italic font-display">100<span class="text-gold-500">%</span></div>
+        <div class="stat-number text-5xl md:text-6xl text-forest-700 italic font-display"><span class="counter" data-target="98">0</span><span class="text-gold-500">%</span></div>
         <div class="divider-fine w-12 mx-auto my-4"></div>
-        <div class="eyebrow text-ink-mute">Atendimento particular</div>
+        <div class="eyebrow text-ink-mute">Pacientes satisfeitos</div>
       </div>
     </div>
   </div>
@@ -431,8 +658,90 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
           <span class="text-forest-700 font-medium">Reabilitação oral completa</span>
         </div>
       </div>
-      <a href="https://wa.me/553132411738?text=Ol%C3%A1%2C%20Dr.%20Mauro%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" class="btn-primary">
-        <i data-lucide="message-circle" class="w-5 h-5"></i> Conversar com a clínica
+      <a href="https://wa.me/553132411738?text=Ol%C3%A1%2C%20Dr.%20Mauro%21%20Gostaria%20de%20agendar%20a%20avalia%C3%A7%C3%A3o%20gratuita." target="_blank" rel="noopener" class="btn-primary">
+        <i data-lucide="message-circle" class="w-5 h-5"></i> Agendar avaliação gratuita
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPE — inspirado em Pedro II ("Nossa equipe") -->
+<section id="equipe" class="py-24 lg:py-32 bg-cream-200 relative">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+      <div class="flex items-center gap-3 justify-center mb-6">
+        <div class="w-10 h-px bg-gold-400"></div>
+        <span class="eyebrow text-gold-600">Nossa equipe</span>
+        <div class="w-10 h-px bg-gold-400"></div>
+      </div>
+      <h2 class="h-display text-4xl md:text-5xl lg:text-6xl text-forest-700 mb-6">
+        Profissionais <span class="italic">dedicados</span> ao seu sorriso
+      </h2>
+      <p class="text-ink-soft text-lg font-light">
+        Uma equipe completa para cuidar de cada etapa do seu tratamento.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+
+      <!-- Dr. Mauro -->
+      <div class="team-card reveal">
+        <div class="team-portrait">
+          <svg viewBox="0 0 100 130" fill="none">
+            <circle cx="50" cy="42" r="20" fill="currentColor"/>
+            <path d="M14 130c0-22 16-40 36-40s36 18 36 40" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="info">
+          <span class="eyebrow text-gold-600 mb-2 block">Especialidade principal</span>
+          <h3 class="font-display text-2xl text-forest-700 mb-1">Dr. Mauro Dilascio</h3>
+          <p class="text-ink-soft font-light text-sm leading-relaxed mb-3">
+            Cirurgião-dentista — Implantes, próteses, protocolo e reabilitação oral. Mais de 30 anos de experiência clínica.
+          </p>
+          <div class="text-xs text-ink-mute uppercase tracking-widest">CRO-MG</div>
+        </div>
+      </div>
+
+      <!-- Especialista 2 (placeholder) -->
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-portrait">
+          <svg viewBox="0 0 100 130" fill="none">
+            <circle cx="50" cy="42" r="20" fill="currentColor"/>
+            <path d="M14 130c0-22 16-40 36-40s36 18 36 40" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="info">
+          <span class="eyebrow text-gold-600 mb-2 block">Apoio clínico</span>
+          <h3 class="font-display text-2xl text-forest-700 mb-1">Especialista da equipe</h3>
+          <p class="text-ink-soft font-light text-sm leading-relaxed mb-3">
+            Profissional dedicado aos procedimentos complementares e ao acompanhamento contínuo dos pacientes.
+          </p>
+          <div class="text-xs text-ink-mute uppercase tracking-widest">CRO-MG</div>
+        </div>
+      </div>
+
+      <!-- Atendimento (placeholder) -->
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-portrait">
+          <svg viewBox="0 0 100 130" fill="none">
+            <circle cx="50" cy="42" r="20" fill="currentColor"/>
+            <path d="M14 130c0-22 16-40 36-40s36 18 36 40" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="info">
+          <span class="eyebrow text-gold-600 mb-2 block">Coordenação de atendimento</span>
+          <h3 class="font-display text-2xl text-forest-700 mb-1">Equipe de recepção</h3>
+          <p class="text-ink-soft font-light text-sm leading-relaxed mb-3">
+            Responsável pelo acolhimento, agendamento e por garantir que cada paciente seja bem recebido em cada visita.
+          </p>
+          <div class="text-xs text-ink-mute uppercase tracking-widest">Atendimento humanizado</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center reveal reveal-delay-3">
+      <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20a%20avalia%C3%A7%C3%A3o%20gratuita%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-primary">
+        <i data-lucide="message-circle" class="w-5 h-5"></i> Agendar avaliação gratuita
       </a>
     </div>
   </div>
@@ -458,10 +767,11 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
       <div class="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-gold-300 to-transparent"></div>
       <div class="journey-step reveal">
         <div class="journey-num mb-4">01</div>
-        <h3 class="font-display text-2xl text-forest-700 mb-3">Avaliação inicial</h3>
+        <span class="pill-free mb-3" style="font-size:0.62rem;padding:0.25rem 0.7rem"><span class="dot"></span>Sem custo</span>
+        <h3 class="font-display text-2xl text-forest-700 mb-3 mt-2">Avaliação gratuita</h3>
         <p class="text-ink-soft text-base leading-relaxed font-light">
-          Escutamos sua história, suas dores e seus objetivos antes de
-          recomendar qualquer tratamento.
+          O primeiro passo é uma conversa sem custo. Escutamos sua história, suas
+          dores e seus objetivos antes de recomendar qualquer tratamento.
         </p>
       </div>
       <div class="journey-step reveal reveal-delay-1">
@@ -529,7 +839,7 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
           <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Melhora da autoestima</span></li>
         </ul>
         <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20avaliar%20um%20implante%20dent%C3%A1rio." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-forest-600 font-semibold hover:text-gold-500 transition-colors group">
-          Quero avaliar meu caso
+          Agendar avaliação gratuita
           <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
         </a>
       </div>
@@ -551,7 +861,7 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
           <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Resultado durável</span></li>
         </ul>
         <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20uma%20avalia%C3%A7%C3%A3o%20para%20pr%C3%B3tese%20dent%C3%A1ria." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-forest-600 font-semibold hover:text-gold-500 transition-colors group">
-          Quero avaliar meu caso
+          Agendar avaliação gratuita
           <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
         </a>
       </div>
@@ -573,11 +883,37 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
           <li class="flex items-start gap-2.5"><i data-lucide="check" class="w-4 h-4 text-gold-500 mt-1 flex-shrink-0"></i><span class="text-ink-soft">Confiança para falar e comer</span></li>
         </ul>
         <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20o%20protocolo%20sobre%20implante." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-forest-600 font-semibold hover:text-gold-500 transition-colors group">
-          Quero avaliar meu caso
+          Agendar avaliação gratuita
           <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
         </a>
       </div>
     </div>
+
+    <!-- Fallback inteligente (inspirado em Pedro II "Não encontrou?") -->
+    <div class="fallback-panel p-8 lg:p-10 mt-12 reveal">
+      <div class="grid lg:grid-cols-12 gap-6 items-center">
+        <div class="lg:col-span-8">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-px bg-gold-400"></div>
+            <span class="eyebrow text-gold-600">Buscando outro tratamento?</span>
+          </div>
+          <h3 class="font-display text-2xl md:text-3xl text-forest-700 mb-3">
+            Não encontrou o tratamento que procurava? <span class="italic">Fale com a clínica.</span>
+          </h3>
+          <p class="text-ink-soft font-light leading-relaxed max-w-2xl">
+            Nossa expertise central é reabilitação oral, mas a Clínica Dilascio também conta com
+            profissionais para outras especialidades. Conte o seu caso — vamos te orientar sobre
+            o melhor caminho.
+          </p>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20se%20a%20cl%C3%ADnica%20atende%20outro%20tratamento%20espec%C3%ADfico." target="_blank" rel="noopener" class="btn-gold">
+            <i data-lucide="message-circle" class="w-5 h-5"></i> Falar com a clínica
+          </a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -585,77 +921,91 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
 <section class="py-24 lg:py-32 bg-paper relative">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-12 gap-12 mb-16 items-end">
-      <div class="lg:col-span-6 reveal">
+      <div class="lg:col-span-7 reveal">
         <div class="flex items-center gap-3 mb-6">
           <div class="w-10 h-px bg-gold-400"></div>
-          <span class="eyebrow text-gold-600">Diferenciais</span>
+          <span class="eyebrow text-gold-600">Por que nos escolher</span>
         </div>
         <h2 class="h-display text-4xl md:text-5xl lg:text-6xl text-forest-700">
-          Por que pacientes escolhem <span class="italic">a Dilascio</span>?
+          Sua saúde, nosso compromisso <span class="italic">com a excelência.</span>
         </h2>
       </div>
+      <div class="lg:col-span-5 lg:pb-2 reveal reveal-delay-2">
+        <p class="text-ink-soft text-lg leading-relaxed font-light">
+          Três pilares que estruturam a experiência do paciente na Clínica Dilascio.
+        </p>
+      </div>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-      <div class="bg-white border border-line p-8 rounded-md reveal hover:border-gold-300 transition-colors">
-        <div class="flex items-center gap-4 mb-5">
-          <div class="w-12 h-12 rounded-md bg-forest-50 flex items-center justify-center"><i data-lucide="hand-heart" class="w-6 h-6 text-forest-600"></i></div>
-          <span class="font-display text-2xl text-gold-500 italic">01</span>
-        </div>
-        <h3 class="font-display text-2xl text-forest-700 mb-3">Atendimento humanizado</h3>
+
+    <!-- 3 pilares centrais (inspirados em Pedro II) -->
+    <div class="grid md:grid-cols-3 gap-7 mb-7">
+      <div class="bg-white border border-line p-8 lg:p-10 rounded-md reveal hover:border-gold-300 transition-colors">
+        <div class="pillar-icon mb-7"><i data-lucide="hand-heart" class="w-7 h-7"></i></div>
+        <span class="eyebrow text-gold-600 mb-2 block">Pilar 01</span>
+        <h3 class="font-display text-2xl md:text-3xl text-forest-700 mb-4">Acompanhamento próximo</h3>
         <p class="text-ink-soft leading-relaxed font-light">
-          O paciente é ouvido com atenção real e acompanhado em cada etapa do tratamento.
+          Aqui você não é apenas mais um número. O atendimento é humanizado, com
+          retorno rápido e escuta real para sanar todas as suas dúvidas — antes,
+          durante e após o tratamento.
         </p>
       </div>
-      <div class="bg-white border border-line p-8 rounded-md reveal reveal-delay-1 hover:border-gold-300 transition-colors">
-        <div class="flex items-center gap-4 mb-5">
-          <div class="w-12 h-12 rounded-md bg-forest-50 flex items-center justify-center"><i data-lucide="clipboard-pen-line" class="w-6 h-6 text-forest-600"></i></div>
-          <span class="font-display text-2xl text-gold-500 italic">02</span>
-        </div>
-        <h3 class="font-display text-2xl text-forest-700 mb-3">Planejamento personalizado</h3>
+
+      <div class="bg-white border border-line p-8 lg:p-10 rounded-md reveal reveal-delay-1 hover:border-gold-300 transition-colors">
+        <div class="pillar-icon mb-7"><i data-lucide="calendar-clock" class="w-7 h-7"></i></div>
+        <span class="eyebrow text-gold-600 mb-2 block">Pilar 02</span>
+        <h3 class="font-display text-2xl md:text-3xl text-forest-700 mb-4">Horários flexíveis</h3>
         <p class="text-ink-soft leading-relaxed font-light">
-          Cada paciente possui necessidades diferentes. O tratamento é pensado para cada caso.
+          Precisa de horário fora do convencional? Atendemos no horário de almoço
+          e em outras janelas, mediante combinação. Sua saúde não pode esperar
+          pela sua agenda — converse com a recepção.
         </p>
       </div>
-      <div class="bg-white border border-line p-8 rounded-md reveal reveal-delay-2 hover:border-gold-300 transition-colors">
-        <div class="flex items-center gap-4 mb-5">
-          <div class="w-12 h-12 rounded-md bg-forest-50 flex items-center justify-center"><i data-lucide="shield-check" class="w-6 h-6 text-forest-600"></i></div>
-          <span class="font-display text-2xl text-gold-500 italic">03</span>
-        </div>
-        <h3 class="font-display text-2xl text-forest-700 mb-3">Segurança e confiança</h3>
+
+      <div class="bg-white border border-line p-8 lg:p-10 rounded-md reveal reveal-delay-2 hover:border-gold-300 transition-colors">
+        <div class="pillar-icon mb-7"><i data-lucide="wallet" class="w-7 h-7"></i></div>
+        <span class="eyebrow text-gold-600 mb-2 block">Pilar 03</span>
+        <h3 class="font-display text-2xl md:text-3xl text-forest-700 mb-4">Condições facilitadas</h3>
         <p class="text-ink-soft leading-relaxed font-light">
-          Tratamentos conduzidos com mais de 30 anos de experiência e acompanhamento profissional.
+          Diversas formas de pagamento — incluindo parcelamento — para tornar
+          o tratamento acessível sem abrir mão da qualidade e do planejamento.
+          Atendimento particular, sem convênios.
         </p>
       </div>
-      <div class="bg-white border border-line p-8 rounded-md reveal reveal-delay-3 hover:border-gold-300 transition-colors">
-        <div class="flex items-center gap-4 mb-5">
+    </div>
+
+    <!-- Complementares -->
+    <div class="grid md:grid-cols-3 gap-7">
+      <div class="bg-white border border-line p-7 rounded-md reveal hover:border-gold-300 transition-colors">
+        <div class="flex items-center gap-4 mb-4">
           <div class="w-12 h-12 rounded-md bg-forest-50 flex items-center justify-center"><i data-lucide="building-2" class="w-6 h-6 text-forest-600"></i></div>
           <span class="font-display text-2xl text-gold-500 italic">04</span>
         </div>
-        <h3 class="font-display text-2xl text-forest-700 mb-3">Estrutura moderna</h3>
-        <p class="text-ink-soft leading-relaxed font-light">
-          Clínica equipada com 7 cadeiras clínicas, oferecendo conforto e praticidade.
+        <h3 class="font-display text-xl text-forest-700 mb-2">Estrutura moderna</h3>
+        <p class="text-ink-soft leading-relaxed font-light text-sm">
+          Clínica equipada com 7 cadeiras, oferecendo conforto e fluidez no atendimento.
         </p>
       </div>
-      <div class="bg-white border border-line p-8 rounded-md reveal reveal-delay-4 hover:border-gold-300 transition-colors">
-        <div class="flex items-center gap-4 mb-5">
+
+      <div class="bg-white border border-line p-7 rounded-md reveal reveal-delay-1 hover:border-gold-300 transition-colors">
+        <div class="flex items-center gap-4 mb-4">
           <div class="w-12 h-12 rounded-md bg-forest-50 flex items-center justify-center"><i data-lucide="target" class="w-6 h-6 text-forest-600"></i></div>
           <span class="font-display text-2xl text-gold-500 italic">05</span>
         </div>
-        <h3 class="font-display text-2xl text-forest-700 mb-3">Foco em resultado real</h3>
-        <p class="text-ink-soft leading-relaxed font-light">
+        <h3 class="font-display text-xl text-forest-700 mb-2">Foco em resultado real</h3>
+        <p class="text-ink-soft leading-relaxed font-light text-sm">
           Mais do que estética: devolver funcionalidade, segurança e qualidade de vida.
         </p>
       </div>
-      <div class="bg-forest-700 text-cream-100 p-8 rounded-md flex flex-col justify-between reveal reveal-delay-5">
+
+      <div class="bg-forest-700 text-cream-100 p-7 rounded-md flex flex-col justify-between reveal reveal-delay-2">
         <div>
-          <p class="font-display text-2xl leading-snug italic mb-4">"Quero agendar uma avaliação."</p>
-          <p class="text-cream-100/70 text-sm mb-6 font-light">
-            A primeira conversa é simples e sem compromisso. Você sai com clareza
-            sobre o seu caso.
+          <p class="font-display text-xl leading-snug italic mb-3">"Quero conhecer a clínica."</p>
+          <p class="text-cream-100/70 text-sm mb-5 font-light">
+            Avaliação gratuita, sem compromisso. Você sai com clareza sobre o seu caso.
           </p>
         </div>
-        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-gold w-full justify-center">
-          <i data-lucide="message-circle" class="w-5 h-5"></i> Falar pelo WhatsApp
+        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20a%20avalia%C3%A7%C3%A3o%20gratuita%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-gold w-full justify-center text-sm py-3">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> Agendar agora
         </a>
       </div>
     </div>
@@ -755,7 +1105,7 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
           Reunimos as perguntas que mais ouvimos no dia a dia. Se ainda restar
           alguma, fale com a gente pelo WhatsApp.
         </p>
-        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20tratamento." target="_blank" rel="noopener" class="btn-primary mt-9 hidden lg:inline-flex">
+        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20avalia%C3%A7%C3%A3o%20gratuita." target="_blank" rel="noopener" class="btn-primary mt-9 hidden lg:inline-flex">
           <i data-lucide="message-circle" class="w-5 h-5"></i> Tirar minha dúvida
         </a>
       </div>
@@ -837,9 +1187,95 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
             </div>
           </details>
         </div>
-        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20tratamento." target="_blank" rel="noopener" class="btn-primary mt-9 lg:hidden inline-flex">
+        <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20avalia%C3%A7%C3%A3o%20gratuita." target="_blank" rel="noopener" class="btn-primary mt-9 lg:hidden inline-flex">
           <i data-lucide="message-circle" class="w-5 h-5"></i> Tirar minha dúvida
         </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENHA NOS VISITAR (inspirado em Pedro II) -->
+<section id="contato" class="py-24 lg:py-32 bg-cream-100 relative">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+      <!-- Coluna esquerda — info -->
+      <div class="lg:col-span-5 reveal">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-px bg-gold-400"></div>
+          <span class="eyebrow text-gold-600">Onde estamos</span>
+        </div>
+        <h2 class="h-display text-4xl md:text-5xl text-forest-700 mb-7">
+          Venha nos <span class="italic">visitar.</span>
+        </h2>
+
+        <div class="space-y-6 mb-9">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-md bg-forest-50 border border-line flex items-center justify-center flex-shrink-0">
+              <i data-lucide="map-pin" class="w-5 h-5 text-forest-600"></i>
+            </div>
+            <div>
+              <div class="eyebrow text-gold-600 mb-1">Endereço</div>
+              <p class="text-forest-700 leading-relaxed font-medium">
+                R. Domingos Vieira, 587 — sala 1214<br>
+                Santa Efigênia · Belo Horizonte/MG<br>
+                <span class="text-ink-mute font-light text-sm">CEP 30150-240</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-md bg-forest-50 border border-line flex items-center justify-center flex-shrink-0">
+              <i data-lucide="clock" class="w-5 h-5 text-forest-600"></i>
+            </div>
+            <div>
+              <div class="eyebrow text-gold-600 mb-1">Funcionamento</div>
+              <p class="text-forest-700 leading-relaxed font-medium">
+                Segunda à Sexta<br>
+                <span class="text-ink-mute font-light text-sm">Horários flexíveis — converse com a recepção</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-md bg-forest-50 border border-line flex items-center justify-center flex-shrink-0">
+              <i data-lucide="credit-card" class="w-5 h-5 text-forest-600"></i>
+            </div>
+            <div>
+              <div class="eyebrow text-gold-600 mb-1">Pagamento</div>
+              <p class="text-forest-700 leading-relaxed font-medium">
+                Atendimento particular<br>
+                <span class="text-ink-mute font-light text-sm">Diversas formas, incluindo parcelamento</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20a%20avalia%C3%A7%C3%A3o%20gratuita%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-primary">
+            <i data-lucide="message-circle" class="w-5 h-5"></i> Avaliação gratuita
+          </a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=R.+Domingos+Vieira,+587+-+Santa+Efigênia,+Belo+Horizonte+-+MG,+30150-240" target="_blank" rel="noopener" class="btn-ghost">
+            <i data-lucide="navigation" class="w-4 h-4"></i> Ver rota
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna direita — mapa -->
+      <div class="lg:col-span-7 reveal reveal-delay-2">
+        <div class="map-wrapper" style="aspect-ratio: 4/3;">
+          <iframe
+            src="https://www.google.com/maps?q=R.%20Domingos%20Vieira%2C%20587%20-%20Santa%20Efig%C3%AAnia%2C%20Belo%20Horizonte%20-%20MG%2C%2030150-240&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            title="Localização da Clínica Dilascio em Belo Horizonte">
+          </iframe>
+        </div>
+        <p class="text-center mt-4 text-xs text-ink-mute italic font-display text-sm">
+          R. Domingos Vieira, 587 · Santa Efigênia · Belo Horizonte
+        </p>
       </div>
     </div>
   </div>
@@ -861,12 +1297,11 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
         <span class="italic text-gold-300">voltar a sorrir</span> com mais segurança.
       </h2>
       <p class="text-cream-100/80 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl mx-auto font-light">
-        Agende sua avaliação e descubra qual é o melhor tratamento para o seu caso —
-        com escuta, planejamento e o acompanhamento de quem cuida disso há mais
-        de três décadas.
+        Sua primeira avaliação é <strong class="text-gold-300 font-semibold">gratuita e sem compromisso</strong>.
+        Você sai com clareza sobre o seu caso, prazo e investimento — sem surpresas no meio do caminho.
       </p>
-      <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-gold text-lg py-5 px-10 reveal reveal-delay-1">
-        <i data-lucide="message-circle" class="w-6 h-6"></i> Agendar minha avaliação
+      <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20a%20avalia%C3%A7%C3%A3o%20gratuita%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-gold text-lg py-5 px-10 reveal reveal-delay-1">
+        <i data-lucide="message-circle" class="w-6 h-6"></i> Agendar minha avaliação gratuita
       </a>
       <p class="mt-10 text-cream-100/60 text-sm font-display italic">
         Resposta pessoal · Belo Horizonte · Santa Efigênia
@@ -892,17 +1327,19 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F8F4ED; color
         <p class="text-cream-100/70 leading-relaxed max-w-md font-light text-sm">
           Há mais de 30 anos cuidando de pessoas que querem voltar a sorrir,
           mastigar e viver com mais segurança. Implantes, próteses e protocolo
-          em Belo Horizonte.
+          em Belo Horizonte. <strong class="text-gold-300 font-semibold">Avaliação inicial gratuita</strong> · Atendimento 100% particular.
         </p>
       </div>
       <div class="md:col-span-3">
         <div class="eyebrow text-gold-300/80 mb-4">Atendimento</div>
         <ul class="space-y-2.5 text-sm">
           <li><a href="#dr-mauro" class="hover:text-gold-300 transition-colors">Dr. Mauro Dilascio</a></li>
+          <li><a href="#equipe" class="hover:text-gold-300 transition-colors">Nossa equipe</a></li>
           <li><a href="#tratamentos" class="hover:text-gold-300 transition-colors">Implantes</a></li>
           <li><a href="#tratamentos" class="hover:text-gold-300 transition-colors">Próteses</a></li>
           <li><a href="#tratamentos" class="hover:text-gold-300 transition-colors">Protocolo</a></li>
           <li><a href="#duvidas" class="hover:text-gold-300 transition-colors">Dúvidas frequentes</a></li>
+          <li><a href="#contato" class="hover:text-gold-300 transition-colors">Onde estamos</a></li>
         </ul>
       </div>
       <div class="md:col-span-4">

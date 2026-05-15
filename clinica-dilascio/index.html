@@ -237,15 +237,21 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F4F8FB; color
   aspect-ratio: 4/5;
   background: linear-gradient(180deg, #155A8C, #003560);
   position: relative;
-  display: flex; align-items: flex-end; justify-content: center;
-  padding: 2rem;
+  overflow: hidden;
 }
 .team-portrait::after {
   content: '';
   position: absolute; inset: 10px;
-  border: 1px solid rgba(184,153,104,0.35);
+  border: 1px solid rgba(255,255,255,0.18);
   border-radius: 3px;
   pointer-events: none;
+  z-index: 2;
+}
+.team-portrait img {
+  transition: transform 700ms cubic-bezier(.2,.7,.2,1);
+}
+.team-card:hover .team-portrait img {
+  transform: scale(1.04);
 }
 .team-portrait svg { color: rgba(184,153,104,0.32); width: 50%; max-width: 140px; }
 .team-card .info { padding: 1.5rem 1.6rem 1.7rem; }
@@ -403,12 +409,8 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F4F8FB; color
     </div>
     <div class="lg:col-span-5 reveal reveal-delay-2 relative">
       <div class="hero-portrait-frame max-w-md mx-auto">
-        <div class="portrait-fallback">
-          <svg viewBox="0 0 100 130" fill="none" class="w-1/2 max-w-[180px]">
-            <circle cx="50" cy="42" r="20" fill="currentColor"/>
-            <path d="M14 130c0-22 16-40 36-40s36 18 36 40" fill="currentColor"/>
-          </svg>
-        </div>
+        <img src="team/dr-mauro-hero.jpg" alt="Dr. Mauro Dilascio — Cirurgião-dentista" width="800" height="1067" loading="eager" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-forest-800/85 via-forest-800/20 to-transparent pointer-events-none"></div>
         <div class="absolute left-5 bottom-5 right-5 z-10 flex items-end justify-between text-cream-100">
           <div>
             <div class="eyebrow text-gold-300 mb-1">Cirurgião-dentista</div>
@@ -562,7 +564,7 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F4F8FB; color
   </div>
 </section>
 
-<!-- EQUIPE — inspirado em Pedro II ("Nossa equipe") -->
+<!-- EQUIPE -->
 <section id="equipe" class="py-20 lg:py-24 bg-cream-200 relative">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-14 reveal">
@@ -576,55 +578,71 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F4F8FB; color
       </h2>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-6">
 
-      <!-- Dr. Mauro -->
+      <!-- Dr. Mauro Dilascio -->
       <div class="team-card reveal">
         <div class="team-portrait">
-          <svg viewBox="0 0 100 130" fill="none">
-            <circle cx="50" cy="42" r="20" fill="currentColor"/>
-            <path d="M14 130c0-22 16-40 36-40s36 18 36 40" fill="currentColor"/>
-          </svg>
+          <img src="team/dr-mauro.jpg" alt="Dr. Mauro Dilascio" width="600" height="750" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
         </div>
         <div class="info">
           <span class="eyebrow text-gold-600 mb-2 block">Cirurgião-dentista</span>
-          <h3 class="font-display text-2xl text-forest-700 mb-1">Dr. Mauro Dilascio</h3>
-          <p class="text-ink-mute font-light text-sm">Implante, prótese e protocolo</p>
+          <h3 class="font-display text-xl text-forest-700 mb-1 leading-tight">Dr. Mauro Dilascio</h3>
+          <p class="text-ink-mute font-light text-sm leading-snug">Implantes, estética e harmonização facial</p>
         </div>
       </div>
 
-      <!-- Especialista 2 (placeholder) -->
+      <!-- Dra. Ana Luísa -->
       <div class="team-card reveal reveal-delay-1">
         <div class="team-portrait">
-          <svg viewBox="0 0 100 130" fill="none">
-            <circle cx="50" cy="42" r="20" fill="currentColor"/>
-            <path d="M14 130c0-22 16-40 36-40s36 18 36 40" fill="currentColor"/>
-          </svg>
+          <img src="team/dra-ana.jpg" alt="Dra. Ana Luísa" width="600" height="750" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
         </div>
         <div class="info">
-          <span class="eyebrow text-gold-600 mb-2 block">Apoio clínico</span>
-          <h3 class="font-display text-2xl text-forest-700 mb-1">Especialista</h3>
-          <p class="text-ink-mute font-light text-sm">Procedimentos complementares</p>
+          <span class="eyebrow text-gold-600 mb-2 block">Cirurgiã-dentista</span>
+          <h3 class="font-display text-xl text-forest-700 mb-1 leading-tight">Dra. Ana Luísa</h3>
+          <p class="text-ink-mute font-light text-sm leading-snug">Endodontia</p>
         </div>
       </div>
 
-      <!-- Atendimento (placeholder) -->
+      <!-- Dr. Matheus Maia -->
       <div class="team-card reveal reveal-delay-2">
         <div class="team-portrait">
-          <svg viewBox="0 0 100 130" fill="none">
-            <circle cx="50" cy="42" r="20" fill="currentColor"/>
-            <path d="M14 130c0-22 16-40 36-40s36 18 36 40" fill="currentColor"/>
-          </svg>
+          <img src="team/dr-matheus.jpg" alt="Dr. Matheus Maia" width="600" height="750" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
         </div>
         <div class="info">
-          <span class="eyebrow text-gold-600 mb-2 block">Atendimento</span>
-          <h3 class="font-display text-2xl text-forest-700 mb-1">Recepção</h3>
-          <p class="text-ink-mute font-light text-sm">Acolhimento e agendamento</p>
+          <span class="eyebrow text-gold-600 mb-2 block">Cirurgião-dentista</span>
+          <h3 class="font-display text-xl text-forest-700 mb-1 leading-tight">Dr. Matheus Maia</h3>
+          <p class="text-ink-mute font-light text-sm leading-snug">Clínica geral e procedimentos</p>
         </div>
       </div>
+
+      <!-- Dra. Clara Gontijo -->
+      <div class="team-card reveal reveal-delay-3">
+        <div class="team-portrait">
+          <img src="team/dra-clara.jpg" alt="Dra. Clara Gontijo" width="600" height="750" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+        </div>
+        <div class="info">
+          <span class="eyebrow text-gold-600 mb-2 block">Cirurgiã-dentista</span>
+          <h3 class="font-display text-xl text-forest-700 mb-1 leading-tight">Dra. Clara Gontijo</h3>
+          <p class="text-ink-mute font-light text-sm leading-snug">Clínica geral e procedimentos</p>
+        </div>
+      </div>
+
+      <!-- Carla Dilascio -->
+      <div class="team-card reveal reveal-delay-4">
+        <div class="team-portrait">
+          <img src="team/carla.jpg" alt="Carla Dilascio" width="600" height="750" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+        </div>
+        <div class="info">
+          <span class="eyebrow text-gold-600 mb-2 block">Fonoaudióloga</span>
+          <h3 class="font-display text-xl text-forest-700 mb-1 leading-tight">Carla Dilascio</h3>
+          <p class="text-ink-mute font-light text-sm leading-snug">Fonoaudiologia e micropigmentação</p>
+        </div>
+      </div>
+
     </div>
 
-    <div class="mt-12 text-center reveal reveal-delay-3">
+    <div class="mt-12 text-center reveal reveal-delay-5">
       <a href="https://wa.me/553132411738?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20a%20avalia%C3%A7%C3%A3o%20gratuita%20na%20Cl%C3%ADnica%20Dilascio." target="_blank" rel="noopener" class="btn-primary">
         <i data-lucide="message-circle" class="w-5 h-5"></i> Agendar avaliação gratuita
       </a>

@@ -94,23 +94,119 @@
 
 <style>
 html { scroll-behavior: smooth; }
-body { font-family: 'Manrope', system-ui, sans-serif; background: #F4F8FB; color: #102134; -webkit-font-smoothing: antialiased; }
+
+/* === TEXTURA DE PONTOS — base reutilizável (inspirada em certificadoimmune.com.br) === */
+:root {
+  --dot-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Ccircle cx='2' cy='2' r='0.9' fill='%23004070' opacity='0.13'/%3E%3Ccircle cx='16' cy='16' r='0.7' fill='%230080B0' opacity='0.10'/%3E%3C/svg%3E");
+  --dot-texture-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Ccircle cx='2' cy='2' r='0.8' fill='%23004070' opacity='0.08'/%3E%3Ccircle cx='16' cy='16' r='0.6' fill='%230080B0' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+body {
+  font-family: 'Manrope', system-ui, sans-serif;
+  background-color: #F4F8FB;
+  background-image: var(--dot-texture-light);
+  background-attachment: fixed;
+  color: #102134;
+  -webkit-font-smoothing: antialiased;
+}
 .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
 .h-display { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; letter-spacing: -0.018em; line-height: 1.02; }
 .eyebrow { font-family: 'Manrope', sans-serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; }
-.bg-paper { background-color: #F4F8FB; background-image: radial-gradient(at 12% 18%, rgba(0, 128, 176, 0.06) 0px, transparent 50%), radial-gradient(at 92% 82%, rgba(0, 64, 112, 0.05) 0px, transparent 55%); }
+
+.bg-paper {
+  background-color: #F4F8FB;
+  background-image:
+    radial-gradient(at 12% 18%, rgba(0, 128, 176, 0.10) 0px, transparent 50%),
+    radial-gradient(at 92% 82%, rgba(0, 64, 112, 0.08) 0px, transparent 55%),
+    var(--dot-texture);
+}
+
+/* Textura aplicável a qualquer seção via pseudo-elemento (não afeta children) */
+.textured { position: relative; isolation: isolate; }
+.textured::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: var(--dot-texture);
+  background-attachment: local;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+.textured > * { position: relative; z-index: 1; }
+
 .bg-paper-noise { position: relative; }
 .bg-paper-noise::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); opacity: 0.035; pointer-events: none; z-index: 0; }
 .bg-paper-noise > * { position: relative; z-index: 1; }
 .divider-fine { height: 1px; background: linear-gradient(90deg, transparent, #99D3EB 50%, transparent); }
-.btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.65rem; padding: 0.95rem 1.7rem; background: linear-gradient(180deg, #155A8C 0%, #004070 100%); color: #F4F8FB; font-weight: 600; font-size: 0.95rem; border-radius: 999px; border: 1px solid rgba(0, 128, 176, 0.3); box-shadow: 0 1px 0 0 rgba(255,255,255,0.06) inset, 0 14px 28px -16px rgba(0,64,112,0.5); transition: transform 280ms cubic-bezier(.2,.7,.2,1), box-shadow 280ms ease, background 280ms ease; position: relative; overflow: hidden; }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 1px 0 0 rgba(255,255,255,0.08) inset, 0 22px 38px -14px rgba(0,64,112,0.55); background: linear-gradient(180deg, #155A8C 0%, #003560 100%); }
-.btn-primary::after { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 30%, rgba(0,128,176,0.22) 50%, transparent 70%); transform: translateX(-120%); transition: transform 750ms ease; }
+
+/* === BOTÕES — efeito shine, lift e active state polidos === */
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.65rem;
+  padding: 0.95rem 1.7rem;
+  background: linear-gradient(180deg, #155A8C 0%, #004070 100%);
+  color: #F4F8FB; font-weight: 600; font-size: 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 128, 176, 0.3);
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.06) inset, 0 14px 28px -16px rgba(0,64,112,0.5);
+  transition: transform 280ms cubic-bezier(.2,.7,.2,1), box-shadow 280ms ease, background 280ms ease;
+  position: relative; overflow: hidden;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.10) inset, 0 26px 44px -14px rgba(0,64,112,0.6);
+  background: linear-gradient(180deg, #1969A4 0%, #003560 100%);
+}
+.btn-primary:active { transform: translateY(-1px) scale(0.985); transition: transform 90ms ease; }
+.btn-primary::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.28) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 750ms ease;
+  pointer-events: none;
+}
 .btn-primary:hover::after { transform: translateX(120%); }
-.btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; padding: 0.85rem 1.4rem; background: transparent; color: #004070; font-weight: 600; font-size: 0.9rem; border-radius: 999px; border: 1px solid #004070; transition: all 250ms ease; }
-.btn-ghost:hover { background: #004070; color: #F4F8FB; }
-.btn-gold { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.95rem 1.7rem; background: linear-gradient(180deg, #0080B0 0%, #006A92 100%); color: #F4F8FB; font-weight: 600; font-size: 0.95rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 14px 26px -12px rgba(0,128,176,0.5); transition: transform 280ms cubic-bezier(.2,.7,.2,1), box-shadow 280ms ease; }
-.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 20px 34px -10px rgba(0,128,176,0.55); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+  padding: 0.85rem 1.4rem;
+  background: transparent;
+  color: #004070; font-weight: 600; font-size: 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #004070;
+  transition: all 250ms ease;
+  position: relative; overflow: hidden;
+  cursor: pointer;
+}
+.btn-ghost:hover { background: #004070; color: #F4F8FB; transform: translateY(-2px); box-shadow: 0 14px 26px -14px rgba(0,64,112,0.5); }
+.btn-ghost:active { transform: translateY(0) scale(0.985); }
+
+.btn-gold {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+  padding: 0.95rem 1.7rem;
+  background: linear-gradient(180deg, #0080B0 0%, #006A92 100%);
+  color: #F4F8FB; font-weight: 600; font-size: 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.10) inset, 0 14px 26px -12px rgba(0,128,176,0.5);
+  transition: transform 280ms cubic-bezier(.2,.7,.2,1), box-shadow 280ms ease, background 280ms ease;
+  position: relative; overflow: hidden;
+  cursor: pointer;
+}
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.14) inset, 0 26px 38px -10px rgba(0,128,176,0.6);
+  background: linear-gradient(180deg, #18A1D1 0%, #005275 100%);
+}
+.btn-gold:active { transform: translateY(-1px) scale(0.985); transition: transform 90ms ease; }
+.btn-gold::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.40) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 750ms ease;
+  pointer-events: none;
+}
+.btn-gold:hover::after { transform: translateX(120%); }
 .marquee { display: flex; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .marquee-track { display: flex; flex-shrink: 0; gap: 2.5rem; animation: marquee 42s linear infinite; padding: 0 1.25rem; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -119,9 +215,11 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F4F8FB; color
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: 90ms; } .reveal-delay-2 { transition-delay: 180ms; } .reveal-delay-3 { transition-delay: 270ms; } .reveal-delay-4 { transition-delay: 360ms; } .reveal-delay-5 { transition-delay: 450ms; }
 .card-elegant { background: #FFFFFF; border: 1px solid #D6E0E9; border-radius: 6px; transition: transform 350ms cubic-bezier(.2,.7,.2,1), box-shadow 350ms ease, border-color 350ms ease; position: relative; overflow: hidden; }
-.card-elegant::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 3px; background: linear-gradient(180deg, #0080B0, transparent); opacity: 0; transition: opacity 350ms ease; }
-.card-elegant:hover { transform: translateY(-4px); box-shadow: 0 28px 50px -22px rgba(0,64,112,0.18); border-color: #99D3EB; }
+.card-elegant::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 3px; background: linear-gradient(180deg, #0080B0, transparent); opacity: 0; transition: opacity 350ms ease; z-index: 2; }
+.card-elegant::after { content: ''; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 35%, rgba(0,128,176,0.10) 50%, transparent 65%); transform: translateX(-110%); transition: transform 900ms cubic-bezier(.2,.7,.2,1); pointer-events: none; z-index: 1; }
+.card-elegant:hover { transform: translateY(-6px); box-shadow: 0 32px 56px -22px rgba(0,64,112,0.22); border-color: #99D3EB; }
 .card-elegant:hover::before { opacity: 1; }
+.card-elegant:hover::after { transform: translateX(110%); }
 .faq-item details { border-bottom: 1px solid #D6E0E9; }
 .faq-item summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 0; font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 500; color: #102134; transition: color 250ms ease; }
 .faq-item summary:hover { color: #004070; }
@@ -434,7 +532,7 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F4F8FB; color
 </section>
 
 <!-- SOCIAL PROOF + STATS — faixa horizontal compacta -->
-<section class="py-12 lg:py-14 bg-cream-50 border-y border-line">
+<section class="py-12 lg:py-14 bg-cream-50 border-y border-line textured">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 items-center text-center">
 
@@ -495,7 +593,7 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F4F8FB; color
 </section>
 
 <!-- DEPOIMENTOS -->
-<section id="depoimentos" class="py-20 lg:py-24 bg-cream-100 relative">
+<section id="depoimentos" class="py-20 lg:py-24 bg-cream-100 textured relative">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-14 reveal">
       <div class="flex items-center gap-3 justify-center mb-6">
@@ -565,7 +663,7 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F4F8FB; color
 </section>
 
 <!-- EQUIPE -->
-<section id="equipe" class="py-20 lg:py-24 bg-cream-200 relative">
+<section id="equipe" class="py-20 lg:py-24 bg-cream-200 textured relative">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-14 reveal">
       <div class="flex items-center gap-3 justify-center mb-6">
@@ -651,7 +749,7 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F4F8FB; color
 </section>
 
 <!-- TRATAMENTOS -->
-<section id="tratamentos" class="py-20 lg:py-24 bg-cream-200 relative">
+<section id="tratamentos" class="py-20 lg:py-24 bg-cream-200 textured relative">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="mb-14 reveal">
       <div class="flex items-center gap-3 mb-6">
@@ -735,7 +833,7 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F4F8FB; color
 </section>
 
 <!-- DR. MAURO -->
-<section id="dr-mauro" class="py-20 lg:py-24 bg-cream-100 relative">
+<section id="dr-mauro" class="py-20 lg:py-24 bg-cream-100 textured relative">
   <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
     <div class="lg:col-span-5 reveal">
       <div class="relative max-w-md mx-auto">
@@ -789,7 +887,7 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F4F8FB; color
 </section>
 
 <!-- FAQ -->
-<section id="duvidas" class="py-20 lg:py-24 bg-cream-200 relative">
+<section id="duvidas" class="py-20 lg:py-24 bg-cream-200 textured relative">
   <div class="max-w-5xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 mb-12">
       <div class="lg:col-span-5 reveal">
@@ -865,7 +963,7 @@ body { font-family: 'Manrope', system-ui, sans-serif; background: #F4F8FB; color
 </section>
 
 <!-- VENHA NOS VISITAR (inspirado em Pedro II) -->
-<section id="contato" class="py-20 lg:py-24 bg-cream-100 relative">
+<section id="contato" class="py-20 lg:py-24 bg-cream-100 textured relative">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 

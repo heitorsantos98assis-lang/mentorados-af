@@ -345,7 +345,14 @@ body {
   pointer-events: none;
   z-index: 2;
 }
+/* CSS blindado: garante posicionamento das fotos mesmo se Tailwind CDN atrasar */
 .team-portrait img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
   transition: transform 700ms cubic-bezier(.2,.7,.2,1);
 }
 .team-card:hover .team-portrait img {
@@ -353,6 +360,15 @@ body {
 }
 .team-portrait svg { color: rgba(184,153,104,0.32); width: 50%; max-width: 140px; }
 .team-card .info { padding: 1.5rem 1.6rem 1.7rem; }
+/* Mesmo princípio para a foto do hero — anti race-condition Tailwind */
+.hero-portrait-frame > img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
 
 /* Map iframe wrapper */
 .map-wrapper {
@@ -681,7 +697,7 @@ body {
       <!-- Dr. Mauro Dilascio -->
       <div class="team-card reveal">
         <div class="team-portrait">
-          <img src="team/dr-mauro.jpg" alt="Dr. Mauro Dilascio" width="600" height="750" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+          <img src="team/dr-mauro.jpg" alt="Dr. Mauro Dilascio" width="600" height="750" loading="eager" class="absolute inset-0 w-full h-full object-cover">
         </div>
         <div class="info">
           <span class="eyebrow text-gold-600 mb-2 block">Cirurgião-dentista</span>
@@ -693,7 +709,7 @@ body {
       <!-- Dra. Ana Luísa -->
       <div class="team-card reveal reveal-delay-1">
         <div class="team-portrait">
-          <img src="team/dra-ana.jpg" alt="Dra. Ana Luísa" width="600" height="750" loading="lazy" class="absolute inset-0 w-full h-full object-cover">
+          <img src="team/dra-ana.jpg" alt="Dra. Ana Luísa" width="600" height="750" loading="eager" class="absolute inset-0 w-full h-full object-cover">
         </div>
         <div class="info">
           <span class="eyebrow text-gold-600 mb-2 block">Cirurgiã-dentista</span>
